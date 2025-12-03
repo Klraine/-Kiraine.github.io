@@ -1,0 +1,1430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KaziConnect - Skilled Workers & Freelancers | SokoLinc</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ===== VARIABLES & BASE STYLES ===== */
+        :root {
+            --primary: #2D5C8A;
+            --primary-dark: #1E4065;
+            --secondary: #FFA726;
+            --secondary-dark: #F57C00;
+            --accent: #1C1C1C;
+            --light: #F8F9FA;
+            --dark: #343A40;
+            --gray: #6C757D;
+            --light-gray: #E9ECEF;
+            --white: #FFFFFF;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
+            --radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ===== MOBILE-FIRST TYPOGRAPHY ===== */
+        h1 { font-size: 2rem; line-height: 1.2; }
+        h2 { font-size: 1.75rem; line-height: 1.3; }
+        h3 { font-size: 1.5rem; line-height: 1.3; }
+        h4 { font-size: 1.25rem; line-height: 1.4; }
+        p { font-size: 1rem; margin-bottom: 1rem; }
+
+        @media (min-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            h3 { font-size: 1.75rem; }
+            h4 { font-size: 1.5rem; }
+        }
+
+        /* ===== BUTTONS ===== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 14px 24px;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+            min-height: 50px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary);
+            color: var(--accent);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--secondary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-accent {
+            background-color: var(--accent);
+            color: var(--white);
+        }
+
+        .btn-accent:hover {
+            background-color: #000;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-small {
+            padding: 10px 18px;
+            font-size: 0.9rem;
+            min-height: 44px;
+        }
+
+        .btn-full {
+            width: 100%;
+        }
+
+        /* ===== HEADER & NAVIGATION ===== */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--white);
+        }
+
+        .logo-icon {
+            font-size: 2rem;
+            color: var(--secondary);
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        .tagline {
+            font-size: 0.75rem;
+            opacity: 0.9;
+        }
+
+        .nav-toggle {
+            display: flex;
+            flex-direction: column;
+            background: none;
+            border: none;
+            width: 30px;
+            height: 30px;
+            justify-content: space-between;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        .nav-toggle span {
+            display: block;
+            height: 3px;
+            width: 100%;
+            background-color: var(--white);
+            border-radius: 3px;
+            transition: var(--transition);
+        }
+
+        .nav-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .nav-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .nav-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 85%;
+            max-width: 320px;
+            height: 100vh;
+            background: var(--white);
+            transition: var(--transition);
+            z-index: 2000;
+            overflow-y: auto;
+            box-shadow: -2px 0 20px rgba(0,0,0,0.1);
+        }
+
+        nav.active {
+            right: 0;
+        }
+
+        .nav-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-links {
+            list-style: none;
+            padding: 1rem 0;
+        }
+
+        .nav-links li {
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .nav-links a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 1rem 1.5rem;
+            color: var(--dark);
+            text-decoration: none;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            background-color: var(--light-gray);
+            color: var(--primary);
+        }
+
+        .nav-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1500;
+        }
+
+        .nav-overlay.active {
+            display: block;
+        }
+
+        /* ===== PAGE HEADER ===== */
+        .page-header {
+            background: linear-gradient(135deg, #1565C0 0%, #1E88E5 100%);
+            color: var(--white);
+            padding: 2.5rem 0;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            margin-bottom: 0.5rem;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+
+        /* ===== SECTIONS ===== */
+        section {
+            padding: 4rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+
+        .section-header p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        /* ===== SERVICES GRID ===== */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+            padding: 2rem 1.5rem;
+            border: 1px solid var(--light-gray);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #1565C0 0%, #1E88E5 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: var(--white);
+            font-size: 2rem;
+        }
+
+        .service-content h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .service-content p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            min-height: 60px;
+        }
+
+        /* ===== LISTINGS GRID ===== */
+        .listings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .listing-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .listing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .listing-image {
+            height: 180px;
+            background: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray);
+            font-size: 3rem;
+        }
+
+        .listing-content {
+            padding: 1.5rem;
+        }
+
+        .listing-title {
+            font-size: 1.2rem;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .listing-description {
+            color: var(--gray);
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .listing-price {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .listing-meta {
+            display: flex;
+            justify-content: space-between;
+            color: var(--gray);
+            font-size: 0.85rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .listing-actions {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .listing-badge {
+            background: var(--primary);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+
+        .rating {
+            color: var(--secondary);
+            margin: 0.5rem 0;
+        }
+
+        /* ===== WORKER TYPES GRID ===== */
+        .worker-types-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .worker-type-btn {
+            background: var(--white);
+            border: 2px solid var(--light-gray);
+            border-radius: var(--radius);
+            padding: 1rem;
+            text-align: center;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .worker-type-btn.active {
+            border-color: var(--primary);
+            background: var(--light-gray);
+        }
+
+        /* ===== STATS GRID ===== */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            color: var(--primary);
+            font-weight: bold;
+            transition: all 0.5s ease-in-out;
+        }
+
+        /* ===== POPUPS ===== */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 3000;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            padding: 1rem;
+        }
+
+        .popup-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .popup {
+            background: var(--white);
+            border-radius: var(--radius);
+            width: 100%;
+            max-width: 500px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: var(--shadow-lg);
+            transform: translateY(20px);
+            transition: var(--transition);
+        }
+
+        .popup-overlay.active .popup {
+            transform: translateY(0);
+        }
+
+        .popup-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--light-gray);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .popup-header h3 {
+            color: var(--primary);
+            margin: 0;
+        }
+
+        .popup-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--gray);
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .popup-body {
+            padding: 1.5rem;
+        }
+
+        .popup-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--accent);
+            color: var(--white);
+            padding: 3rem 0 1.5rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-column h3 {
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .footer-column p {
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 767px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            section {
+                padding: 3rem 0;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+            
+            .popup-actions {
+                flex-direction: column;
+            }
+            
+            .listing-actions {
+                flex-direction: column;
+            }
+            
+            .service-card {
+                padding: 1.5rem 1rem;
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 1023px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .services-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-link logo-icon"></i>
+                <div class="logo-text">
+                    <h1>SokoLinc</h1>
+                    <div class="tagline">Connecting Buyers, Sellers & Services Across Every Soko</div>
+                </div>
+            </a>
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Navigation Overlay -->
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <!-- Navigation Menu -->
+    <nav id="mainNav">
+        <div class="nav-header">
+            <span>Menu</span>
+            <button class="close-btn" id="closeNav">&times;</button>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="sokofresh.html"><i class="fas fa-apple-alt"></i> SokoFresh</a></li>
+            <li><a href="sokodeals.html"><i class="fas fa-tags"></i> SokoDeals</a></li>
+            <li><a href="kaziconnect.html" class="active"><i class="fas fa-tools"></i> KaziConnect</a></li>
+            <li><a href="sokoride.html"><i class="fas fa-truck"></i> SokoRide</a></li>
+            <li><a href="tangazo.html"><i class="fas fa-bullhorn"></i> Tangazo+</a></li>
+            <li><a href="bizboost.html"><i class="fas fa-ad"></i> BizBoost</a></li>
+            <li><a href="contact.html"><i class="fas fa-phone"></i> Contact Us</a></li>
+            <li><a href="terms.html"><i class="fas fa-file-contract"></i> Terms & Conditions</a></li>
+            <li><a href="privacy.html"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
+        </ul>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container">
+            <h1><i class="fas fa-tools"></i> KaziConnect</h1>
+            <p>Skilled Workers & Freelancers - Find Reliable Professionals for Your Projects</p>
+            <button class="btn btn-secondary" onclick="showPostPopup('work')">
+                <i class="fas fa-user-plus"></i> List Your Skills
+            </button>
+        </div>
+    </div>
+
+    <!-- Quick Stats Section -->
+    <section class="quick-stats" style="background: var(--light-gray); padding: 2rem 0;">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number" id="workersOnline">124</div>
+                    <div style="color: var(--gray); font-size: 0.9rem;">Workers Online</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="jobsCompleted">856</div>
+                    <div style="color: var(--gray); font-size: 0.9rem;">Jobs Completed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">15</div>
+                    <div style="color: var(--gray); font-size: 0.9rem;">Service Categories</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">98%</div>
+                    <div style="color: var(--gray); font-size: 0.9rem;">Satisfaction Rate</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Worker Categories -->
+    <section style="padding: 2rem 0;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Find Skilled Workers</h2>
+                <p>Browse professionals by category</p>
+            </div>
+            <div class="worker-types-grid">
+                <button class="worker-type-btn active" onclick="filterWorkers('all')">
+                    <span style="font-size: 2rem;">👷</span>
+                    <div style="font-size: 0.9rem; font-weight: 600; margin-top: 0.5rem;">All Workers</div>
+                </button>
+                <button class="worker-type-btn" onclick="filterWorkers('plumber')">
+                    <span style="font-size: 2rem;">🔧</span>
+                    <div style="font-size: 0.9rem; font-weight: 600; margin-top: 0.5rem;">Plumbers</div>
+                </button>
+                <button class="worker-type-btn" onclick="filterWorkers('electrician')">
+                    <span style="font-size: 2rem;">⚡</span>
+                    <div style="font-size: 0.9rem; font-weight: 600; margin-top: 0.5rem;">Electricians</div>
+                </button>
+                <button class="worker-type-btn" onclick="filterWorkers('mechanic')">
+                    <span style="font-size: 2rem;">🔩</span>
+                    <div style="font-size: 0.9rem; font-weight: 600; margin-top: 0.5rem;">Mechanics</div>
+                </button>
+                <button class="worker-type-btn" onclick="filterWorkers('carpenter')">
+                    <span style="font-size: 2rem;">🪚</span>
+                    <div style="font-size: 0.9rem; font-weight: 600; margin-top: 0.5rem;">Carpenters</div>
+                </button>
+                <button class="worker-type-btn" onclick="filterWorkers('mason')">
+                    <span style="font-size: 2rem;">🧱</span>
+                    <div style="font-size: 0.9rem; font-weight: 600; margin-top: 0.5rem;">Masons</div>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Available Workers Listings -->
+    <section style="padding: 2rem 0; background: var(--light-gray);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Available Skilled Workers</h2>
+                <p>Connect directly with verified professionals</p>
+            </div>
+            
+            <div class="listings-grid" id="workerListings">
+                <!-- Plumber Listing -->
+                <div class="listing-card" data-worker-type="plumber">
+                    <div class="listing-image" style="background: linear-gradient(135deg, #4ECDC4, #44A08D);">
+                        <span style="font-size: 4rem;">🔧</span>
+                    </div>
+                    <div class="listing-content">
+                        <div class="listing-badge">Available Now</div>
+                        <h3 class="listing-title">John Kamau - Plumber</h3>
+                        <p class="listing-description">Experienced plumber specializing in pipe installations, repairs, and maintenance. 10+ years experience.</p>
+                        <div class="listing-price">Starting KES 800/day</div>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span style="color: var(--gray); margin-left: 5px;">4.8 (24 reviews)</span>
+                        </div>
+                        <div class="listing-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Nairobi West</span>
+                            <span><i class="fas fa-briefcase"></i> 45 jobs</span>
+                        </div>
+                        <div class="listing-actions">
+                            <button class="btn btn-primary btn-small btn-full" onclick="showContactPopup('plumber', 'John Kamau - Plumber')">
+                                <i class="fas fa-phone"></i> Contact John
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Electrician Listing -->
+                <div class="listing-card" data-worker-type="electrician">
+                    <div class="listing-image" style="background: linear-gradient(135deg, #FFD93D, #FF9B50);">
+                        <span style="font-size: 4rem;">⚡</span>
+                    </div>
+                    <div class="listing-content">
+                        <div class="listing-badge">Featured</div>
+                        <h3 class="listing-title">Susan Atieno - Electrician</h3>
+                        <p class="listing-description">Certified electrician for wiring, installations, and electrical repairs. Residential & commercial.</p>
+                        <div class="listing-price">Starting KES 1,200/day</div>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span style="color: var(--gray); margin-left: 5px;">4.9 (31 reviews)</span>
+                        </div>
+                        <div class="listing-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Thika Road</span>
+                            <span><i class="fas fa-briefcase"></i> 67 jobs</span>
+                        </div>
+                        <div class="listing-actions">
+                            <button class="btn btn-primary btn-small btn-full" onclick="showContactPopup('electrician', 'Susan Atieno - Electrician')">
+                                <i class="fas fa-phone"></i> Contact Susan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mechanic Listing -->
+                <div class="listing-card" data-worker-type="mechanic">
+                    <div class="listing-image" style="background: linear-gradient(135deg, #FF6B6B, #C44569);">
+                        <span style="font-size: 4rem;">🔩</span>
+                    </div>
+                    <div class="listing-content">
+                        <h3 class="listing-title">Mike Omondi - Mechanic</h3>
+                        <p class="listing-description">Auto mechanic specializing in Japanese cars. Engine repairs, servicing, and diagnostics.</p>
+                        <div class="listing-price">Starting KES 1,500/day</div>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span style="color: var(--gray); margin-left: 5px;">5.0 (18 reviews)</span>
+                        </div>
+                        <div class="listing-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Industrial Area</span>
+                            <span><i class="fas fa-briefcase"></i> 89 jobs</span>
+                        </div>
+                        <div class="listing-actions">
+                            <button class="btn btn-primary btn-small btn-full" onclick="showContactPopup('mechanic', 'Mike Omondi - Mechanic')">
+                                <i class="fas fa-phone"></i> Contact Mike
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carpenter Listing -->
+                <div class="listing-card" data-worker-type="carpenter">
+                    <div class="listing-image" style="background: linear-gradient(135deg, #A8E6CF, #56C596);">
+                        <span style="font-size: 4rem;">🪚</span>
+                    </div>
+                    <div class="listing-content">
+                        <div class="listing-badge">Custom Furniture</div>
+                        <h3 class="listing-title">Peter Mwangi - Carpenter</h3>
+                        <p class="listing-description">Expert carpenter for furniture making, cabinets, and woodwork. Quality craftsmanship guaranteed.</p>
+                        <div class="listing-price">Starting KES 1,000/day</div>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span style="color: var(--gray); margin-left: 5px;">4.7 (42 reviews)</span>
+                        </div>
+                        <div class="listing-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Ruiru</span>
+                            <span><i class="fas fa-briefcase"></i> 56 jobs</span>
+                        </div>
+                        <div class="listing-actions">
+                            <button class="btn btn-primary btn-small btn-full" onclick="showContactPopup('carpenter', 'Peter Mwangi - Carpenter')">
+                                <i class="fas fa-phone"></i> Contact Peter
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mason Listing -->
+                <div class="listing-card" data-worker-type="mason">
+                    <div class="listing-image" style="background: linear-gradient(135deg, #FFD93D, #FF9B50);">
+                        <span style="font-size: 4rem;">🧱</span>
+                    </div>
+                    <div class="listing-content">
+                        <h3 class="listing-title">James Kariuki - Mason</h3>
+                        <p class="listing-description">Skilled mason for construction, stone work, and building projects. Reliable and experienced.</p>
+                        <div class="listing-price">Starting KES 900/day</div>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span style="color: var(--gray); margin-left: 5px;">4.9 (27 reviews)</span>
+                        </div>
+                        <div class="listing-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Kitengela</span>
+                            <span><i class="fas fa-briefcase"></i> 34 jobs</span>
+                        </div>
+                        <div class="listing-actions">
+                            <button class="btn btn-primary btn-small btn-full" onclick="showContactPopup('mason', 'James Kariuki - Mason')">
+                                <i class="fas fa-phone"></i> Contact James
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Painter Listing -->
+                <div class="listing-card" data-worker-type="painter">
+                    <div class="listing-image" style="background: linear-gradient(135deg, #667eea, #764ba2);">
+                        <span style="font-size: 4rem;">🎨</span>
+                    </div>
+                    <div class="listing-content">
+                        <div class="listing-badge">Interior & Exterior</div>
+                        <h3 class="listing-title">David Njoroge - Painter</h3>
+                        <p class="listing-description">Professional painter for homes and offices. Quality finishes with attention to detail.</p>
+                        <div class="listing-price">Starting KES 750/day</div>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span style="color: var(--gray); margin-left: 5px;">4.6 (38 reviews)</span>
+                        </div>
+                        <div class="listing-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Ngong</span>
+                            <span><i class="fas fa-briefcase"></i> 72 jobs</span>
+                        </div>
+                        <div class="listing-actions">
+                            <button class="btn btn-primary btn-small btn-full" onclick="showContactPopup('painter', 'David Njoroge - Painter')">
+                                <i class="fas fa-phone"></i> Contact David
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Load More Button -->
+            <div style="text-align: center; margin-top: 3rem;">
+                <button class="btn btn-outline" onclick="loadMoreWorkers()">
+                    <i class="fas fa-redo"></i> Load More Workers
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section style="padding: 3rem 0; background: linear-gradient(135deg, #1565C0 0%, #1E88E5 100%); color: white;">
+        <div class="container">
+            <div class="section-header" style="color: white;">
+                <h2 style="color: white;">How KaziConnect Works</h2>
+                <p style="color: rgba(255,255,255,0.9);">Simple steps to find reliable skilled workers</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);">
+                    <div class="service-icon" style="background: rgba(255,255,255,0.2);">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3 style="color: white;">1. Find Your Expert</h3>
+                        <p style="color: rgba(255,255,255,0.9);">Browse skilled workers by category and read reviews from previous clients</p>
+                    </div>
+                </div>
+                <div class="service-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);">
+                    <div class="service-icon" style="background: rgba(255,255,255,0.2);">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3 style="color: white;">2. Contact Directly</h3>
+                        <p style="color: rgba(255,255,255,0.9);">Call or WhatsApp the worker to discuss your project details and pricing</p>
+                    </div>
+                </div>
+                <div class="service-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);">
+                    <div class="service-icon" style="background: rgba(255,255,255,0.2);">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3 style="color: white;">3. Get Your Work Done</h3>
+                        <p style="color: rgba(255,255,255,0.9);">Schedule the work, agree on terms, and get your project completed professionally</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section style="padding: 3rem 0;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Service Pricing</h2>
+                <p>Transparent pricing for skilled services</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon" style="background: #4ECDC4;">
+                        <i class="fas fa-wrench"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Basic Services</h3>
+                        <p><strong>KES 199/month</strong><br>Plumbers, Masons, Painters<br>Basic listing with contact details</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon" style="background: #FFD93D;">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Featured Services</h3>
+                        <p><strong>KES 499/month</strong><br>Electricians, Mechanics<br>Featured placement & priority listing</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon" style="background: #FF6B6B;">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Premium Services</h3>
+                        <p><strong>KES 899/month</strong><br>Specialized professionals<br>Top placement & verified badges</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Worker Testimonials -->
+    <section style="padding: 3rem 0; background: var(--light-gray);">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our Workers Say</h2>
+                <p>Real stories from our community of skilled professionals</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon" style="background: var(--secondary);">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="service-content">
+                        <p style="font-style: italic; color: var(--gray);">"KaziConnect helped me find consistent work. I no longer have to wait at construction sites hoping for daily jobs."</p>
+                        <div style="margin-top: 1rem;">
+                            <strong>James Kariuki</strong>
+                            <div style="color: var(--primary); font-size: 0.9rem;">Mason, Kitengela</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon" style="background: var(--secondary);">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="service-content">
+                        <p style="font-style: italic; color: var(--gray);">"As a female electrician, KaziConnect gave me the platform to showcase my skills and build my client base."</p>
+                        <div style="margin-top: 1rem;">
+                            <strong>Susan Atieno</strong>
+                            <div style="color: var(--primary); font-size: 0.9rem;">Electrician, Thika Road</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon" style="background: var(--secondary);">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="service-content">
+                        <p style="font-style: italic; color: var(--gray);">"The platform connects me with clients who appreciate quality carpentry work. My business has grown significantly."</p>
+                        <div style="margin-top: 1rem;">
+                            <strong>Peter Mwangi</strong>
+                            <div style="color: var(--primary); font-size: 0.9rem;">Carpenter, Ruiru</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section style="padding: 3rem 0;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Need Skilled Work Done?</h2>
+                <p>Join thousands of Kenyans using KaziConnect for their projects</p>
+            </div>
+            <div style="text-align: center;">
+                <button class="btn btn-primary" onclick="showPostPopup('work')" style="margin-right: 1rem;">
+                    <i class="fas fa-user-plus"></i> List Your Skills
+                </button>
+                <button class="btn btn-secondary" onclick="window.scrollTo(0, document.getElementById('workerListings').offsetTop)">
+                    <i class="fas fa-search"></i> Find Workers
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>SokoLinc</h3>
+                    <p>Connecting buyers, sellers & services across every Soko through simple, accessible technology.</p>
+                    <p><i class="fas fa-phone"></i> +254 105 399 526</p>
+                    <p><i class="fab fa-whatsapp"></i> +254 105 399 526</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="sokofresh.html"><i class="fas fa-apple-alt"></i> SokoFresh</a></li>
+                        <li><a href="sokodeals.html"><i class="fas fa-tags"></i> SokoDeals</a></li>
+                        <li><a href="kaziconnect.html"><i class="fas fa-tools"></i> KaziConnect</a></li>
+                        <li><a href="sokoride.html"><i class="fas fa-truck"></i> SokoRide</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="terms.html"><i class="fas fa-file-contract"></i> Terms & Conditions</a></li>
+                        <li><a href="privacy.html"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
+                        <li><a href="contact.html"><i class="fas fa-phone"></i> Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SokoLinc. All rights reserved.</p>
+                <p>Made with <i class="fas fa-heart" style="color: #ff6b6b;"></i> for Kenyan Communities</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Popups -->
+    <!-- Contact Popup -->
+    <div class="popup-overlay" id="contactPopup">
+        <div class="popup">
+            <div class="popup-header">
+                <h3 id="contactTitle">Contact Worker</h3>
+                <button class="popup-close" onclick="closeContactPopup()">&times;</button>
+            </div>
+            <div class="popup-body">
+                <p id="contactMessage">How would you like to get in touch?</p>
+                <div class="popup-actions">
+                    <button class="btn btn-primary" id="callBtn">
+                        <i class="fas fa-phone"></i> Call
+                    </button>
+                    <button class="btn btn-secondary" id="whatsappBtn">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Post Listing Popup -->
+    <div class="popup-overlay" id="postPopup">
+        <div class="popup">
+            <div class="popup-header">
+                <h3 id="postTitle">List Your Skills</h3>
+                <button class="popup-close" onclick="closePostPopup()">&times;</button>
+            </div>
+            <div class="popup-body">
+                <p id="postMessage">Contact us to list your skills on KaziConnect:</p>
+                <div class="popup-actions">
+                    <button class="btn btn-primary" onclick="callNumber('+254105399526')">
+                        <i class="fas fa-phone"></i> Call Us
+                    </button>
+                    <button class="btn btn-secondary" id="postWhatsappBtn">
+                        <i class="fab fa-whatsapp"></i> WhatsApp Us
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ===== GLOBAL VARIABLES =====
+        const platformPhone = '+254105399526';
+        let currentWorkerType = '';
+        let currentWorker = '';
+
+        // ===== DOM ELEMENTS =====
+        const navToggle = document.getElementById('navToggle');
+        const mainNav = document.getElementById('mainNav');
+        const navOverlay = document.getElementById('navOverlay');
+        const closeNav = document.getElementById('closeNav');
+
+        // ===== NAVIGATION FUNCTIONS =====
+        function toggleNavigation() {
+            navToggle.classList.toggle('active');
+            mainNav.classList.toggle('active');
+            navOverlay.classList.toggle('active');
+            document.body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : '';
+        }
+
+        navToggle.addEventListener('click', toggleNavigation);
+        closeNav.addEventListener('click', toggleNavigation);
+        navOverlay.addEventListener('click', toggleNavigation);
+
+        // ===== DYNAMIC STATS COUNTERS =====
+        function updateWorkersOnline() {
+            const workersElement = document.getElementById('workersOnline');
+            const min = 80;
+            const max = 200;
+            
+            // Generate realistic fluctuation
+            const current = parseInt(workersElement.textContent);
+            const change = Math.floor(Math.random() * 21) - 10; // -10 to +10 change
+            let newValue = current + change;
+            
+            // Keep within bounds
+            newValue = Math.max(min, Math.min(max, newValue));
+            
+            // Animate the change
+            workersElement.style.opacity = '0.7';
+            setTimeout(() => {
+                workersElement.textContent = newValue;
+                workersElement.style.opacity = '1';
+            }, 250);
+        }
+
+        function updateJobsCompleted() {
+            const jobsElement = document.getElementById('jobsCompleted');
+            const min = 800;
+            const max = 1200;
+            
+            // Generate realistic increase
+            const current = parseInt(jobsElement.textContent);
+            const increase = Math.floor(Math.random() * 6) + 1; // 1-6 increase
+            let newValue = current + increase;
+            
+            // Keep within bounds
+            newValue = Math.max(min, Math.min(max, newValue));
+            
+            // Animate the change
+            jobsElement.style.opacity = '0.7';
+            setTimeout(() => {
+                jobsElement.textContent = newValue;
+                jobsElement.style.opacity = '1';
+            }, 250);
+        }
+
+        // ===== KAZICONNECT SPECIFIC FUNCTIONALITY =====
+        function filterWorkers(workerType) {
+            const listings = document.querySelectorAll('#workerListings .listing-card');
+            const workerBtns = document.querySelectorAll('.worker-type-btn');
+            
+            // Update active worker type button
+            workerBtns.forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            event.currentTarget.classList.add('active');
+            
+            // Filter listings
+            listings.forEach(listing => {
+                if (workerType === 'all' || listing.getAttribute('data-worker-type') === workerType) {
+                    listing.style.display = 'block';
+                } else {
+                    listing.style.display = 'none';
+                }
+            });
+        }
+
+        function loadMoreWorkers() {
+            // In a real implementation, this would load more workers from an API
+            alert('More skilled workers loading soon! Currently showing sample listings.');
+        }
+
+        // ===== POPUP FUNCTIONS =====
+        function showContactPopup(workerType, workerName) {
+            currentWorkerType = workerType;
+            currentWorker = workerName;
+            
+            const popup = document.getElementById('contactPopup');
+            const title = document.getElementById('contactTitle');
+            const message = document.getElementById('contactMessage');
+            const callBtn = document.getElementById('callBtn');
+            const whatsappBtn = document.getElementById('whatsappBtn');
+            
+            title.textContent = `Contact ${workerName}`;
+            message.textContent = `Get in touch about ${getWorkerTypeName(workerType)} services:`;
+            
+            // Generate sample phone numbers based on worker type
+            const sampleNumbers = {
+                'John Kamau - Plumber': '+254712345678',
+                'Susan Atieno - Electrician': '+254723456789',
+                'Mike Omondi - Mechanic': '+254734567890',
+                'Peter Mwangi - Carpenter': '+254745678901',
+                'James Kariuki - Mason': '+254756789012',
+                'David Njoroge - Painter': '+254767890123'
+            };
+            
+            const phoneNumber = sampleNumbers[workerName] || '+254712345678';
+            
+            callBtn.onclick = () => {
+                callNumber(phoneNumber);
+                closeContactPopup();
+            };
+            
+            whatsappBtn.onclick = () => {
+                const whatsappMessage = `Hello ${workerName}, I am interested in your ${getWorkerTypeName(workerType)} services. Please share more details.`;
+                openWhatsApp(whatsappMessage, phoneNumber);
+                closeContactPopup();
+            };
+            
+            popup.classList.add('active');
+        }
+
+        function getWorkerTypeName(type) {
+            const names = {
+                'plumber': 'plumbing',
+                'electrician': 'electrical',
+                'mechanic': 'mechanic',
+                'carpenter': 'carpentry',
+                'mason': 'masonry',
+                'painter': 'painting'
+            };
+            return names[type] || 'professional';
+        }
+
+        function closeContactPopup() {
+            document.getElementById('contactPopup').classList.remove('active');
+        }
+
+        function showPostPopup(type) {
+            const popup = document.getElementById('postPopup');
+            const title = document.getElementById('postTitle');
+            const message = document.getElementById('postMessage');
+            const whatsappBtn = document.getElementById('postWhatsappBtn');
+            
+            let whatsappMessage = '';
+            
+            switch(type) {
+                case 'work':
+                    title.textContent = 'List Your Skills';
+                    message.textContent = 'Contact us to list your skills on KaziConnect';
+                    whatsappMessage = 'Hello SokoLinc, I want to LIST my skills on KaziConnect. Service: [ ] Experience: [ ] Location: [ ] Rates: [ ] Phone: [ ]';
+                    break;
+                default:
+                    title.textContent = 'Post Your Listing';
+                    message.textContent = 'Contact us to create your listing';
+                    whatsappMessage = 'Hello SokoLinc, I want to create a listing. Details: [ ]';
+            }
+            
+            whatsappBtn.onclick = () => {
+                openWhatsApp(whatsappMessage);
+                closePostPopup();
+            };
+            
+            popup.classList.add('active');
+        }
+
+        function closePostPopup() {
+            document.getElementById('postPopup').classList.remove('active');
+        }
+
+        // ===== CONTACT FUNCTIONS =====
+        function callNumber(phoneNumber) {
+            window.location.href = `tel:${phoneNumber}`;
+        }
+
+        function openWhatsApp(message, phone = platformPhone) {
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/${phone}?text=${encodedMessage}`, '_blank');
+        }
+
+        // ===== INITIALIZATION =====
+        document.addEventListener('DOMContentLoaded', function() {
+            // Start dynamic counters
+            setInterval(updateWorkersOnline, 85000); // Update every 85 seconds
+            setInterval(updateJobsCompleted, 95000); // Update every 95 seconds
+            
+            // Close popups when clicking overlay
+            document.querySelectorAll('.popup-overlay').forEach(overlay => {
+                overlay.addEventListener('click', function(e) {
+                    if (e.target === this) {
+                        this.classList.remove('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

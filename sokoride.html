@@ -1,0 +1,1779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>SokoRide - Transport & Logistics | SokoLinc</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ===== VARIABLES & BASE STYLES ===== */
+        :root {
+            --primary: #1e3c72; /* Changed to SokoRide blue */
+            --primary-dark: #152a56; /* Darker blue for SokoRide */
+            --secondary: #F4A300;
+            --secondary-dark: #D18A00;
+            --accent: #1C1C1C;
+            --light: #F8F9FA;
+            --dark: #343A40;
+            --gray: #6C757D;
+            --light-gray: #E9ECEF;
+            --white: #FFFFFF;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
+            --radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            width: 100%;
+            position: relative;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ===== MOBILE-FIRST TYPOGRAPHY ===== */
+        h1 { font-size: 2rem; line-height: 1.2; }
+        h2 { font-size: 1.75rem; line-height: 1.3; }
+        h3 { font-size: 1.5rem; line-height: 1.3; }
+        h4 { font-size: 1.25rem; line-height: 1.4; }
+        p { font-size: 1rem; margin-bottom: 1rem; }
+
+        @media (min-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            h3 { font-size: 1.75rem; }
+            h4 { font-size: 1.5rem; }
+        }
+
+        /* ===== BUTTONS ===== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 14px 24px;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+            min-height: 50px;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary);
+            color: var(--accent);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--secondary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-accent {
+            background-color: var(--accent);
+            color: var(--white);
+        }
+
+        .btn-accent:hover {
+            background-color: #000;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-small {
+            padding: 10px 18px;
+            font-size: 0.9rem;
+            min-height: 44px;
+        }
+
+        .btn-full {
+            width: 100%;
+        }
+
+        /* ===== HEADER & NAVIGATION ===== */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--white);
+        }
+
+        .logo-icon {
+            font-size: 2rem;
+            color: var(--secondary);
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        .tagline {
+            font-size: 0.75rem;
+            opacity: 0.9;
+        }
+
+        .nav-toggle {
+            display: flex;
+            flex-direction: column;
+            background: none;
+            border: none;
+            width: 30px;
+            height: 30px;
+            justify-content: space-between;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        .nav-toggle span {
+            display: block;
+            height: 3px;
+            width: 100%;
+            background-color: var(--white);
+            border-radius: 3px;
+            transition: var(--transition);
+        }
+
+        .nav-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .nav-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .nav-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 85%;
+            max-width: 320px;
+            height: 100vh;
+            background: var(--white);
+            transition: var(--transition);
+            z-index: 2000;
+            overflow-y: auto;
+            box-shadow: -2px 0 20px rgba(0,0,0,0.1);
+        }
+
+        nav.active {
+            right: 0;
+        }
+
+        .nav-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-links {
+            list-style: none;
+            padding: 1rem 0;
+        }
+
+        .nav-links li {
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .nav-links a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 1rem 1.5rem;
+            color: var(--dark);
+            text-decoration: none;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            background-color: var(--light-gray);
+            color: var(--primary);
+        }
+
+        .nav-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1500;
+        }
+
+        .nav-overlay.active {
+            display: block;
+        }
+
+        /* ===== PAGE HEADER ===== */
+        .page-header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: var(--white);
+            padding: 2.5rem 0;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            margin-bottom: 0.5rem;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+
+        /* ===== SECTIONS ===== */
+        section {
+            padding: 4rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+
+        .section-header p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        /* ===== SERVICES GRID ===== */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+            padding: 2rem 1.5rem;
+            border: 1px solid var(--light-gray);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: var(--white);
+            font-size: 2rem;
+        }
+
+        .service-content h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .service-content p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            min-height: 60px;
+        }
+
+        /* ===== LISTINGS GRID ===== */
+        .listings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .listing-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .listing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .listing-image {
+            height: 180px;
+            background: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray);
+            font-size: 3rem;
+            overflow: hidden;
+            position: relative;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-user-drag: none;
+            -khtml-user-drag: none;
+            -moz-user-drag: none;
+            pointer-events: none;
+        }
+
+        .listing-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.02);
+            z-index: 1;
+        }
+
+        .listing-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-user-drag: none;
+            -khtml-user-drag: none;
+            -moz-user-drag: none;
+            pointer-events: none;
+        }
+
+        .listing-content {
+            padding: 1.5rem;
+        }
+
+        .listing-title {
+            font-size: 1.2rem;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .listing-description {
+            color: var(--gray);
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .listing-price {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .listing-meta {
+            display: flex;
+            justify-content: space-between;
+            color: var(--gray);
+            font-size: 0.85rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .listing-actions {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .listing-badge {
+            background: var(--primary);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+
+        .listing-badge.featured {
+            background: var(--secondary);
+            color: var(--accent);
+        }
+
+        .listing-badge.experienced {
+            background: #8B4513;
+            color: white;
+        }
+
+        /* ===== DRIVER INITIALS ===== */
+        .driver-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 0.75rem;
+        }
+
+        .driver-initials {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        .driver-name {
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        /* ===== VEHICLE TYPES GRID ===== */
+        .vehicle-types-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .vehicle-type-btn {
+            background: var(--white);
+            border: 2px solid var(--light-gray);
+            border-radius: var(--radius);
+            padding: 1rem;
+            text-align: center;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .vehicle-type-btn.active {
+            border-color: var(--primary);
+            background: var(--light-gray);
+        }
+
+        /* ===== STATS GRID ===== */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            color: var(--primary);
+            font-weight: bold;
+            transition: all 0.5s ease-in-out;
+            position: relative;
+        }
+
+        .live-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: #ff4444;
+            border-radius: 50%;
+            margin-left: 5px;
+            animation: blink 2s infinite;
+            vertical-align: middle;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        /* ===== ENHANCED FOOTER ===== */
+        .powered-by {
+            text-align: center;
+            margin-top: 1rem;
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .powered-by::before {
+            content: '';
+            display: block;
+            width: 30px;
+            height: 1px;
+            background: var(--secondary);
+        }
+
+        /* ===== POPUPS ===== */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 3000;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            padding: 1rem;
+        }
+
+        .popup-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .popup {
+            background: var(--white);
+            border-radius: var(--radius);
+            width: 100%;
+            max-width: 500px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: var(--shadow-lg);
+            transform: translateY(20px);
+            transition: var(--transition);
+        }
+
+        .popup-overlay.active .popup {
+            transform: translateY(0);
+        }
+
+        .popup-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--light-gray);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .popup-header h3 {
+            color: var(--primary);
+            margin: 0;
+        }
+
+        .popup-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--gray);
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .popup-body {
+            padding: 1.5rem;
+        }
+
+        .popup-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--accent);
+            color: var(--white);
+            padding: 3rem 0 1.5rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-column h3 {
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .footer-column p {
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1.5rem;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+        }
+
+        .footer-tagline {
+            text-align: center;
+            margin: 1rem 0;
+            padding: 1rem 0;
+        }
+
+        .kenyan-heart {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 0.5rem 1rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50px;
+            margin: 0.5rem 0;
+        }
+
+        .heart-pulse {
+            color: #ff6b6b;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 767px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            section {
+                padding: 3rem 0;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+            
+            .popup-actions {
+                flex-direction: column;
+            }
+            
+            .listing-actions {
+                flex-direction: column;
+            }
+            
+            .service-card {
+                padding: 1.5rem 1rem;
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 1023px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .services-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-link logo-icon"></i>
+                <div class="logo-text">
+                    <h1>SokoLinc</h1>
+                    <div class="tagline">Connecting Buyers, Sellers & Services Across Every Soko</div>
+                </div>
+            </a>
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Navigation Overlay -->
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <!-- Navigation Menu -->
+    <nav id="mainNav">
+        <div class="nav-header">
+            <span>Menu</span>
+            <button class="close-btn" id="closeNav">&times;</button>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="sokofresh.html"><i class="fas fa-apple-alt"></i> SokoFresh</a></li>
+            <li><a href="sokodeals.html"><i class="fas fa-tags"></i> SokoDeals</a></li>
+            <li><a href="kaziconnect.html"><i class="fas fa-tools"></i> KaziConnect</a></li>
+            <li><a href="sokoride.html" class="active"><i class="fas fa-truck"></i> SokoRide</a></li>
+            <li><a href="tangazo.html"><i class="fas fa-bullhorn"></i> Tangazo+</a></li>
+            <li><a href="bizboost.html"><i class="fas fa-ad"></i> BizBoost</a></li>
+            <li><a href="contact.html"><i class="fas fa-phone"></i> Contact Us</a></li>
+            <li><a href="terms.html"><i class="fas fa-file-contract"></i> Terms & Conditions</a></li>
+            <li><a href="privacy.html"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
+        </ul>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container">
+            <h1><i class="fas fa-truck"></i> SokoRide</h1>
+            <p>Reliable Transport & Logistics - Connecting You with Trusted Drivers Across Kenya</p>
+            <button class="btn btn-secondary" onclick="showPostPopup('transport')">
+                <i class="fas fa-plus"></i> List Your Vehicle
+            </button>
+        </div>
+    </div>
+
+    <!-- Quick Stats Section -->
+    <section class="quick-stats" style="background: var(--light-gray); padding: 2rem 0;">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number" id="driversOnline">88<span class="live-dot"></span></div>
+                    <div style="color: var(--gray); font-size: 0.9rem;">Drivers Online</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="vehiclesAvailable">44</div>
+                    <div style="color: var(--gray); font-size: 0.9rem;">Vehicles Available</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">12</div>
+                    <div style="color: var(--gray); font-size: 0.9rem;">Counties Covered</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div style="color: var(--gray); font-size: 0.9rem;">Service Available</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vehicle Types -->
+    <section style="padding: 2rem 0;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Choose Your Vehicle Type</h2>
+                <p>Find the perfect transport solution for your needs</p>
+            </div>
+            <div class="vehicle-types-grid">
+                <button class="vehicle-type-btn active" onclick="filterVehicles('all')">
+                    <span style="font-size: 2rem;">🚗</span>
+                    <div style="font-size: 0.9rem; font-weight: 600; margin-top: 0.5rem;">All Vehicles</div>
+                </button>
+                <button class="vehicle-type-btn" onclick="filterVehicles('boda')">
+                    <span style="font-size: 2rem;">🏍️</span>
+                    <div style="font-size: 0.9rem; font-weight: 600; margin-top: 0.5rem;">Boda Bodas</div>
+                </button>
+                <button class="vehicle-type-btn" onclick="filterVehicles('tuktuk')">
+                    <span style="font-size: 2rem;">🛺</span>
+                    <div style="font-size: 0.9rem; font-weight: 600; margin-top: 0.5rem;">Tuk-Tuks</div>
+                </button>
+                <button class="vehicle-type-btn" onclick="filterVehicles('pickup')">
+                    <span style="font-size: 2rem;">🛻</span>
+                    <div style="font-size: 0.9rem; font-weight: 600; margin-top: 0.5rem;">Pickups</div>
+                </button>
+                <button class="vehicle-type-btn" onclick="filterVehicles('lorry')">
+                    <span style="font-size: 2rem;">🚚</span>
+                    <div style="font-size: 0.9rem; font-weight: 600; margin-top: 0.5rem;">Lorries</div>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Available Vehicles Listings -->
+    <section style="padding: 2rem 0; background: var(--light-gray);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Available Vehicles</h2>
+                <p>Reliable transport services ready for your needs across Kajiado County and Nairobi</p>
+            </div>
+            
+            <div class="listings-grid" id="vehicleListings">
+                <!-- NEW: Tractor Service - Richard K. G -->
+                <div class="listing-card" data-vehicle-type="tractor">
+                    <div class="listing-image">
+                        <img src="./sokorides.images/Richard.G.K.jpeg" alt="Tractor for Farming">
+                    </div>
+                    <div class="listing-content">
+                        <div class="listing-badge experienced">Extremely Experienced</div>
+                        <h3 class="listing-title">Agricultural Tractor Services</h3>
+                        <div class="driver-info">
+                            <div class="driver-initials" style="background: #8B4513;">RG</div>
+                            <div class="driver-name">Richard K. G.</div>
+                        </div>
+                        <p class="listing-description">Professional land preparation and ploughing services for farms of all sizes. Specialising in efficient soil tilling with modern tractor equipment.</p>
+                        <div class="listing-price">Starting from KES 1,500</div>
+                        <div class="listing-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Birika & Surrounding Areas</span>
+                            <span><i class="fas fa-clock"></i> Available Weekdays</span>
+                        </div>
+                        <div class="listing-actions">
+                            <button class="btn btn-primary btn-small btn-full" onclick="showContactPopup('tractor', 'Richard K. G.', '+254725647939')">
+                                <i class="fas fa-phone"></i> Call Provider
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW: Tuk-Lorry - Alex -->
+                <div class="listing-card" data-vehicle-type="tuklorry">
+                    <div class="listing-image">
+                        <img src="https://www.sairaj.com/web/image/2861-4e06b505/Tuk%202%20png.webp" alt="Tuk-Lorry Vehicle">
+                    </div>
+                    <div class="listing-content">
+                        <div class="listing-badge featured">Featured</div>
+                        <h3 class="listing-title">Tuk-Lorry Transport</h3>
+                        <div class="driver-info">
+                            <div class="driver-initials" style="background: #4ECDC4;">AL</div>
+                            <div class="driver-name">Alex</div>
+                        </div>
+                        <p class="listing-description">Versatile three-wheeler lorry perfect for small to medium cargo transport. Offering cost-effective, swift, and dependable delivery services throughout the region.</p>
+                        <div class="listing-price">Starting from KES 800</div>
+                        <div class="listing-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Kiserian, Ngong, Birika, Rongai</span>
+                            <span><i class="fas fa-clock"></i> 24/7 Service</span>
+                        </div>
+                        <div class="listing-actions">
+                            <button class="btn btn-primary btn-small btn-full" onclick="showContactPopup('tuklorry', 'Alex', '+254716466367')">
+                                <i class="fas fa-phone"></i> Call Driver
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Boda Boda Listing 1 -->
+                <div class="listing-card" data-vehicle-type="boda">
+                    <div class="listing-image">
+                        <img src="https://images.unsplash.com/photo-1571068316343-c26c4c857643?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Boda Boda Motorcycle">
+                    </div>
+                    <div class="listing-content">
+                        <div class="listing-badge">Fast Delivery</div>
+                        <h3 class="listing-title">Boda Boda Service</h3>
+                        <div class="driver-info">
+                            <div class="driver-initials" style="background: #FF6B6B;">JM</div>
+                            <div class="driver-name">John Mwangi</div>
+                        </div>
+                        <p class="listing-description">Quick motorcycle transport for urgent deliveries and personal transport through traffic.</p>
+                        <div class="listing-price">Starting from KES 150</div>
+                        <div class="listing-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Kajiado Town</span>
+                            <span><i class="fas fa-clock"></i> 24/7 Available</span>
+                        </div>
+                        <div class="listing-actions">
+                            <button class="btn btn-primary btn-small btn-full" onclick="showContactPopup('boda', 'John Mwangi')">
+                                <i class="fas fa-phone"></i> Call Rider
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tuk-Tuk Listing 1 -->
+                <div class="listing-card" data-vehicle-type="tuktuk">
+                    <div class="listing-image">
+                        <img src="https://images.unsplash.com/photo-1622295028115-3a02d1e043a8?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Tuk-Tuk Vehicle">
+                    </div>
+                    <div class="listing-content">
+                        <div class="listing-badge">Available Now</div>
+                        <h3 class="listing-title">Tuk-Tuk Transport</h3>
+                        <div class="driver-info">
+                            <div class="driver-initials" style="background: #4ECDC4;">AO</div>
+                            <div class="driver-name">Ahmed Omar</div>
+                        </div>
+                        <p class="listing-description">Quick and affordable transport within town. Perfect for small packages and short distances.</p>
+                        <div class="listing-price">Starting from KES 250</div>
+                        <div class="listing-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Nairobi CBD</span>
+                            <span><i class="fas fa-clock"></i> 24/7 Service</span>
+                        </div>
+                        <div class="listing-actions">
+                            <button class="btn btn-primary btn-small btn-full" onclick="showContactPopup('tuktuk', 'Ahmed Omar')">
+                                <i class="fas fa-phone"></i> Call Driver
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pickup Truck Listing 1 -->
+                <div class="listing-card" data-vehicle-type="pickup">
+                    <div class="listing-image">
+                        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Pickup Truck">
+                    </div>
+                    <div class="listing-content">
+                        <div class="listing-badge">Featured</div>
+                        <h3 class="listing-title">Pickup Truck</h3>
+                        <div class="driver-info">
+                            <div class="driver-initials" style="background: #45B7D1;">WK</div>
+                            <div class="driver-name">Wangari Kariuki</div>
+                        </div>
+                        <p class="listing-description">Reliable pickup truck for furniture, goods transport. Available for inter-county deliveries.</p>
+                        <div class="listing-price">Starting from KES 400</div>
+                        <div class="listing-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Kajiado County</span>
+                            <span><i class="fas fa-clock"></i> Available Today</span>
+                        </div>
+                        <div class="listing-actions">
+                            <button class="btn btn-primary btn-small btn-full" onclick="showContactPopup('pickup', 'Wangari Kariuki')">
+                                <i class="fas fa-phone"></i> Call Owner
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Van Listing -->
+                <div class="listing-card" data-vehicle-type="van">
+                    <div class="listing-image">
+                        <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Van Vehicle">
+                    </div>
+                    <div class="listing-content">
+                        <h3 class="listing-title">14-Seater Van</h3>
+                        <div class="driver-info">
+                            <div class="driver-initials" style="background: #FFD93D;">SO</div>
+                            <div class="driver-name">Samuel Ochieng</div>
+                        </div>
+                        <p class="listing-description">Comfortable van for group transport, airport transfers, and corporate events.</p>
+                        <div class="listing-price">Starting from KES 500</div>
+                        <div class="listing-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Nairobi & Surrounding</span>
+                            <span><i class="fas fa-clock"></i> Book in Advance</span>
+                        </div>
+                        <div class="listing-actions">
+                            <button class="btn btn-primary btn-small btn-full" onclick="showContactPopup('van', 'Samuel Ochieng')">
+                                <i class="fas fa-phone"></i> Call Owner
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Small Lorry Listing -->
+                <div class="listing-card" data-vehicle-type="lorry">
+                    <div class="listing-image">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25856cd25?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Small Lorry">
+                    </div>
+                    <div class="listing-content">
+                        <h3 class="listing-title">5-Ton Lorry</h3>
+                        <div class="driver-info">
+                            <div class="driver-initials" style="background: #96C93D;">PM</div>
+                            <div class="driver-name">Peter Mbugua</div>
+                        </div>
+                        <p class="listing-description">Heavy-duty lorry for large shipments, construction materials, and bulk goods transport.</p>
+                        <div class="listing-price">Starting from KES 700</div>
+                        <div class="listing-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Kiserian, Kajiado</span>
+                            <span><i class="fas fa-clock"></i> Book in Advance</span>
+                        </div>
+                        <div class="listing-actions">
+                            <button class="btn btn-primary btn-small btn-full" onclick="showContactPopup('lorry', 'Peter Mbugua')">
+                                <i class="fas fa-phone"></i> Call Driver
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Heavy Lorry Listing -->
+                <div class="listing-card" data-vehicle-type="lorry">
+                    <div class="listing-image">
+                        <img src="https://images.unsplash.com/photo-1485236715568-ddc5ee6ca227?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Heavy Lorry">
+                    </div>
+                    <div class="listing-content">
+                        <div class="listing-badge" style="background: var(--secondary); color: var(--accent);">Long-Haul</div>
+                        <h3 class="listing-title">10-Ton Lorry</h3>
+                        <div class="driver-info">
+                            <div class="driver-initials" style="background: #C44569;">MA</div>
+                            <div class="driver-name">Mohammed Ali</div>
+                        </div>
+                        <p class="listing-description">Heavy-duty long-haul lorry for nationwide transport of bulk goods and equipment.</p>
+                        <div class="listing-price">Starting from KES 1,200</div>
+                        <div class="listing-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Mombasa Road</span>
+                            <span><i class="fas fa-clock"></i> Available Now</span>
+                        </div>
+                        <div class="listing-actions">
+                            <button class="btn btn-primary btn-small btn-full" onclick="showContactPopup('lorry', 'Mohammed Ali')">
+                                <i class="fas fa-phone"></i> Call Driver
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Refrigerated Truck -->
+                <div class="listing-card" data-vehicle-type="refrigerated">
+                    <div class="listing-image">
+                        <img src="https://images.unsplash.com/photo-1545173168-9f1947eebb7f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Refrigerated Truck">
+                    </div>
+                    <div class="listing-content">
+                        <div class="listing-badge" style="background: var(--secondary); color: var(--accent);">Refrigerated</div>
+                        <h3 class="listing-title">Refrigerated Truck</h3>
+                        <div class="driver-info">
+                            <div class="driver-initials" style="background: #A8E6CF;">EK</div>
+                            <div class="driver-name">Esther Kamau</div>
+                        </div>
+                        <p class="listing-description">Temperature-controlled transport for fresh produce, dairy, and perishable goods.</p>
+                        <div class="listing-price">Starting from KES 1,500</div>
+                        <div class="listing-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Kajiado County</span>
+                            <span><i class="fas fa-clock"></i> Available Now</span>
+                        </div>
+                        <div class="listing-actions">
+                            <button class="btn btn-primary btn-small btn-full" onclick="showContactPopup('refrigerated', 'Esther Kamau')">
+                                <i class="fas fa-phone"></i> Call Owner
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Boda Boda Listing 2 -->
+                <div class="listing-card" data-vehicle-type="boda">
+                    <div class="listing-image">
+                        <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Boda Boda Motorcycle">
+                    </div>
+                    <div class="listing-content">
+                        <h3 class="listing-title">Boda Boda Service</h3>
+                        <div class="driver-info">
+                            <div class="driver-initials" style="background: #FF9A8B;">JO</div>
+                            <div class="driver-name">Joseph Odhiambo</div>
+                        </div>
+                        <p class="listing-description">Reliable motorcycle transport for quick deliveries and personal commute in Ngong area.</p>
+                        <div class="listing-price">Starting from KES 150</div>
+                        <div class="listing-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Ngong Town</span>
+                            <span><i class="fas fa-clock"></i> 24/7 Available</span>
+                        </div>
+                        <div class="listing-actions">
+                            <button class="btn btn-primary btn-small btn-full" onclick="showContactPopup('boda', 'Joseph Odhiambo')">
+                                <i class="fas fa-phone"></i> Call Rider
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Load More Button -->
+            <div style="text-align: center; margin-top: 3rem;">
+                <button class="btn btn-outline" onclick="loadMoreVehicles()">
+                    <i class="fas fa-redo"></i> Load More Vehicles
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section style="padding: 3rem 0; background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white;">
+        <div class="container">
+            <div class="section-header" style="color: white;">
+                <h2 style="color: white;">How SokoRide Works</h2>
+                <p style="color: rgba(255,255,255,0.9);">Simple steps to get reliable transport</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);">
+                    <div class="service-icon" style="background: rgba(255,255,255,0.2);">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3 style="color: white;">1. Find Your Ride</h3>
+                        <p style="color: rgba(255,255,255,0.9);">Browse available vehicles and choose the one that fits your needs</p>
+                    </div>
+                </div>
+                <div class="service-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);">
+                    <div class="service-icon" style="background: rgba(255,255,255,0.2);">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3 style="color: white;">2. Contact Directly</h3>
+                        <p style="color: rgba(255,255,255,0.9);">Call or WhatsApp the driver/owner to discuss details and pricing</p>
+                    </div>
+                </div>
+                <div class="service-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);">
+                    <div class="service-icon" style="background: rgba(255,255,255,0.2);">
+                        <i class="fas fa-road"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3 style="color: white;">3. Get Moving</h3>
+                        <p style="color: rgba(255,255,255,0.9);">Arrange pickup and delivery with your chosen transport provider</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section style="padding: 3rem 0;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Transparent Pricing</h2>
+                <p>Know what you're paying for with our clear pricing structure</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon" style="background: #FF6B6B;">
+                        <span style="font-size: 1.5rem;">🏍️</span>
+                    </div>
+                    <div class="service-content">
+                        <h3>Boda Boda Services</h3>
+                        <p><strong>Starting from KES 150</strong><br>Quick personal transport<br>Urgent deliveries</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon" style="background: #4ECDC4;">
+                        <span style="font-size: 1.5rem;">🛺</span>
+                    </div>
+                    <div class="service-content">
+                        <h3>Tuk-Tuk Services</h3>
+                        <p><strong>Starting from KES 250</strong><br>Within town, short distances<br>Small packages & personal transport</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon" style="background: #45B7D1;">
+                        <span style="font-size: 1.5rem;">🛻</span>
+                    </div>
+                    <div class="service-content">
+                        <h3>Pickup Trucks</h3>
+                        <p><strong>Starting from KES 400</strong><br>Furniture & goods transport<br>Inter-county available</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon" style="background: #96C93D;">
+                        <span style="font-size: 1.5rem;">🚐</span>
+                    </div>
+                    <div class="service-content">
+                        <h3>Vans</h3>
+                        <p><strong>Starting from KES 500</strong><br>Group transport<br>Airport transfers & events</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon" style="background: #C44569;">
+                        <span style="font-size: 1.5rem;">🚚</span>
+                    </div>
+                    <div class="service-content">
+                        <h3>Lorries</h3>
+                        <p><strong>Starting from KES 700</strong><br>Heavy goods & bulk transport<br>Nationwide coverage</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon" style="background: #A8E6CF;">
+                        <span style="font-size: 1.5rem;">🚛</span>
+                    </div>
+                    <div class="service-content">
+                        <h3>Refrigerated Trucks</h3>
+                        <p><strong>Starting from KES 1,500</strong><br>Temperature-controlled<br>Perishable goods transport</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Driver Testimonials -->
+    <section style="padding: 3rem 0; background: var(--light-gray);">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our Drivers Say</h2>
+                <p>Real stories from our community of transport providers in Kajiado</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon" style="background: var(--secondary);">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="service-content">
+                        <p style="font-style: italic; color: var(--gray);">"SokoRide helped me find customers consistently. I no longer wait idle at stages all day."</p>
+                        <div style="margin-top: 1rem;">
+                            <strong>John Mwangi</strong>
+                            <div style="color: var(--primary); font-size: 0.9rem;">Boda Rider, Kajiado Town</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon" style="background: var(--secondary);">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="service-content">
+                        <p style="font-style: italic; color: var(--gray);">"My pickup truck business has doubled since joining SokoRide. Great platform for serious transporters."</p>
+                        <div style="margin-top: 1rem;">
+                            <strong>Wangari Kariuki</strong>
+                            <div style="color: var(--primary); font-size: 0.9rem;">Pickup Owner, Kajiado County</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon" style="background: var(--secondary);">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="service-content">
+                        <p style="font-style: italic; color: var(--gray);">"The platform connects me with clients who need refrigerated transport for fresh produce from our farms."</p>
+                        <div style="margin-top: 1rem;">
+                            <strong>Esther Kamau</strong>
+                            <div style="color: var(--primary); font-size: 0.9rem;">Truck Owner, Kajiado</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section style="padding: 3rem 0;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Need Reliable Transport?</h2>
+                <p>Join thousands of Kenyans using SokoRide for their transport needs</p>
+            </div>
+            <div style="text-align: center;">
+                <button class="btn btn-primary" onclick="showPostPopup('transport')" style="margin-right: 1rem;">
+                    <i class="fas fa-plus"></i> List Your Vehicle
+                </button>
+                <button class="btn btn-secondary" onclick="window.scrollTo(0, document.getElementById('vehicleListings').offsetTop)">
+                    <i class="fas fa-search"></i> Find Transport
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>SokoLinc</h3>
+                    <p>Connecting buyers, sellers & services across every Soko through simple, accessible technology.</p>
+                    <p><i class="fas fa-phone"></i> +254 105 399 526</p>
+                    <p><i class="fab fa-whatsapp"></i> +254 105 399 526</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="sokofresh.html"><i class="fas fa-apple-alt"></i> SokoFresh</a></li>
+                        <li><a href="sokodeals.html"><i class="fas fa-tags"></i> SokoDeals</a></li>
+                        <li><a href="kaziconnect.html"><i class="fas fa-tools"></i> KaziConnect</a></li>
+                        <li><a href="sokoride.html"><i class="fas fa-truck"></i> SokoRide</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="terms.html"><i class="fas fa-file-contract"></i> Terms & Conditions</a></li>
+                        <li><a href="privacy.html"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
+                        <li><a href="contact.html"><i class="fas fa-phone"></i> Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SokoLinc. All rights reserved.</p>
+                <div class="footer-tagline">
+                    <div class="kenyan-heart">
+                        <span>Made with</span>
+                        <span class="heart-pulse">❤️</span>
+                        <span>for Kenyan Communities</span>
+                    </div>
+                </div>
+                <div class="powered-by">
+                    Powered by MortApps Studios
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Popups -->
+    <!-- Contact Popup -->
+    <div class="popup-overlay" id="contactPopup">
+        <div class="popup">
+            <div class="popup-header">
+                <h3 id="contactTitle">Contact Driver</h3>
+                <button class="popup-close" onclick="closeContactPopup()">&times;</button>
+            </div>
+            <div class="popup-body">
+                <p id="contactMessage">How would you like to get in touch?</p>
+                <div class="popup-actions">
+                    <button class="btn btn-primary" id="callBtn">
+                        <i class="fas fa-phone"></i> Call
+                    </button>
+                    <button class="btn btn-secondary" id="whatsappBtn">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Post Listing Popup -->
+    <div class="popup-overlay" id="postPopup">
+        <div class="popup">
+            <div class="popup-header">
+                <h3 id="postTitle">List Your Vehicle</h3>
+                <button class="popup-close" onclick="closePostPopup()">&times;</button>
+            </div>
+            <div class="popup-body">
+                <p id="postMessage">Contact us to list your vehicle on SokoRide:</p>
+                <div class="popup-actions">
+                    <button class="btn btn-primary" onclick="callNumber('+254105399526')">
+                        <i class="fas fa-phone"></i> Call Us
+                    </button>
+                    <button class="btn btn-secondary" id="postWhatsappBtn">
+                        <i class="fab fa-whatsapp"></i> WhatsApp Us
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ===== GLOBAL VARIABLES =====
+        const platformPhone = '+254105399526';
+        let currentVehicleType = '';
+        let currentDriver = '';
+        let currentPhone = '';
+        let driversValue = 88;
+        let vehiclesValue = 44;
+        let driversTrend = 'up';
+        let vehiclesTrend = 'up';
+        let driversStep = 0;
+        let vehiclesStep = 0;
+        let loadMoreCount = 0;
+
+        // ===== DOM ELEMENTS =====
+        const navToggle = document.getElementById('navToggle');
+        const mainNav = document.getElementById('mainNav');
+        const navOverlay = document.getElementById('navOverlay');
+        const closeNav = document.getElementById('closeNav');
+
+        // ===== NAVIGATION FUNCTIONS =====
+        function toggleNavigation() {
+            navToggle.classList.toggle('active');
+            mainNav.classList.toggle('active');
+            navOverlay.classList.toggle('active');
+            document.body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : '';
+        }
+
+        navToggle.addEventListener('click', toggleNavigation);
+        closeNav.addEventListener('click', toggleNavigation);
+        navOverlay.addEventListener('click', toggleNavigation);
+
+        // ===== REALISTIC TRADING-LIKE COUNTERS =====
+        function updateDriversOnline() {
+            const driversElement = document.getElementById('driversOnline');
+            const min = 45;
+            const max = 150;
+            
+            // Trading-like pattern: small fluctuations with occasional larger moves
+            let change;
+            
+            // Every 5th update, make a larger move
+            if (driversStep % 5 === 0) {
+                change = Math.floor(Math.random() * 21) - 10; // -10 to +10
+            } else {
+                change = Math.floor(Math.random() * 7) - 3; // -3 to +3 for small fluctuations
+            }
+            
+            // Trend-based adjustment
+            if (driversTrend === 'up') {
+                change = Math.max(1, change); // Ensure positive when trending up
+            } else {
+                change = Math.min(-1, change); // Ensure negative when trending down
+            }
+            
+            let newValue = driversValue + change;
+            
+            // Keep within bounds and reverse trend if hitting limits
+            if (newValue >= max) {
+                newValue = max - 1;
+                driversTrend = 'down';
+            } else if (newValue <= min) {
+                newValue = min + 1;
+                driversTrend = 'up';
+            }
+            
+            // Occasionally reverse trend randomly (10% chance)
+            if (Math.random() < 0.1) {
+                driversTrend = driversTrend === 'up' ? 'down' : 'up';
+            }
+            
+            driversValue = newValue;
+            driversStep++;
+            
+            // Animate the change
+            driversElement.style.opacity = '0.7';
+            setTimeout(() => {
+                driversElement.textContent = newValue;
+                driversElement.style.opacity = '1';
+            }, 250);
+        }
+
+        function updateVehiclesAvailable() {
+            const vehiclesElement = document.getElementById('vehiclesAvailable');
+            const min = 25;
+            const max = 85;
+            
+            // Trading-like pattern for vehicles
+            let change;
+            
+            // Every 4th update, make a larger move
+            if (vehiclesStep % 4 === 0) {
+                change = Math.floor(Math.random() * 15) - 7; // -7 to +7
+            } else {
+                change = Math.floor(Math.random() * 5) - 2; // -2 to +2 for small fluctuations
+            }
+            
+            // Trend-based adjustment
+            if (vehiclesTrend === 'up') {
+                change = Math.max(1, change);
+            } else {
+                change = Math.min(-1, change);
+            }
+            
+            let newValue = vehiclesValue + change;
+            
+            // Keep within bounds and reverse trend if hitting limits
+            if (newValue >= max) {
+                newValue = max - 1;
+                vehiclesTrend = 'down';
+            } else if (newValue <= min) {
+                newValue = min + 1;
+                vehiclesTrend = 'up';
+            }
+            
+            // Occasionally reverse trend randomly (15% chance)
+            if (Math.random() < 0.15) {
+                vehiclesTrend = vehiclesTrend === 'up' ? 'down' : 'up';
+            }
+            
+            vehiclesValue = newValue;
+            vehiclesStep++;
+            
+            // Animate the change
+            vehiclesElement.style.opacity = '0.7';
+            setTimeout(() => {
+                vehiclesElement.textContent = newValue;
+                vehiclesElement.style.opacity = '1';
+            }, 250);
+        }
+
+        // ===== SOKORIDE SPECIFIC FUNCTIONALITY =====
+        function filterVehicles(vehicleType) {
+            const listings = document.querySelectorAll('#vehicleListings .listing-card');
+            const vehicleBtns = document.querySelectorAll('.vehicle-type-btn');
+            
+            // Update active vehicle type button
+            vehicleBtns.forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            event.currentTarget.classList.add('active');
+            
+            // Filter listings
+            listings.forEach(listing => {
+                if (vehicleType === 'all' || listing.getAttribute('data-vehicle-type') === vehicleType) {
+                    listing.style.display = 'block';
+                } else {
+                    listing.style.display = 'none';
+                }
+            });
+        }
+
+        function loadMoreVehicles() {
+            const hiddenListings = document.querySelectorAll('.hidden-listing');
+            
+            if (loadMoreCount < hiddenListings.length) {
+                // Show next 3 hidden listings
+                for (let i = loadMoreCount; i < loadMoreCount + 3 && i < hiddenListings.length; i++) {
+                    hiddenListings[i].style.display = 'block';
+                }
+                loadMoreCount += 3;
+                
+                // If all listings are shown, disable the button
+                if (loadMoreCount >= hiddenListings.length) {
+                    document.querySelector('.btn-outline').textContent = 'All Vehicles Loaded';
+                    document.querySelector('.btn-outline').disabled = true;
+                }
+            }
+        }
+
+        // ===== POPUP FUNCTIONS =====
+        function showContactPopup(vehicleType, driverName, phoneNumber = null) {
+            currentVehicleType = vehicleType;
+            currentDriver = driverName;
+            currentPhone = phoneNumber;
+            
+            const popup = document.getElementById('contactPopup');
+            const title = document.getElementById('contactTitle');
+            const message = document.getElementById('contactMessage');
+            const callBtn = document.getElementById('callBtn');
+            const whatsappBtn = document.getElementById('whatsappBtn');
+            
+            title.textContent = `Contact ${driverName}`;
+            message.textContent = `Get in touch about ${getVehicleTypeName(vehicleType)} services:`;
+            
+            // Use provided phone number or generate sample based on vehicle type
+            if (!phoneNumber) {
+                const sampleNumbers = {
+                    'boda': '+254712345678',
+                    'tuktuk': '+254723456789',
+                    'pickup': '+254734567890',
+                    'van': '+254745678901',
+                    'lorry': '+254756789012',
+                    'refrigerated': '+254767890123',
+                    'tractor': '+254778901234',
+                    'tuklorry': '+254789012345'
+                };
+                
+                currentPhone = sampleNumbers[vehicleType] || '+254712345678';
+            }
+            
+            callBtn.onclick = () => {
+                callNumber(currentPhone);
+                closeContactPopup();
+            };
+            
+            whatsappBtn.onclick = () => {
+                const whatsappMessage = `Hello ${driverName}, I am interested in your ${getVehicleTypeName(vehicleType)} services. Please share more details.`;
+                openWhatsApp(whatsappMessage, currentPhone);
+                closeContactPopup();
+            };
+            
+            popup.classList.add('active');
+        }
+
+        function getVehicleTypeName(type) {
+            const names = {
+                'boda': 'Boda Boda',
+                'tuktuk': 'Tuk-Tuk',
+                'pickup': 'Pickup Truck',
+                'van': 'Van',
+                'lorry': 'Lorry',
+                'refrigerated': 'Refrigerated Truck',
+                'tractor': 'Tractor Services',
+                'tuklorry': 'Tuk-Lorry'
+            };
+            return names[type] || 'vehicle';
+        }
+
+        function closeContactPopup() {
+            document.getElementById('contactPopup').classList.remove('active');
+        }
+
+        function showPostPopup(type) {
+            const popup = document.getElementById('postPopup');
+            const title = document.getElementById('postTitle');
+            const message = document.getElementById('postMessage');
+            const whatsappBtn = document.getElementById('postWhatsappBtn');
+            
+            let whatsappMessage = '';
+            
+            switch(type) {
+                case 'transport':
+                    title.textContent = 'List Your Vehicle';
+                    message.textContent = 'Contact us to list your vehicle on SokoRide';
+                    whatsappMessage = 'Hello SokoLinc, I want to LIST my vehicle on SokoRide. Vehicle Type: [ ] Service Area: [ ] Rates: [ ] Phone: [ ]';
+                    break;
+                default:
+                    title.textContent = 'Post Your Listing';
+                    message.textContent = 'Contact us to create your listing';
+                    whatsappMessage = 'Hello SokoLinc, I want to create a listing. Details: [ ]';
+            }
+            
+            whatsappBtn.onclick = () => {
+                openWhatsApp(whatsappMessage);
+                closePostPopup();
+            };
+            
+            popup.classList.add('active');
+        }
+
+        function closePostPopup() {
+            document.getElementById('postPopup').classList.remove('active');
+        }
+
+        // ===== CONTACT FUNCTIONS =====
+        function callNumber(phoneNumber) {
+            window.location.href = `tel:${phoneNumber}`;
+        }
+
+        function openWhatsApp(message, phone = platformPhone) {
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/${phone}?text=${encodedMessage}`, '_blank');
+        }
+
+        // ===== INITIALIZATION =====
+        document.addEventListener('DOMContentLoaded', function() {
+            // Start dynamic counters with trading-like patterns
+            setInterval(updateDriversOnline, 8000); // Update every 8 seconds
+            setInterval(updateVehiclesAvailable, 12000); // Update every 12 seconds
+            
+            // Close popups when clicking overlay
+            document.querySelectorAll('.popup-overlay').forEach(overlay => {
+                overlay.addEventListener('click', function(e) {
+                    if (e.target === this) {
+                        this.classList.remove('active');
+                    }
+                });
+            });
+            
+            // Prevent image right-click and drag
+            document.querySelectorAll('.listing-image img').forEach(img => {
+                img.addEventListener('contextmenu', function(e) {
+                    e.preventDefault();
+                    return false;
+                });
+                
+                img.addEventListener('dragstart', function(e) {
+                    e.preventDefault();
+                    return false;
+                });
+            });
+        });
+    </script>
+</body>
+</html>

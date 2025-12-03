@@ -1,0 +1,2306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ALL METADATA AND LINKS REMAIN EXACTLY THE SAME -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+    
+    <meta property="og:title" content="SokoLinc - Connecting Buyers, Sellers & Services Across Every Soko">
+    <meta property="og:description" content="Kenya's Smart Community Marketplace connecting people, produce, transport, jobs, and local opportunities under one roof.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sokolinc.co.ke">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <title>SokoLinc - Connecting Buyers, Sellers & Services Across Every Soko</title>
+    
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛒</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛒</text></svg>">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ===== BULLETPROOF RESET & BASE ===== */
+        :root {
+            --primary: #2D8C3C;
+            --primary-dark: #1F6B2D;
+            --primary-light: rgba(45, 140, 60, 0.1);
+            --secondary: #F4A300;
+            --secondary-dark: #D18A00;
+            --secondary-light: rgba(244, 163, 0, 0.1);
+            --accent: #1C1C1C;
+            --light: #F8F9FA;
+            --dark: #343A40;
+            --gray: #6C757D;
+            --light-gray: #E9ECEF;
+            --white: #FFFFFF;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
+            --shadow-xl: 0 12px 32px rgba(0, 0, 0, 0.2);
+            --radius-sm: 8px;
+            --radius: 12px;
+            --radius-lg: 16px;
+            --transition-fast: 0.2s ease;
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* ===== COMPLETE COPY PROTECTION ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        /* Allow text selection ONLY where absolutely necessary */
+        input, textarea {
+            -webkit-user-select: text;
+            -moz-user-select: text;
+            -ms-user-select: text;
+            user-select: text;
+        }
+
+        /* Completely disable text selection on body */
+        body {
+            -webkit-user-select: none !important;
+            -moz-user-select: none !important;
+            -ms-user-select: none !important;
+            user-select: none !important;
+        }
+
+        /* Force no selection on all elements */
+        div, p, span, h1, h2, h3, h4, h5, h6, a, li, button, section, main, footer, header, nav {
+            -webkit-user-select: none !important;
+            -moz-user-select: none !important;
+            -ms-user-select: none !important;
+            user-select: none !important;
+            cursor: default;
+        }
+
+        /* Prevent context menu on right-click */
+        * {
+            -webkit-touch-callout: none !important;
+        }
+
+        /* Disable image dragging - FIXED SYNTAX */
+        img {
+            -webkit-user-drag: none;
+            -khtml-user-drag: none;
+            -moz-user-drag: none;
+            -o-user-drag: none;
+            pointer-events: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        /* Specific exception for popup content (temporary for reading) - FIXED SYNTAX */
+        .popup-body * {
+            -webkit-user-select: text !important;
+            -moz-user-select: text !important;
+            -ms-user-select: text !important;
+            user-select: text !important;
+        }
+
+        /* Exception for images inside popups */
+        .popup-body img {
+            pointer-events: auto;
+            -webkit-user-drag: auto;
+            -khtml-user-drag: auto;
+            -moz-user-drag: auto;
+            -o-user-drag: auto;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+            scroll-padding-top: 80px;
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            width: 100%;
+            position: relative;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+
+        body.scroll-locked {
+            overflow: hidden !important;
+            position: fixed !important;
+            width: 100% !important;
+            height: 100% !important;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ===== LUXURY LOADER ===== */
+        .sokolinc-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #2D8C3C 0%, #1F6B2D 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.8s var(--transition), visibility 0.8s var(--transition);
+        }
+        
+        .sokolinc-loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+        
+        .loader-animation {
+            position: relative;
+            width: 140px;
+            height: 140px;
+            margin-bottom: 2rem;
+        }
+        
+        .loader-circle {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 3px solid transparent;
+            border-top: 3px solid #F4A300;
+            border-radius: 50%;
+            animation: spin 1.5s linear infinite;
+        }
+        
+        .loader-circle:nth-child(2) {
+            border: 3px solid transparent;
+            border-right: 3px solid rgba(255, 255, 255, 0.7);
+            animation: spin 2s linear infinite reverse;
+        }
+        
+        .loader-circle:nth-child(3) {
+            width: 100px;
+            height: 100px;
+            top: 20px;
+            left: 20px;
+            border: 3px solid transparent;
+            border-bottom: 3px solid rgba(244, 163, 0, 0.7);
+            animation: spin 2.5s linear infinite;
+        }
+        
+        .loader-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2.5rem;
+            color: white;
+            z-index: 10;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .loader-brand {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        
+        .loader-brand-name {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            letter-spacing: -0.5px;
+        }
+        
+        .loader-tagline {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+            letter-spacing: 0.5px;
+            font-weight: 500;
+        }
+        
+        .loader-progress {
+            width: 200px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 2px;
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+        
+        .loader-progress-bar {
+            height: 100%;
+            background: #F4A300;
+            width: 0%;
+            border-radius: 2px;
+            animation: progressLoad 2.5s ease-in-out forwards;
+        }
+        
+        @keyframes progressLoad {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+        
+        .loader-powered {
+            position: absolute;
+            bottom: 50px;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .loader-powered::before {
+            content: '';
+            display: block;
+            width: 25px;
+            height: 1px;
+            background: #F4A300;
+        }
+
+        .loader-whatsapp {
+            position: absolute;
+            bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .loader-whatsapp i {
+            color: #25D366;
+            font-size: 1.1rem;
+        }
+
+        /* ===== BULLETPROOF HEADER ===== */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            font-size: 2rem;
+            color: var(--secondary);
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--white);
+            line-height: 1.2;
+            margin: 0;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-tagline {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 500;
+            margin-top: 2px;
+            white-space: nowrap;
+        }
+
+        .nav-toggle {
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: var(--radius-sm);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+            z-index: 1001;
+        }
+
+        .nav-toggle span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: var(--white);
+            border-radius: 2px;
+            transition: var(--transition);
+        }
+
+        .nav-toggle.active span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        .nav-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .nav-toggle.active span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        .nav-toggle:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* ===== PERFECT MOBILE NAVIGATION SCROLLING ===== */
+        nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 320px;
+            height: 100vh;
+            background: var(--white);
+            box-shadow: var(--shadow-xl);
+            z-index: 1000;
+            transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            max-width: 90vw;
+        }
+
+        nav.active {
+            right: 0;
+        }
+
+        .nav-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-shrink: 0;
+            min-height: 74px;
+        }
+
+        .nav-header span {
+            color: var(--white);
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .nav-close {
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: var(--radius-sm);
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            flex-shrink: 0;
+        }
+
+        .nav-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* EXPERT FIX: Perfect scrollable navigation */
+        .nav-links {
+            list-style: none;
+            overflow-y: auto;
+            height: calc(100vh - 74px);
+            -webkit-overflow-scrolling: touch;
+            overscroll-behavior: contain;
+            padding: 0;
+            margin: 0;
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary) transparent;
+        }
+
+        .nav-links::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .nav-links::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .nav-links::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        .nav-links li {
+            border-bottom: 1px solid var(--light-gray);
+            margin: 0;
+        }
+
+        .nav-links li:last-child {
+            border-bottom: none;
+        }
+
+        .nav-links a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 1.25rem 1.5rem;
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+            min-height: 60px;
+        }
+
+        .nav-links a:hover {
+            background: var(--primary-light);
+            color: var(--primary);
+        }
+
+        .nav-links a i {
+            width: 20px;
+            text-align: center;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .nav-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(3px);
+            -webkit-backdrop-filter: blur(3px);
+            z-index: 999;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .nav-overlay.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* ===== SMOOTH HERO SECTION ===== */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.05)"/></svg>');
+            background-size: cover;
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.75rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.5px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            line-height: 1.6;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 400;
+        }
+
+        .cta-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        /* ===== SMOOTH BUTTONS ===== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 1rem 2rem;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            transition: all var(--transition);
+            position: relative;
+            overflow: hidden;
+            min-height: 52px;
+            touch-action: manipulation;
+            white-space: nowrap;
+        }
+
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+        }
+
+        .btn:active::after {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            box-shadow: 0 4px 12px rgba(45, 140, 60, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(45, 140, 60, 0.4);
+        }
+
+        .btn-primary:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 8px rgba(45, 140, 60, 0.3);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
+            color: var(--accent);
+            box-shadow: 0 4px 12px rgba(244, 163, 0, 0.3);
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(244, 163, 0, 0.4);
+        }
+
+        .btn-secondary:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 8px rgba(244, 163, 0, 0.3);
+        }
+
+        .btn-accent {
+            background: linear-gradient(135deg, var(--accent) 0%, #000 100%);
+            color: var(--white);
+            box-shadow: 0 4px 12px rgba(28, 28, 28, 0.3);
+        }
+
+        .btn-accent:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(28, 28, 28, 0.4);
+        }
+
+        .btn-accent:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 8px rgba(28, 28, 28, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .btn-small {
+            padding: 0.75rem 1.5rem;
+            font-size: 0.9rem;
+            min-height: 44px;
+        }
+
+        .btn-full {
+            width: 100%;
+        }
+
+        /* ===== SMOOTH SECTIONS ===== */
+        section {
+            padding: 5rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-header h2 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+            letter-spacing: -0.5px;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+
+        .section-header p {
+            font-size: 1.125rem;
+            color: var(--gray);
+            line-height: 1.7;
+            margin-top: 2rem;
+        }
+
+        /* ===== SMOOTH SERVICES GRID ===== */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem 2rem;
+            box-shadow: var(--shadow);
+            transition: all var(--transition);
+            border: 1px solid var(--light-gray);
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+            border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            color: var(--white);
+            font-size: 2rem;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .service-content {
+            flex: 1;
+            text-align: center;
+        }
+
+        .service-content h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .service-content p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            flex: 1;
+        }
+
+        /* ===== PERFECT POPUP FIXES ===== */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all var(--transition);
+            padding: 1.5rem;
+        }
+
+        .popup-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .popup {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            width: 100%;
+            max-width: 500px;
+            max-height: 90vh;
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+            transform: translateY(20px) scale(0.98);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .popup-overlay.active .popup {
+            transform: translateY(0) scale(1);
+        }
+
+        .popup-header {
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid var(--light-gray);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            flex-shrink: 0;
+        }
+
+        .popup-header h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0;
+            color: var(--white);
+        }
+
+        .popup-close {
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: var(--radius-sm);
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            flex-shrink: 0;
+        }
+
+        .popup-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* EXPERT FIX: Perfect popup body scrolling */
+        .popup-body {
+            padding: 2rem;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            overscroll-behavior: contain;
+            flex: 1;
+            min-height: 0;
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary) transparent;
+        }
+
+        .popup-body::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .popup-body::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .popup-body::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 3px;
+        }
+
+        .popup-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        /* Enhanced Help Popup */
+        .help-section {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .help-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .help-section h4 {
+            color: var(--primary);
+            font-size: 1.25rem;
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .help-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+            padding: 1.25rem;
+            background: var(--light-gray);
+            border-radius: var(--radius);
+        }
+
+        .step-icon {
+            width: 32px;
+            height: 32px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .legal-links {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .legal-link {
+            flex: 1;
+            min-width: 200px;
+            padding: 1rem;
+            background: var(--light-gray);
+            border-radius: var(--radius);
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 600;
+            text-align: center;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .legal-link:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: translateY(-2px);
+            border-color: var(--primary);
+        }
+
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin: 2rem 0 1rem;
+            padding: 1rem;
+            background: rgba(45, 140, 60, 0.05);
+            border-radius: var(--radius);
+        }
+
+        /* Ad Popup - EXPERT FIX: Perfect layout with proper button spacing */
+        .ad-popup-body {
+            text-align: center;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
+        }
+
+        .ad-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: block;
+            flex-shrink: 0;
+        }
+
+        .ad-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+            margin: 1.5rem 0;
+            flex-shrink: 0;
+        }
+
+        .ad-feature {
+            padding: 0.75rem;
+            background: var(--light-gray);
+            border-radius: var(--radius);
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+
+        /* EXPERT FIX: Perfect popup actions layout */
+        .popup-actions {
+            margin-top: auto;
+            padding-top: 1.5rem;
+        }
+
+        .popup-actions .btn-outline {
+            margin-top: 0.5rem;
+            border-color: var(--gray);
+            color: var(--gray);
+        }
+
+        /* ===== BULLETPROOF FOOTER ===== */
+        footer {
+            background: var(--accent);
+            color: var(--white);
+            padding: 4rem 0 2rem;
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-column h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.75rem;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--secondary);
+        }
+
+        .footer-column p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: var(--transition);
+            padding: 0.25rem 0;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+            transform: translateX(5px);
+        }
+
+        .footer-links a i {
+            width: 20px;
+            font-size: 1rem;
+        }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.25rem;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background: var(--secondary);
+            color: var(--accent);
+            transform: translateY(-3px) rotate(5deg);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        .footer-tagline {
+            margin: 1.5rem 0;
+        }
+
+        .kenyan-heart {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--white);
+        }
+
+        /* CRITICAL: Fast beating heart animation */
+        .heart-pulse {
+            color: #ff6b6b;
+            animation: heartbeat 0.6s infinite;
+            display: inline-block;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.15); }
+        }
+
+        .powered-by {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-top: 1rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.85rem;
+        }
+
+        .powered-by::before {
+            content: '';
+            width: 30px;
+            height: 1px;
+            background: var(--secondary);
+        }
+
+        .powered-by a {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 700;
+            transition: var(--transition);
+        }
+
+        .powered-by a:hover {
+            color: var(--white);
+            text-decoration: underline;
+        }
+
+        /* ===== FLOATING WHATSAPP BUTTON ===== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            text-decoration: none;
+            transition: all var(--transition);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.6);
+            animation: none;
+        }
+
+        /* ===== SCROLL TO TOP ===== */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.25rem;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            z-index: 998;
+            opacity: 0;
+            visibility: hidden;
+            transition: all var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .scroll-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+            
+            .hero {
+                padding: 4rem 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.25rem;
+            }
+            
+            .hero p {
+                font-size: 1.125rem;
+            }
+            
+            section {
+                padding: 4rem 0;
+            }
+            
+            .section-header h2 {
+                font-size: 2rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+            
+            .popup-actions {
+                flex-direction: column;
+            }
+            
+            .legal-links {
+                flex-direction: column;
+            }
+            
+            .legal-link {
+                min-width: 100%;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+                width: 56px;
+                height: 56px;
+                font-size: 1.5rem;
+            }
+            
+            .scroll-to-top {
+                bottom: 90px;
+                right: 20px;
+                width: 44px;
+                height: 44px;
+                font-size: 1.1rem;
+            }
+            
+            nav {
+                width: 100%;
+                max-width: 320px;
+            }
+            
+            .nav-links {
+                height: calc(100vh - 74px);
+            }
+            
+            .ad-features {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+            
+            .ad-feature {
+                padding: 0.5rem;
+                font-size: 0.8rem;
+            }
+            
+            /* Mobile-specific fixes for perfect scrolling */
+            .nav-links a {
+                padding: 1rem 1.5rem;
+                min-height: 56px;
+            }
+            
+            .popup-body {
+                padding: 1.5rem;
+            }
+            
+            .popup-header {
+                padding: 1.25rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.875rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section-header h2 {
+                font-size: 1.75rem;
+            }
+            
+            .service-card {
+                padding: 2rem 1.5rem;
+            }
+            
+            .nav-links a {
+                padding: 0.875rem 1.25rem;
+            }
+            
+            .popup {
+                max-height: 95vh;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* High-performance scrolling fixes */
+        .nav-links,
+        .popup-body {
+            will-change: transform;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            transform: translateZ(0);
+            -webkit-transform: translateZ(0);
+        }
+
+        /* Safari-specific fixes */
+        @supports (-webkit-touch-callout: none) {
+            .nav-links,
+            .popup-body {
+                -webkit-overflow-scrolling: touch !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Luxury Loading Screen -->
+    <div class="sokolinc-loader" id="sokolincLoader">
+        <div class="loader-animation">
+            <div class="loader-circle"></div>
+            <div class="loader-circle"></div>
+            <div class="loader-circle"></div>
+            <div class="loader-icon">
+                <i class="fas fa-link"></i>
+            </div>
+        </div>
+        
+        <div class="loader-brand">
+            <div class="loader-brand-name">SokoLinc</div>
+            <div class="loader-tagline">Connecting Communities, Creating Opportunities</div>
+        </div>
+        
+        <div class="loader-progress">
+            <div class="loader-progress-bar"></div>
+        </div>
+        
+        <div class="loader-powered">Powered by MortApps Studios</div>
+        <div class="loader-whatsapp">
+            <i class="fab fa-whatsapp"></i>
+            Integrated with WhatsApp
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <i class="fas fa-link logo-icon"></i>
+                <div class="logo-text">
+                    <h1>SokoLinc</h1>
+                    <div class="logo-tagline">Connecting Every Soko in Kenya</div>
+                </div>
+            </a>
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Navigation Overlay -->
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <!-- Navigation Menu -->
+    <nav id="mainNav">
+        <div class="nav-header">
+            <span>Navigation</span>
+            <button class="nav-close" id="closeNav">&times;</button>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="sokofresh.html"><i class="fas fa-apple-alt"></i> SokoFresh</a></li>
+            <li><a href="sokodeals.html"><i class="fas fa-tags"></i> SokoDeals</a></li>
+            <li><a href="kaziconnect.html"><i class="fas fa-tools"></i> KaziConnect</a></li>
+            <li><a href="sokoride.html"><i class="fas fa-truck"></i> SokoRide</a></li>
+            <li><a href="tangazo.html"><i class="fas fa-bullhorn"></i> Tangazo+</a></li>
+            <li><a href="bizboost.html"><i class="fas fa-ad"></i> BizBoost</a></li>
+            <li><a href="#" onclick="showContactPopup()"><i class="fas fa-phone"></i> Contact Us</a></li>
+            <li><a href="terms.html"><i class="fas fa-file-contract"></i> Terms & Conditions</a></li>
+            <li><a href="privacy.html"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
+            <li><a href="#" onclick="showHelpPopup()"><i class="fas fa-question-circle"></i> Help & Guide</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>Kenya's Smart Community Marketplace</h1>
+                <p>Connecting people, produce, transport, jobs, and local opportunities under one roof. Your hustle deserves a home.</p>
+                <div class="cta-buttons">
+                    <a href="sokofresh.html" class="btn btn-secondary">
+                        <i class="fas fa-apple-alt"></i> Buy Fresh Produce
+                    </a>
+                    <a href="kaziconnect.html" class="btn btn-accent">
+                        <i class="fas fa-tools"></i> Find Services
+                    </a>
+                    <a href="sokoride.html" class="btn btn-outline">
+                        <i class="fas fa-truck"></i> Get Transport
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Who We Are -->
+        <section id="who-we-are">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Who We Are</h2>
+                    <p>SokoLinc is Kenya's community-driven platform that brings together farmers, traders, service providers, and transporters in one seamless ecosystem designed for real people.</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Community First</h3>
+                            <p>Built by Kenyans, for Kenyans. We understand the unique needs of our local markets and design solutions that work for everyone.</p>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Mobile Optimized</h3>
+                            <p>Designed specifically for smartphones to ensure everyone can access our platform easily, even on basic devices.</p>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Fast & Simple</h3>
+                            <p>No complicated registration process. Just browse, connect, and transact directly with real people in your community.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What We Do -->
+        <section id="what-we-do" style="background-color: var(--light-gray);">
+            <div class="container">
+                <div class="section-header">
+                    <h2>What We Do</h2>
+                    <p>We connect communities through specialized marketplaces tailored to different needs, making everyday transactions simpler and more efficient.</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-apple-alt"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>SokoFresh</h3>
+                            <p>Fresh produce marketplace connecting farmers directly with buyers, eliminating middlemen and ensuring fair prices.</p>
+                            <a href="sokofresh.html" class="btn btn-primary btn-small">Browse Fresh Produce</a>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>SokoRide</h3>
+                            <p>Transport and logistics services for goods and personal movement across Kenya's towns and villages.</p>
+                            <a href="sokoride.html" class="btn btn-primary btn-small">Find Transport</a>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-tags"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>SokoDeals</h3>
+                            <p>General marketplace for everyday items, second-hand goods, and household essentials at competitive prices.</p>
+                            <a href="sokodeals.html" class="btn btn-primary btn-small">Shop Great Deals</a>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>KaziConnect</h3>
+                            <p>Find skilled workers or advertise your services to the community. From plumbers to tutors, we connect talent with opportunity.</p>
+                            <a href="kaziconnect.html" class="btn btn-primary btn-small">Hire Services</a>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-bullhorn"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Tangazo+</h3>
+                            <p>Community announcements, events, public notices, and local news that matters to your neighborhood.</p>
+                            <a href="tangazo.html" class="btn btn-primary btn-small">View Announcements</a>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-ad"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>BizBoost</h3>
+                            <p>Business directory and advertising platform for local enterprises to reach more customers and grow.</p>
+                            <a href="bizboost.html" class="btn btn-primary btn-small">Explore Businesses</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What We Offer -->
+        <section id="what-we-offer">
+            <div class="container">
+                <div class="section-header">
+                    <h2>What We Offer</h2>
+                    <p>Simple, effective solutions that make a real difference in people's lives and businesses across Kenya.</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Direct Contact</h3>
+                            <p>Connect instantly via phone or WhatsApp - simple, fast, and personal communication without unnecessary barriers.</p>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Verified Listings</h3>
+                            <p>All listings are verified to ensure authenticity and build trust within our growing community of users.</p>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Nationwide Reach</h3>
+                            <p>Access buyers and sellers from across Kenya in one unified platform, breaking geographical barriers.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section id="why-choose-us" style="background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);">
+            <div class="container">
+                <div class="section-header" style="color: white;">
+                    <h2 style="color: white;">Why Choose SokoLinc</h2>
+                    <p style="color: rgba(255,255,255,0.9);">Because every farmer, trader, worker, and business owner deserves a fair chance to be seen, heard, and successful.</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card" style="background: rgba(255,255,255,0.95);">
+                        <div class="service-icon" style="background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Community Driven</h3>
+                            <p>We're built by and for the community, with a deep understanding of local needs, challenges, and opportunities.</p>
+                        </div>
+                    </div>
+                    <div class="service-card" style="background: rgba(255,255,255,0.95);">
+                        <div class="service-icon" style="background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Trust & Safety</h3>
+                            <p>We prioritize your safety with verified listings, secure connections, and a commitment to ethical transactions.</p>
+                        </div>
+                    </div>
+                    <div class="service-card" style="background: rgba(255,255,255,0.95);">
+                        <div class="service-icon" style="background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Growth Focused</h3>
+                            <p>We're committed to helping Kenyan businesses and individuals thrive in the digital economy.</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 4rem;">
+                    <p style="font-size: 1.5rem; font-weight: 700; color: white; margin-bottom: 2rem; text-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                        Your Hustle Deserves a Home
+                    </p>
+                    <a href="#" onclick="showContactPopup()" class="btn btn-secondary" style="min-width: 200px;">
+                        Join Our Community Today
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>SokoLinc</h3>
+                    <p>Connecting buyers, sellers & services across every Soko in Kenya through simple, accessible technology designed for real people.</p>
+                    <p style="margin-top: 1.5rem;">
+                        <i class="fas fa-phone" style="margin-right: 10px;"></i>
+                        <strong>+254 112 345906</strong>
+                    </p>
+                    <p>
+                        <i class="fab fa-whatsapp" style="margin-right: 10px; color: #25D366;"></i>
+                        <strong>+254 112 345906</strong>
+                    </p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Marketplaces</h3>
+                    <ul class="footer-links">
+                        <li><a href="sokofresh.html"><i class="fas fa-apple-alt"></i> SokoFresh</a></li>
+                        <li><a href="sokodeals.html"><i class="fas fa-tags"></i> SokoDeals</a></li>
+                        <li><a href="kaziconnect.html"><i class="fas fa-tools"></i> KaziConnect</a></li>
+                        <li><a href="sokoride.html"><i class="fas fa-truck"></i> SokoRide</a></li>
+                        <li><a href="tangazo.html"><i class="fas fa-bullhorn"></i> Tangazo+</a></li>
+                        <li><a href="bizboost.html"><i class="fas fa-ad"></i> BizBoost</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="#" onclick="showContactPopup()"><i class="fas fa-phone"></i> Contact Us</a></li>
+                        <li><a href="terms.html"><i class="fas fa-file-contract"></i> Terms & Conditions</a></li>
+                        <li><a href="privacy.html"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
+                        <li><a href="#" onclick="showHelpPopup()"><i class="fas fa-question-circle"></i> Help & Guide</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Connect With Us</h3>
+                    <p>Stay updated with the latest from SokoLinc and connect with our growing community.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" title="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link" title="Twitter/X">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/254112345906" class="social-link" title="WhatsApp" style="background: #25D366;">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                    <p style="margin-top: 1.5rem;">
+                        <i class="fas fa-envelope" style="margin-right: 10px;"></i>
+                        mort@sokolinc.co.ke
+                    </p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 SokoLinc. All rights reserved.</p>
+                <div class="footer-tagline">
+                    <div class="kenyan-heart">
+                        <span>Built with</span>
+                        <span class="heart-pulse">❤️</span>
+                        <span>for Kenya</span>
+                    </div>
+                </div>
+                <div class="powered-by">
+                    Powered by <a href="https://mortappsstudios.com" target="_blank" rel="noopener">MortApps Studios</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Popups -->
+    <!-- Help Popup -->
+    <div class="popup-overlay" id="helpPopup">
+        <div class="popup">
+            <div class="popup-header">
+                <h3>Karibu to SokoLinc</h3>
+                <button class="popup-close" onclick="closeHelpPopup()">&times;</button>
+            </div>
+            <div class="popup-body">
+                <div class="help-section">
+                    <h4><i class="fas fa-info-circle"></i> Welcome to Your Digital Marketplace</h4>
+                    <p>Your all-in-one platform where farmers, buyers, workers, business owners, and transporters meet directly. No logins, no stress - just real connections that work.</p>
+                </div>
+
+                <div class="help-section">
+                    <h4><i class="fas fa-graduation-cap"></i> How to Use SokoLinc</h4>
+                    <div class="help-step">
+                        <div class="step-icon">1</div>
+                        <div class="step-content">
+                            <strong>Explore Marketplaces</strong><br>
+                            Tap any section like SokoFresh or KaziConnect to see available listings near you. Browse freely with no sign-up required.
+                        </div>
+                    </div>
+                    <div class="help-step">
+                        <div class="step-icon">2</div>
+                        <div class="step-content">
+                            <strong>Connect Directly</strong><br>
+                            Tap <strong>Call</strong> for instant voice connection or <strong>WhatsApp</strong> to chat directly with sellers/service providers.
+                        </div>
+                    </div>
+                    <div class="help-step">
+                        <div class="step-icon">3</div>
+                        <div class="step-content">
+                            <strong>List Your Items/Services</strong><br>
+                            On any marketplace page, tap "Post Your..." - we'll guide you through creating professional listings that reach more people.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="help-section">
+                    <h4><i class="fas fa-check-circle"></i> Quick Tips</h4>
+                    <div style="background: var(--primary-light); padding: 1.5rem; border-radius: var(--radius);">
+                        <p style="margin-bottom: 0.5rem;"><strong>✓ Browse & Call FREE</strong> - No charges for browsing or contacting sellers</p>
+                        <p style="margin-bottom: 0.5rem;"><strong>✓ WhatsApp Ready</strong> - Pre-filled messages for faster communication</p>
+                        <p style="margin-bottom: 0.5rem;"><strong>✓ Verified Listings</strong> - We verify all listings for your safety</p>
+                        <p><strong>✓ Community Focused</strong> - Built by Kenyans for Kenyan needs</p>
+                    </div>
+                </div>
+
+                <div class="legal-links">
+                    <a href="terms.html" class="legal-link">
+                        <i class="fas fa-file-contract"></i> Terms & Conditions
+                    </a>
+                    <a href="privacy.html" class="legal-link">
+                        <i class="fas fa-shield-alt"></i> Privacy Policy
+                    </a>
+                </div>
+
+                <div class="checkbox-container">
+                    <input type="checkbox" id="dontShowAgain">
+                    <label for="dontShowAgain">Don't show this guide again</label>
+                </div>
+                
+                <div class="popup-actions">
+                    <button class="btn btn-primary btn-full" onclick="closeHelpPopup()">
+                        Continue to SokoLinc
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Popup -->
+    <div class="popup-overlay" id="contactPopup">
+        <div class="popup">
+            <div class="popup-header">
+                <h3>Contact SokoLinc</h3>
+                <button class="popup-close" onclick="closeContactPopup()">&times;</button>
+            </div>
+            <div class="popup-body">
+                <p style="text-align: center; margin-bottom: 2rem;">Get in touch with us for support, partnerships, or general inquiries.</p>
+                <div class="popup-actions">
+                    <button class="btn btn-primary" onclick="callNumber('+254112345906')">
+                        <i class="fas fa-phone"></i> Call Now
+                    </button>
+                    <button class="btn btn-secondary" onclick="openWhatsApp('Hello SokoLinc, I would like to get more information.')">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </button>
+                    <button class="btn btn-accent" onclick="sendEmail()">
+                        <i class="fas fa-envelope"></i> Email Us
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MortApps Ad Popup (FIXED - NOW SHOWS PROPERLY) -->
+    <div class="popup-overlay" id="adPopup">
+        <div class="popup">
+            <div class="popup-header">
+                <h3>Need a Professional Website?</h3>
+                <button class="popup-close" onclick="closeAdPopup()">&times;</button>
+            </div>
+            <div class="popup-body ad-popup-body">
+                <div class="ad-icon">
+                    <i class="fas fa-globe-africa"></i>
+                </div>
+                <h4 style="color: var(--primary); margin-bottom: 1rem;">MortApps Studios</h4>
+                <p><strong>We build stunning, high-performance websites and mobile apps</strong> that help Kenyan businesses grow online and reach more customers.</p>
+                
+                <div class="ad-features">
+                    <div class="ad-feature">Premium Design</div>
+                    <div class="ad-feature">Fast & Reliable</div>
+                    <div class="ad-feature">Mobile First</div>
+                    <div class="ad-feature">Business Ready</div>
+                </div>
+                
+                <p style="margin: 1.5rem 0; font-weight: 700; color: var(--primary); font-size: 1.1rem;">
+                    <i class="fas fa-phone"></i> Contact: +254 112 345906
+                </p>
+                
+                <div class="popup-actions">
+                    <button class="btn btn-primary" onclick="callNumber('+254112345906')">
+                        <i class="fas fa-phone"></i> Call Now
+                    </button>
+                    <button class="btn btn-secondary" onclick="openWhatsApp('Hello MortApps Studios, I am interested in your website development services.')">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </button>
+                    <button class="btn btn-outline" onclick="closeAdPopup()">Not Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/254112345906" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // ===== EXPERT BULLETPROOF CONFIGURATION =====
+        const CONFIG = {
+            phone: '+254112345906',
+            email: 'mort@sokolinc.co.ke',
+            whatsapp: '+254112345906',
+            adTimer: 59000, // 59 seconds for first show
+            helpTimer: 4000, // 4 seconds for first show
+            mortAppsUrl: 'https://mortappsstudios.com',
+            // NEW: Cooldown periods in milliseconds
+            helpCooldown: 5 * 60 * 60 * 1000, // 5 hours (5 * 60 minutes * 60 seconds * 1000 ms)
+            adCooldown: 2 * 60 * 60 * 1000   // 2 hours (2 * 60 minutes * 60 seconds * 1000 ms)
+        };
+
+        // ===== EXPERT DOM CACHE =====
+        const DOM = {
+            body: document.body,
+            loader: document.getElementById('sokolincLoader'),
+            navToggle: document.getElementById('navToggle'),
+            mainNav: document.getElementById('mainNav'),
+            navOverlay: document.getElementById('navOverlay'),
+            closeNav: document.getElementById('closeNav'),
+            scrollToTop: document.getElementById('scrollToTop'),
+            helpPopup: document.getElementById('helpPopup'),
+            contactPopup: document.getElementById('contactPopup'),
+            adPopup: document.getElementById('adPopup'),
+            dontShowAgain: document.getElementById('dontShowAgain')
+        };
+
+        // ===== EXPERT SCROLL LOCK =====
+        function lockScroll() {
+            DOM.body.classList.add('scroll-locked');
+        }
+        
+        function unlockScroll() {
+            DOM.body.classList.remove('scroll-locked');
+        }
+
+        // ===== COMPLETE COPY PROTECTION SCRIPT =====
+        function preventTextSelection() {
+            // Block context menu (right-click)
+            document.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+                return false;
+            }, false);
+            
+            // Block text selection
+            document.addEventListener('selectstart', function(e) {
+                e.preventDefault();
+                return false;
+            }, false);
+            
+            // Block drag events
+            document.addEventListener('dragstart', function(e) {
+                e.preventDefault();
+                return false;
+            }, false);
+            
+            // Block copy events
+            document.addEventListener('copy', function(e) {
+                e.preventDefault();
+                return false;
+            }, false);
+            
+            // Block cut events
+            document.addEventListener('cut', function(e) {
+                e.preventDefault();
+                return false;
+            }, false);
+            
+            // Block paste events
+            document.addEventListener('paste', function(e) {
+                e.preventDefault();
+                return false;
+            }, false);
+            
+            // Special handling for popups - allow selection in popups
+            document.addEventListener('click', function(e) {
+                if (e.target.closest('.popup-body')) {
+                    // Allow selection in popups temporarily
+                    const popupElements = e.target.closest('.popup-body').querySelectorAll('*');
+                    popupElements.forEach(el => {
+                        el.style.userSelect = 'text';
+                        el.style.webkitUserSelect = 'text';
+                        el.style.MozUserSelect = 'text';
+                        el.style.msUserSelect = 'text';
+                    });
+                } else {
+                    // Reset all elements to no selection
+                    document.querySelectorAll('*').forEach(el => {
+                        if (!el.closest('.popup-body')) {
+                            el.style.userSelect = 'none';
+                            el.style.webkitUserSelect = 'none';
+                            el.style.MozUserSelect = 'none';
+                            el.style.msUserSelect = 'none';
+                        }
+                    });
+                }
+            }, false);
+        }
+
+        // ===== EXPERT NAVIGATION WITH PERFECT SCROLLING =====
+        function toggleNavigation() {
+            const isActive = DOM.mainNav.classList.toggle('active');
+            DOM.navToggle.classList.toggle('active');
+            DOM.navOverlay.classList.toggle('active');
+            
+            if (isActive) {
+                lockScroll();
+                // Ensure nav links are scrollable to the bottom
+                setTimeout(() => {
+                    const navLinks = DOM.mainNav.querySelector('.nav-links');
+                    if (navLinks) {
+                        navLinks.scrollTop = 0; // Reset scroll position
+                    }
+                }, 50);
+            } else {
+                unlockScroll();
+            }
+        }
+
+        DOM.navToggle.addEventListener('click', toggleNavigation);
+        DOM.closeNav.addEventListener('click', toggleNavigation);
+        DOM.navOverlay.addEventListener('click', toggleNavigation);
+
+        // ===== EXPERT POPUP FUNCTIONS WITH PERFECT SCROLLING =====
+        function showHelpPopup() {
+            DOM.helpPopup.classList.add('active');
+            lockScroll();
+            // Reset scroll position
+            setTimeout(() => {
+                const popupBody = DOM.helpPopup.querySelector('.popup-body');
+                if (popupBody) {
+                    popupBody.scrollTop = 0;
+                }
+            }, 50);
+        }
+
+        function closeHelpPopup() {
+            if (DOM.dontShowAgain && DOM.dontShowAgain.checked) {
+                localStorage.setItem('sokolinc_help_closed', 'true');
+            } else {
+                // Store when help was last shown (for 5-hour cooldown)
+                localStorage.setItem('sokolinc_help_last_shown', Date.now());
+            }
+            DOM.helpPopup.classList.remove('active');
+            unlockScroll();
+        }
+
+        function showContactPopup() {
+            DOM.contactPopup.classList.add('active');
+            lockScroll();
+        }
+
+        function closeContactPopup() {
+            DOM.contactPopup.classList.remove('active');
+            unlockScroll();
+        }
+
+        function showAdPopup() {
+            DOM.adPopup.classList.add('active');
+            lockScroll();
+            // Reset scroll position and ensure button is visible
+            setTimeout(() => {
+                const popupBody = DOM.adPopup.querySelector('.popup-body');
+                if (popupBody) {
+                    popupBody.scrollTop = 0;
+                }
+            }, 50);
+        }
+
+        function closeAdPopup() {
+            DOM.adPopup.classList.remove('active');
+            // Store when ad was last shown (for 2-hour cooldown)
+            localStorage.setItem('sokolinc_ad_last_shown', Date.now());
+            unlockScroll();
+        }
+
+        // ===== EXPERT UTILITY FUNCTIONS =====
+        function callNumber(phone) {
+            window.location.href = `tel:${phone}`;
+        }
+
+        function openWhatsApp(message) {
+            const encoded = encodeURIComponent(message);
+            window.open(`https://wa.me/${CONFIG.whatsapp}?text=${encoded}`, '_blank');
+        }
+
+        function sendEmail() {
+            window.location.href = `mailto:${CONFIG.email}?subject=SokoLinc Inquiry&body=Hello SokoLinc team, I would like to get more information about your services.`;
+        }
+
+        // ===== GLOBAL EXPORTS =====
+        window.showHelpPopup = showHelpPopup;
+        window.closeHelpPopup = closeHelpPopup;
+        window.showContactPopup = showContactPopup;
+        window.closeContactPopup = closeContactPopup;
+        window.showAdPopup = showAdPopup;
+        window.closeAdPopup = closeAdPopup;
+        window.callNumber = callNumber;
+        window.openWhatsApp = openWhatsApp;
+        window.sendEmail = sendEmail;
+
+        // ===== EXPERT INITIALIZATION =====
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('✅ SokoLinc - Expert Edition Initialized');
+            
+            // Apply copy protection immediately
+            preventTextSelection();
+            
+            // Hide loader after 3 seconds
+            setTimeout(() => {
+                DOM.loader.classList.add('hidden');
+                
+                // Initialize popup timers AFTER loader is hidden
+                
+                // Show help popup after 4 seconds if not dismissed and cooldown has passed
+                const helpLastShown = localStorage.getItem('sokolinc_help_last_shown');
+                const helpCooldownPassed = !helpLastShown || (Date.now() - helpLastShown > CONFIG.helpCooldown);
+                
+                if (!localStorage.getItem('sokolinc_help_closed') && helpCooldownPassed) {
+                    console.log('⏰ Help popup scheduled for:', CONFIG.helpTimer, 'ms (4 seconds)');
+                    setTimeout(showHelpPopup, CONFIG.helpTimer);
+                } else if (!helpCooldownPassed) {
+                    console.log('⏰ Help popup skipped - cooldown active (5 hours)');
+                }
+
+                // MortApps Ad Popup - Shows after 59 seconds if cooldown has passed
+                const adLastShown = localStorage.getItem('sokolinc_ad_last_shown');
+                const adCooldownPassed = !adLastShown || (Date.now() - adLastShown > CONFIG.adCooldown);
+                
+                if (adCooldownPassed) {
+                    console.log('⏰ MortApps popup scheduled for:', CONFIG.adTimer, 'ms (59 seconds)');
+                    window.adPopupTimer = setTimeout(() => {
+                        console.log('⏰ MortApps popup timer triggered');
+                        
+                        // Check if help popup is showing
+                        if (DOM.helpPopup.classList.contains('active')) {
+                            console.log('⏰ Help popup active, waiting for it to close...');
+                            // If help popup is active, schedule ad popup for after it closes
+                            const checkHelpClosed = setInterval(() => {
+                                if (!DOM.helpPopup.classList.contains('active')) {
+                                    clearInterval(checkHelpClosed);
+                                    console.log('✅ Showing MortApps popup (help popup closed)');
+                                    showAdPopup();
+                                }
+                            }, 500);
+                        } else {
+                            // Help popup not active, show ad popup directly
+                            console.log('✅ Showing MortApps popup (no help popup active)');
+                            showAdPopup();
+                        }
+                    }, CONFIG.adTimer);
+                } else {
+                    console.log('⏰ MortApps popup skipped - cooldown active (2 hours)');
+                }
+                
+            }, 3000); // Wait for loader
+
+            // Scroll to top button
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 500) {
+                    DOM.scrollToTop.classList.add('visible');
+                } else {
+                    DOM.scrollToTop.classList.remove('visible');
+                }
+            });
+
+            // Close popups when clicking overlay (expert handling)
+            document.querySelectorAll('.popup-overlay').forEach(overlay => {
+                overlay.addEventListener('click', function(e) {
+                    if (e.target === this) {
+                        this.classList.remove('active');
+                        unlockScroll();
+                    }
+                });
+            });
+
+            // Handle Escape key to close popups
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    if (DOM.helpPopup.classList.contains('active')) {
+                        closeHelpPopup();
+                    } else if (DOM.contactPopup.classList.contains('active')) {
+                        closeContactPopup();
+                    } else if (DOM.adPopup.classList.contains('active')) {
+                        closeAdPopup();
+                    } else if (DOM.mainNav.classList.contains('active')) {
+                        toggleNavigation();
+                    }
+                }
+            });
+
+            // Initialize MortApps Studios link
+            const mortAppsLink = document.querySelector('.powered-by a');
+            if (mortAppsLink) {
+                mortAppsLink.href = CONFIG.mortAppsUrl;
+                mortAppsLink.target = '_blank';
+                mortAppsLink.rel = 'noopener noreferrer';
+            }
+
+            // Performance optimization: Prevent layout thrashing
+            let resizeTimeout;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimeout);
+                resizeTimeout = setTimeout(() => {
+                    // Handle any responsive adjustments
+                }, 250);
+            });
+
+            console.log('✅ Copy protection ENABLED - No text selection allowed');
+            console.log('✅ MortApps Popup - 59 seconds first time, then 2-hour cooldown');
+            console.log('✅ Help Popup - 4 seconds first time, then 5-hour cooldown');
+            console.log('✅ "Not Now" button fully accessible in MortApps popup');
+            console.log('✅ Mobile navigation scrolls completely to "Help & Guide" button');
+        });
+    </script>
+</body>
+</html>
