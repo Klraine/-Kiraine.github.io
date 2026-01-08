@@ -1,15 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- === MORTAPPS STUDIOS DIGITAL FINGERTIP === -->
+    <!-- Google will know who built this -->
+    <meta name="generator" content="MortApps Studios - Premium Web Solutions Kenya">
+    <meta name="author" content="MortApps Studios">
+    <meta name="copyright" content="© 2026 MortApps Studios. Website crafted with excellence.">
+    <meta name="web_author" content="https://mortappsstudios.com">
+    <link rel="author" href="https://mortappsstudios.com">
+    <link rel="publisher" href="https://mortappsstudios.com">
+    <!-- ============================================ -->
+
+    <!-- Schema.org Structured Data for SokoRide -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "TransportationService",
+        "name": "SokoRide - Transport & Logistics | SokoLinc",
+        "url": "https://www.sokolinc.co.ke/sokoride.html",
+        "description": "Kenya's trusted transport marketplace connecting vehicle owners with customers across Kajiado County and beyond",
+        "provider": {
+            "@type": "Organization",
+            "name": "MortApps Studios",
+            "url": "https://mortappsstudios.com",
+            "description": "Premium Web Development & Digital Solutions for Kenyan Businesses"
+        },
+        "areaServed": {
+            "@type": "Place",
+            "name": "Kajiado County, Kenya"
+        },
+        "availableChannel": {
+            "@type": "ServiceChannel",
+            "servicePhone": "+254112345906",
+            "availableLanguage": ["English", "Swahili"]
+        }
+    }
+    </script>
+
+    <!-- CRITICAL: Social Media Preview Images -->
+    <meta property="og:image" content="https://www.sokolinc.co.ke/android-chrome-512x512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="SokoRide - Kenya's Transport & Logistics Marketplace">
+    <meta property="og:image:type" content="image/png">
+    
+    <meta name="twitter:image" content="https://www.sokolinc.co.ke/android-chrome-512x512.png">
+    <meta name="twitter:image:alt" content="SokoRide - Transport Services Across Kenya">
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+    
+    <meta property="og:title" content="SokoRide - Transport & Logistics | SokoLinc">
+    <meta property="og:description" content="Kenya's Trusted Transport Marketplace – Reliable Vehicles. Trusted Drivers.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sokolinc.co.ke/sokoride.html">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SokoRide - Transport & Logistics | SokoLinc">
+    <meta name="twitter:description" content="Kenya's Trusted Transport Marketplace – Reliable Vehicles. Trusted Drivers.">
+    
     <title>SokoRide - Transport & Logistics | SokoLinc</title>
+    
+    <!-- ===== COMPLETE FAVICON SUITE ===== -->
+    <!-- Favicon for legacy browsers -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
+    <!-- Modern favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    
+    <!-- Android Chrome Icons -->
+    <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="site.webmanifest">
+    
+    <!-- Theme Color for Mobile Browsers -->
+    <meta name="theme-color" content="#1e3c72">
+    <meta name="msapplication-TileColor" content="#1e3c72">
+    
+    <!-- Preconnect for CDN -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com/ajax/libs">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         /* ===== VARIABLES & BASE STYLES ===== */
         :root {
-            --primary: #1e3c72; /* Changed to SokoRide blue */
-            --primary-dark: #152a56; /* Darker blue for SokoRide */
+            --primary: #1e3c72;
+            --primary-dark: #152a56;
             --secondary: #F4A300;
             --secondary-dark: #D18A00;
             --accent: #1C1C1C;
@@ -20,25 +106,29 @@
             --white: #FFFFFF;
             --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
+            --shadow-xl: 0 12px 32px rgba(0, 0, 0, 0.2);
+            --radius-sm: 8px;
             --radius: 12px;
+            --radius-lg: 16px;
             --transition: all 0.3s ease;
+            --transition-slow: all 0.5s ease;
         }
 
+        /* REVISED: Allow text selection for accessibility */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
             -webkit-tap-highlight-color: transparent;
-            -webkit-touch-callout: none;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
         }
 
         html {
             scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+            scroll-padding-top: 80px;
+            overflow-x: hidden;
+            width: 100%;
         }
 
         body {
@@ -48,6 +138,21 @@
             overflow-x: hidden;
             width: 100%;
             position: relative;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-user-select: text;
+            -moz-user-select: text;
+            -ms-user-select: text;
+            user-select: text;
+        }
+
+        /* Only protect images from dragging */
+        img {
+            -webkit-user-drag: none;
+            -khtml-user-drag: none;
+            -moz-user-drag: none;
+            -o-user-drag: none;
+            pointer-events: none;
         }
 
         .container {
@@ -90,6 +195,27 @@
             -webkit-appearance: none;
             -moz-appearance: none;
             appearance: none;
+            position: relative;
+            overflow: hidden;
+            touch-action: manipulation;
+        }
+
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+        }
+
+        .btn:active::after {
+            width: 300px;
+            height: 300px;
         }
 
         .btn-primary {
@@ -155,6 +281,8 @@
             top: 0;
             z-index: 1000;
             box-shadow: var(--shadow);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
 
         .header-container {
@@ -171,9 +299,11 @@
             color: var(--white);
         }
 
-        .logo-icon {
-            font-size: 2rem;
-            color: var(--secondary);
+        .logo-image {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
         }
 
         .logo-text {
@@ -184,36 +314,45 @@
         .logo h1 {
             font-size: 1.5rem;
             margin: 0;
+            font-weight: 800;
+            letter-spacing: -0.5px;
         }
 
         .tagline {
             font-size: 0.75rem;
             opacity: 0.9;
+            font-weight: 500;
+            white-space: nowrap;
         }
 
         .nav-toggle {
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: var(--radius-sm);
             display: flex;
             flex-direction: column;
-            background: none;
-            border: none;
-            width: 30px;
-            height: 30px;
-            justify-content: space-between;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
             cursor: pointer;
-            padding: 0;
+            transition: var(--transition);
+            position: relative;
+            z-index: 1001;
         }
 
         .nav-toggle span {
             display: block;
-            height: 3px;
-            width: 100%;
-            background-color: var(--white);
-            border-radius: 3px;
+            width: 22px;
+            height: 2px;
+            background: var(--white);
+            border-radius: 2px;
             transition: var(--transition);
         }
 
         .nav-toggle.active span:nth-child(1) {
-            transform: rotate(45deg) translate(6px, 6px);
+            transform: translateY(7px) rotate(45deg);
         }
 
         .nav-toggle.active span:nth-child(2) {
@@ -221,21 +360,26 @@
         }
 
         .nav-toggle.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(6px, -6px);
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        .nav-toggle:hover {
+            background: rgba(255, 255, 255, 0.2);
         }
 
         nav {
             position: fixed;
             top: 0;
             right: -100%;
-            width: 85%;
-            max-width: 320px;
+            width: 320px;
             height: 100vh;
             background: var(--white);
-            transition: var(--transition);
-            z-index: 2000;
-            overflow-y: auto;
-            box-shadow: -2px 0 20px rgba(0,0,0,0.1);
+            box-shadow: var(--shadow-xl);
+            z-index: 1000;
+            transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            max-width: 90vw;
         }
 
         nav.active {
@@ -244,49 +388,97 @@
 
         .nav-header {
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            color: var(--white);
             padding: 1.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-shrink: 0;
+            min-height: 74px;
+        }
+
+        .nav-header span {
+            color: var(--white);
+            font-size: 1.25rem;
+            font-weight: 600;
         }
 
         .close-btn {
-            background: none;
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.1);
             border: none;
+            border-radius: var(--radius-sm);
             color: var(--white);
             font-size: 1.5rem;
             cursor: pointer;
-            width: 30px;
-            height: 30px;
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: var(--transition);
+            flex-shrink: 0;
+        }
+
+        .close-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
         }
 
         .nav-links {
             list-style: none;
-            padding: 1rem 0;
+            overflow-y: auto;
+            height: calc(100vh - 74px);
+            -webkit-overflow-scrolling: touch;
+            overscroll-behavior: contain;
+            padding: 0;
+            margin: 0;
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary) transparent;
+        }
+
+        .nav-links::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .nav-links::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .nav-links::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 2px;
         }
 
         .nav-links li {
             border-bottom: 1px solid var(--light-gray);
+            margin: 0;
+        }
+
+        .nav-links li:last-child {
+            border-bottom: none;
         }
 
         .nav-links a {
             display: flex;
             align-items: center;
             gap: 12px;
-            padding: 1rem 1.5rem;
+            padding: 1.25rem 1.5rem;
             color: var(--dark);
             text-decoration: none;
-            transition: var(--transition);
             font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+            min-height: 60px;
         }
 
         .nav-links a:hover {
-            background-color: var(--light-gray);
+            background: var(--light-gray);
             color: var(--primary);
+        }
+
+        .nav-links a i {
+            width: 20px;
+            text-align: center;
+            font-size: 1.1rem;
+            flex-shrink: 0;
         }
 
         .nav-overlay {
@@ -296,30 +488,60 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.5);
-            z-index: 1500;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(3px);
+            -webkit-backdrop-filter: blur(3px);
+            z-index: 999;
+            animation: fadeIn 0.3s ease;
         }
 
         .nav-overlay.active {
             display: block;
         }
 
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
         /* ===== PAGE HEADER ===== */
         .page-header {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
             color: var(--white);
             padding: 2.5rem 0;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.05)"/></svg>');
+            background-size: cover;
+            opacity: 0.5;
         }
 
         .page-header h1 {
             margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
 
         .page-header p {
             font-size: 1.2rem;
-            opacity: 0.9;
+            opacity: 0.95;
             margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         /* ===== SECTIONS ===== */
@@ -436,14 +658,6 @@
             font-size: 3rem;
             overflow: hidden;
             position: relative;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-            -webkit-user-drag: none;
-            -khtml-user-drag: none;
-            -moz-user-drag: none;
-            pointer-events: none;
         }
 
         .listing-image::before {
@@ -461,14 +675,6 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-            -webkit-user-drag: none;
-            -khtml-user-drag: none;
-            -moz-user-drag: none;
-            pointer-events: none;
         }
 
         .listing-content {
@@ -570,6 +776,9 @@
             text-align: center;
             transition: var(--transition);
             cursor: pointer;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
         }
 
         .vehicle-type-btn.active {
@@ -577,7 +786,7 @@
             background: var(--light-gray);
         }
 
-        /* ===== STATS GRID ===== */
+        /* ===== ENHANCED STATS GRID WITH REALISTIC COUNTERS ===== */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -589,7 +798,7 @@
             font-size: 2rem;
             color: var(--primary);
             font-weight: bold;
-            transition: all 0.5s ease-in-out;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
         }
 
@@ -609,24 +818,240 @@
             51%, 100% { opacity: 0; }
         }
 
-        /* ===== ENHANCED FOOTER ===== */
-        .powered-by {
-            text-align: center;
-            margin-top: 1rem;
-            color: rgba(255,255,255,0.6);
-            font-size: 0.9rem;
+        /* ===== ENHANCED FOOTER (MATCHING INDEX) ===== */
+        footer {
+            background: var(--accent);
+            color: var(--white);
+            padding: 4rem 0 2rem;
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-column h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.75rem;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--secondary);
+        }
+
+        .footer-column p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: var(--transition);
+            padding: 0.25rem 0;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+            transform: translateX(5px);
+        }
+
+        .footer-links a i {
+            width: 20px;
+            font-size: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
+            color: var(--white);
+            font-size: 1.25rem;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background: var(--secondary);
+            color: var(--accent);
+            transform: translateY(-3px) rotate(5deg);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        .footer-tagline {
+            margin: 1.5rem 0;
+        }
+
+        .kenyan-heart {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--white);
+        }
+
+        .heart-pulse {
+            color: #ff6b6b;
+            animation: heartbeat 0.6s infinite;
+            display: inline-block;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.15); }
+        }
+
+        .powered-by {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-top: 1rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.85rem;
         }
 
         .powered-by::before {
             content: '';
-            display: block;
             width: 30px;
             height: 1px;
             background: var(--secondary);
+        }
+
+        .powered-by a {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 700;
+            transition: var(--transition);
+        }
+
+        .powered-by a:hover {
+            color: var(--white);
+            text-decoration: underline;
+        }
+
+        /* ===== FLOATING WHATSAPP BUTTON ===== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            text-decoration: none;
+            transition: all var(--transition);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.6);
+            animation: none;
+        }
+
+        /* ===== SCROLL TO TOP ===== */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.25rem;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            z-index: 998;
+            opacity: 0;
+            visibility: hidden;
+            transition: all var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .scroll-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
         }
 
         /* ===== POPUPS ===== */
@@ -637,13 +1062,15 @@
             width: 100%;
             height: 100%;
             background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
             display: flex;
             align-items: center;
             justify-content: center;
-            z-index: 3000;
+            z-index: 2000;
             opacity: 0;
             visibility: hidden;
-            transition: var(--transition);
+            transition: all var(--transition);
             padding: 1rem;
         }
 
@@ -659,13 +1086,15 @@
             max-width: 500px;
             max-height: 90vh;
             overflow-y: auto;
-            box-shadow: var(--shadow-lg);
-            transform: translateY(20px);
-            transition: var(--transition);
+            box-shadow: var(--shadow-xl);
+            transform: translateY(20px) scale(0.98);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
         }
 
         .popup-overlay.active .popup {
-            transform: translateY(0);
+            transform: translateY(0) scale(1);
         }
 
         .popup-header {
@@ -674,116 +1103,66 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            flex-shrink: 0;
         }
 
         .popup-header h3 {
-            color: var(--primary);
+            color: var(--white);
             margin: 0;
+            font-size: 1.5rem;
+            font-weight: 700;
         }
 
         .popup-close {
-            background: none;
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.1);
             border: none;
+            border-radius: var(--radius-sm);
+            color: var(--white);
             font-size: 1.5rem;
             cursor: pointer;
-            color: var(--gray);
-            width: 30px;
-            height: 30px;
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: var(--transition);
+            flex-shrink: 0;
+        }
+
+        .popup-close:hover {
+            background: rgba(255, 255, 255, 0.2);
         }
 
         .popup-body {
             padding: 1.5rem;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            overscroll-behavior: contain;
+            flex: 1;
+            min-height: 0;
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary) transparent;
+        }
+
+        .popup-body::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .popup-body::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .popup-body::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 3px;
         }
 
         .popup-actions {
             display: flex;
             gap: 1rem;
             margin-top: 1.5rem;
-        }
-
-        /* ===== FOOTER ===== */
-        footer {
-            background: var(--accent);
-            color: var(--white);
-            padding: 3rem 0 1.5rem;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-column h3 {
-            color: var(--secondary);
-            margin-bottom: 1.5rem;
-            font-size: 1.3rem;
-        }
-
-        .footer-column p {
-            color: rgba(255,255,255,0.8);
-            margin-bottom: 1rem;
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 0.75rem;
-        }
-
-        .footer-links a {
-            color: rgba(255,255,255,0.8);
-            text-decoration: none;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .footer-links a:hover {
-            color: var(--secondary);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 1.5rem;
-            color: rgba(255,255,255,0.7);
-            font-size: 0.9rem;
-        }
-
-        .footer-tagline {
-            text-align: center;
-            margin: 1rem 0;
-            padding: 1rem 0;
-        }
-
-        .kenyan-heart {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            padding: 0.5rem 1rem;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50px;
-            margin: 0.5rem 0;
-        }
-
-        .heart-pulse {
-            color: #ff6b6b;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
         }
 
         /* ===== RESPONSIVE DESIGN ===== */
@@ -811,6 +1190,36 @@
             .service-card {
                 padding: 1.5rem 1rem;
             }
+            
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+                width: 56px;
+                height: 56px;
+                font-size: 1.5rem;
+            }
+            
+            .scroll-to-top {
+                bottom: 90px;
+                right: 20px;
+                width: 44px;
+                height: 44px;
+                font-size: 1.1rem;
+            }
+            
+            nav {
+                width: 100%;
+                max-width: 320px;
+            }
+            
+            .nav-links {
+                height: calc(100vh - 74px);
+            }
+            
+            .nav-links a {
+                padding: 1rem 1.5rem;
+                min-height: 56px;
+            }
         }
 
         @media (min-width: 768px) and (max-width: 1023px) {
@@ -824,6 +1233,24 @@
                 grid-template-columns: repeat(3, 1fr);
             }
         }
+
+        /* High-performance scrolling fixes */
+        .nav-links,
+        .popup-body {
+            will-change: transform;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            transform: translateZ(0);
+            -webkit-transform: translateZ(0);
+        }
+
+        /* Safari-specific fixes */
+        @supports (-webkit-touch-callout: none) {
+            .nav-links,
+            .popup-body {
+                -webkit-overflow-scrolling: touch !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -831,13 +1258,14 @@
     <header>
         <div class="container header-container">
             <a href="index.html" class="logo">
-                <i class="fas fa-link logo-icon"></i>
+                <!-- Logo image instead of icon -->
+                <img src="sokolinc.logo.png" alt="SokoLinc Logo" class="logo-image" loading="lazy" width="50" height="50">
                 <div class="logo-text">
                     <h1>SokoLinc</h1>
                     <div class="tagline">Connecting Buyers, Sellers & Services Across Every Soko</div>
                 </div>
             </a>
-            <button class="nav-toggle" id="navToggle">
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -852,7 +1280,7 @@
     <nav id="mainNav">
         <div class="nav-header">
             <span>Menu</span>
-            <button class="close-btn" id="closeNav">&times;</button>
+            <button class="close-btn" id="closeNav" aria-label="Close navigation">&times;</button>
         </div>
         <ul class="nav-links">
             <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
@@ -862,9 +1290,10 @@
             <li><a href="sokoride.html" class="active"><i class="fas fa-truck"></i> SokoRide</a></li>
             <li><a href="tangazo.html"><i class="fas fa-bullhorn"></i> Tangazo+</a></li>
             <li><a href="bizboost.html"><i class="fas fa-ad"></i> BizBoost</a></li>
-            <li><a href="contact.html"><i class="fas fa-phone"></i> Contact Us</a></li>
+            <li><a href="#" onclick="showGeneralContact()"><i class="fas fa-phone"></i> Contact Us</a></li>
             <li><a href="terms.html"><i class="fas fa-file-contract"></i> Terms & Conditions</a></li>
             <li><a href="privacy.html"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
+            <li><a href="#" onclick="showHelpPopup()"><i class="fas fa-question-circle"></i> Help & Guide</a></li>
         </ul>
     </nav>
 
@@ -911,25 +1340,25 @@
                 <p>Find the perfect transport solution for your needs</p>
             </div>
             <div class="vehicle-types-grid">
-                <button class="vehicle-type-btn active" onclick="filterVehicles('all')">
-                    <span style="font-size: 2rem;">🚗</span>
-                    <div style="font-size: 0.9rem; font-weight: 600; margin-top: 0.5rem;">All Vehicles</div>
+                <button class="vehicle-type-btn active" onclick="filterVehicles('all')" aria-label="Show all vehicles">
+                    <i class="fas fa-truck-moving" style="font-size: 2rem; color: var(--primary); margin-bottom: 0.5rem;"></i>
+                    <div style="font-size: 0.9rem; font-weight: 600;">All Vehicles</div>
                 </button>
-                <button class="vehicle-type-btn" onclick="filterVehicles('boda')">
-                    <span style="font-size: 2rem;">🏍️</span>
-                    <div style="font-size: 0.9rem; font-weight: 600; margin-top: 0.5rem;">Boda Bodas</div>
+                <button class="vehicle-type-btn" onclick="filterVehicles('boda')" aria-label="Boda Boda motorcycles">
+                    <i class="fas fa-motorcycle" style="font-size: 2rem; color: #FF6B6B; margin-bottom: 0.5rem;"></i>
+                    <div style="font-size: 0.9rem; font-weight: 600;">Boda Bodas</div>
                 </button>
-                <button class="vehicle-type-btn" onclick="filterVehicles('tuktuk')">
-                    <span style="font-size: 2rem;">🛺</span>
-                    <div style="font-size: 0.9rem; font-weight: 600; margin-top: 0.5rem;">Tuk-Tuks</div>
+                <button class="vehicle-type-btn" onclick="filterVehicles('tuktuk')" aria-label="Tuk-Tuk three-wheelers">
+                    <i class="fas fa-truck-pickup" style="font-size: 2rem; color: #4ECDC4; margin-bottom: 0.5rem;"></i>
+                    <div style="font-size: 0.9rem; font-weight: 600;">Tuk-Tuks</div>
                 </button>
-                <button class="vehicle-type-btn" onclick="filterVehicles('pickup')">
-                    <span style="font-size: 2rem;">🛻</span>
-                    <div style="font-size: 0.9rem; font-weight: 600; margin-top: 0.5rem;">Pickups</div>
+                <button class="vehicle-type-btn" onclick="filterVehicles('pickup')" aria-label="Pickup trucks">
+                    <i class="fas fa-truck" style="font-size: 2rem; color: #45B7D1; margin-bottom: 0.5rem;"></i>
+                    <div style="font-size: 0.9rem; font-weight: 600;">Pickups</div>
                 </button>
-                <button class="vehicle-type-btn" onclick="filterVehicles('lorry')">
-                    <span style="font-size: 2rem;">🚚</span>
-                    <div style="font-size: 0.9rem; font-weight: 600; margin-top: 0.5rem;">Lorries</div>
+                <button class="vehicle-type-btn" onclick="filterVehicles('lorry')" aria-label="Lorries and trucks">
+                    <i class="fas fa-truck-loading" style="font-size: 2rem; color: #C44569; margin-bottom: 0.5rem;"></i>
+                    <div style="font-size: 0.9rem; font-weight: 600;">Lorries</div>
                 </button>
             </div>
         </div>
@@ -944,10 +1373,10 @@
             </div>
             
             <div class="listings-grid" id="vehicleListings">
-                <!-- NEW: Tractor Service - Richard K. G -->
+                <!-- NEW: Tractor Service - Richard K. G. -->
                 <div class="listing-card" data-vehicle-type="tractor">
                     <div class="listing-image">
-                        <img src="./sokorides.images/Richard.G.K.jpeg" alt="Tractor for Farming">
+                        <img src="./sokorides.images/Richard.G.K.jpeg" alt="Tractor for farming services in Birika area" loading="lazy" width="400" height="300">
                     </div>
                     <div class="listing-content">
                         <div class="listing-badge experienced">Extremely Experienced</div>
@@ -973,7 +1402,7 @@
                 <!-- NEW: Tuk-Lorry - Alex -->
                 <div class="listing-card" data-vehicle-type="tuklorry">
                     <div class="listing-image">
-                        <img src="https://www.sairaj.com/web/image/2861-4e06b505/Tuk%202%20png.webp" alt="Tuk-Lorry Vehicle">
+                        <img src="https://www.sairaj.com/web/image/2861-4e06b505/Tuk%202%20png.webp" alt="Tuk-Lorry vehicle for cargo transport" loading="lazy" width="400" height="300">
                     </div>
                     <div class="listing-content">
                         <div class="listing-badge featured">Featured</div>
@@ -999,7 +1428,7 @@
                 <!-- Boda Boda Listing 1 -->
                 <div class="listing-card" data-vehicle-type="boda">
                     <div class="listing-image">
-                        <img src="https://images.unsplash.com/photo-1571068316343-c26c4c857643?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Boda Boda Motorcycle">
+                        <img src="https://images.unsplash.com/photo-1571068316343-c26c4c857643?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Boda Boda motorcycle for quick transport" loading="lazy" width="400" height="300">
                     </div>
                     <div class="listing-content">
                         <div class="listing-badge">Fast Delivery</div>
@@ -1025,7 +1454,7 @@
                 <!-- Tuk-Tuk Listing 1 -->
                 <div class="listing-card" data-vehicle-type="tuktuk">
                     <div class="listing-image">
-                        <img src="https://images.unsplash.com/photo-1622295028115-3a02d1e043a8?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Tuk-Tuk Vehicle">
+                        <img src="https://images.unsplash.com/photo-1622295028115-3a02d1e043a8?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Tuk-Tuk vehicle for short distance transport" loading="lazy" width="400" height="300">
                     </div>
                     <div class="listing-content">
                         <div class="listing-badge">Available Now</div>
@@ -1051,7 +1480,7 @@
                 <!-- Pickup Truck Listing 1 -->
                 <div class="listing-card" data-vehicle-type="pickup">
                     <div class="listing-image">
-                        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Pickup Truck">
+                        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Pickup truck for furniture and goods transport" loading="lazy" width="400" height="300">
                     </div>
                     <div class="listing-content">
                         <div class="listing-badge">Featured</div>
@@ -1077,7 +1506,7 @@
                 <!-- Van Listing -->
                 <div class="listing-card" data-vehicle-type="van">
                     <div class="listing-image">
-                        <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Van Vehicle">
+                        <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="14-seater van for group transport" loading="lazy" width="400" height="300">
                     </div>
                     <div class="listing-content">
                         <h3 class="listing-title">14-Seater Van</h3>
@@ -1102,7 +1531,7 @@
                 <!-- Small Lorry Listing -->
                 <div class="listing-card" data-vehicle-type="lorry">
                     <div class="listing-image">
-                        <img src="https://images.unsplash.com/photo-1558618666-fcd25856cd25?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Small Lorry">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25856cd25?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="5-ton lorry for heavy goods transport" loading="lazy" width="400" height="300">
                     </div>
                     <div class="listing-content">
                         <h3 class="listing-title">5-Ton Lorry</h3>
@@ -1127,7 +1556,7 @@
                 <!-- Heavy Lorry Listing -->
                 <div class="listing-card" data-vehicle-type="lorry">
                     <div class="listing-image">
-                        <img src="https://images.unsplash.com/photo-1485236715568-ddc5ee6ca227?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Heavy Lorry">
+                        <img src="https://images.unsplash.com/photo-1485236715568-ddc5ee6ca227?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="10-ton lorry for long-haul transport" loading="lazy" width="400" height="300">
                     </div>
                     <div class="listing-content">
                         <div class="listing-badge" style="background: var(--secondary); color: var(--accent);">Long-Haul</div>
@@ -1153,7 +1582,7 @@
                 <!-- Refrigerated Truck -->
                 <div class="listing-card" data-vehicle-type="refrigerated">
                     <div class="listing-image">
-                        <img src="https://images.unsplash.com/photo-1545173168-9f1947eebb7f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Refrigerated Truck">
+                        <img src="https://images.unsplash.com/photo-1545173168-9f1947eebb7f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Refrigerated truck for perishable goods" loading="lazy" width="400" height="300">
                     </div>
                     <div class="listing-content">
                         <div class="listing-badge" style="background: var(--secondary); color: var(--accent);">Refrigerated</div>
@@ -1179,7 +1608,7 @@
                 <!-- Boda Boda Listing 2 -->
                 <div class="listing-card" data-vehicle-type="boda">
                     <div class="listing-image">
-                        <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Boda Boda Motorcycle">
+                        <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Boda Boda service in Ngong area" loading="lazy" width="400" height="300">
                     </div>
                     <div class="listing-content">
                         <h3 class="listing-title">Boda Boda Service</h3>
@@ -1260,7 +1689,7 @@
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon" style="background: #FF6B6B;">
-                        <span style="font-size: 1.5rem;">🏍️</span>
+                        <i class="fas fa-motorcycle" style="font-size: 1.5rem;"></i>
                     </div>
                     <div class="service-content">
                         <h3>Boda Boda Services</h3>
@@ -1269,7 +1698,7 @@
                 </div>
                 <div class="service-card">
                     <div class="service-icon" style="background: #4ECDC4;">
-                        <span style="font-size: 1.5rem;">🛺</span>
+                        <i class="fas fa-truck-pickup" style="font-size: 1.5rem;"></i>
                     </div>
                     <div class="service-content">
                         <h3>Tuk-Tuk Services</h3>
@@ -1278,7 +1707,7 @@
                 </div>
                 <div class="service-card">
                     <div class="service-icon" style="background: #45B7D1;">
-                        <span style="font-size: 1.5rem;">🛻</span>
+                        <i class="fas fa-truck" style="font-size: 1.5rem;"></i>
                     </div>
                     <div class="service-content">
                         <h3>Pickup Trucks</h3>
@@ -1287,7 +1716,7 @@
                 </div>
                 <div class="service-card">
                     <div class="service-icon" style="background: #96C93D;">
-                        <span style="font-size: 1.5rem;">🚐</span>
+                        <i class="fas fa-shuttle-van" style="font-size: 1.5rem;"></i>
                     </div>
                     <div class="service-content">
                         <h3>Vans</h3>
@@ -1296,7 +1725,7 @@
                 </div>
                 <div class="service-card">
                     <div class="service-icon" style="background: #C44569;">
-                        <span style="font-size: 1.5rem;">🚚</span>
+                        <i class="fas fa-truck-loading" style="font-size: 1.5rem;"></i>
                     </div>
                     <div class="service-content">
                         <h3>Lorries</h3>
@@ -1305,7 +1734,7 @@
                 </div>
                 <div class="service-card">
                     <div class="service-icon" style="background: #A8E6CF;">
-                        <span style="font-size: 1.5rem;">🚛</span>
+                        <i class="fas fa-temperature-low" style="font-size: 1.5rem;"></i>
                     </div>
                     <div class="service-content">
                         <h3>Refrigerated Trucks</h3>
@@ -1375,7 +1804,7 @@
                 <button class="btn btn-primary" onclick="showPostPopup('transport')" style="margin-right: 1rem;">
                     <i class="fas fa-plus"></i> List Your Vehicle
                 </button>
-                <button class="btn btn-secondary" onclick="window.scrollTo(0, document.getElementById('vehicleListings').offsetTop)">
+                <button class="btn btn-secondary" onclick="window.scrollTo({top: document.getElementById('vehicleListings').offsetTop, behavior: 'smooth'})">
                     <i class="fas fa-search"></i> Find Transport
                 </button>
             </div>
@@ -1389,39 +1818,93 @@
                 <div class="footer-column">
                     <h3>SokoLinc</h3>
                     <p>Connecting buyers, sellers & services across every Soko through simple, accessible technology.</p>
-                    <p><i class="fas fa-phone"></i> +254 105 399 526</p>
-                    <p><i class="fab fa-whatsapp"></i> +254 105 399 526</p>
+                    <p style="margin-top: 1.5rem;">
+                        <i class="fas fa-phone" style="margin-right: 10px;"></i>
+                        <strong>+254 112 345906</strong>
+                    </p>
+                    <p>
+                        <i class="fab fa-whatsapp" style="margin-right: 10px; color: #25D366;"></i>
+                        <strong>+254 112 345906</strong>
+                    </p>
+                    <!-- CLICKABLE EMAILS -->
+                    <p style="margin-top: 1rem;">
+                        <i class="fas fa-envelope" style="margin-right: 10px;"></i>
+                        <a href="mailto:mort@sokolinc.co.ke" style="color: rgba(255, 255, 255, 0.9); text-decoration: none; transition: var(--transition);">
+                            mort@sokolinc.co.ke
+                        </a>
+                    </p>
+                    <p>
+                        <i class="fas fa-envelope" style="margin-right: 10px;"></i>
+                        <a href="mailto:sokolinc.ke@gmail.com" style="color: rgba(255, 255, 255, 0.9); text-decoration: none; transition: var(--transition);">
+                            sokolinc.ke@gmail.com
+                        </a>
+                    </p>
                 </div>
                 <div class="footer-column">
-                    <h3>Quick Links</h3>
+                    <h3>Marketplaces</h3>
                     <ul class="footer-links">
                         <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
                         <li><a href="sokofresh.html"><i class="fas fa-apple-alt"></i> SokoFresh</a></li>
                         <li><a href="sokodeals.html"><i class="fas fa-tags"></i> SokoDeals</a></li>
                         <li><a href="kaziconnect.html"><i class="fas fa-tools"></i> KaziConnect</a></li>
                         <li><a href="sokoride.html"><i class="fas fa-truck"></i> SokoRide</a></li>
+                        <li><a href="tangazo.html"><i class="fas fa-bullhorn"></i> Tangazo+</a></li>
+                        <li><a href="bizboost.html"><i class="fas fa-ad"></i> BizBoost</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Legal</h3>
+                    <h3>Quick Links</h3>
                     <ul class="footer-links">
+                        <li><a href="#" onclick="showGeneralContact()"><i class="fas fa-phone"></i> Contact Us</a></li>
                         <li><a href="terms.html"><i class="fas fa-file-contract"></i> Terms & Conditions</a></li>
                         <li><a href="privacy.html"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
-                        <li><a href="contact.html"><i class="fas fa-phone"></i> Contact Us</a></li>
+                        <li><a href="#" onclick="showHelpPopup()"><i class="fas fa-question-circle"></i> Help & Guide</a></li>
                     </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Connect With Us</h3>
+                    <p>Stay updated with the latest from SokoLinc and connect with our growing community.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" title="Facebook" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link" title="Twitter/X" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link" title="Instagram" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/254112345906" class="social-link" title="WhatsApp" style="background: #25D366;" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                    <!-- CLICKABLE EMAILS -->
+                    <p style="margin-top: 1.5rem;">
+                        <i class="fas fa-envelope" style="margin-right: 10px;"></i>
+                        <a href="mailto:mort@sokolinc.co.ke" style="color: rgba(255, 255, 255, 0.9); text-decoration: none; transition: var(--transition);">
+                            mort@sokolinc.co.ke
+                        </a>
+                    </p>
+                    <p>
+                        <i class="fas fa-envelope" style="margin-right: 10px;"></i>
+                        <a href="mailto:sokolinc.ke@gmail.com" style="color: rgba(255, 255, 255, 0.9); text-decoration: none; transition: var(--transition);">
+                            sokolinc.ke@gmail.com
+                        </a>
+                    </p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 SokoLinc. All rights reserved.</p>
+                <!-- UPDATED: Changed from 2025 to 2026 -->
+                <p>&copy; 2026 SokoLinc. All rights reserved.</p>
                 <div class="footer-tagline">
                     <div class="kenyan-heart">
-                        <span>Made with</span>
+                        <span>Built with</span>
                         <span class="heart-pulse">❤️</span>
-                        <span>for Kenyan Communities</span>
+                        <span>for Kenya</span>
                     </div>
                 </div>
                 <div class="powered-by">
-                    Powered by MortApps Studios
+                    Powered by <a href="https://mortappsstudios.com" target="_blank" rel="noopener">MortApps Studios</a>
                 </div>
             </div>
         </div>
@@ -1433,7 +1916,7 @@
         <div class="popup">
             <div class="popup-header">
                 <h3 id="contactTitle">Contact Driver</h3>
-                <button class="popup-close" onclick="closeContactPopup()">&times;</button>
+                <button class="popup-close" onclick="closeContactPopup()" aria-label="Close popup">&times;</button>
             </div>
             <div class="popup-body">
                 <p id="contactMessage">How would you like to get in touch?</p>
@@ -1454,12 +1937,12 @@
         <div class="popup">
             <div class="popup-header">
                 <h3 id="postTitle">List Your Vehicle</h3>
-                <button class="popup-close" onclick="closePostPopup()">&times;</button>
+                <button class="popup-close" onclick="closePostPopup()" aria-label="Close popup">&times;</button>
             </div>
             <div class="popup-body">
                 <p id="postMessage">Contact us to list your vehicle on SokoRide:</p>
                 <div class="popup-actions">
-                    <button class="btn btn-primary" onclick="callNumber('+254105399526')">
+                    <button class="btn btn-primary" id="postCallBtn">
                         <i class="fas fa-phone"></i> Call Us
                     </button>
                     <button class="btn btn-secondary" id="postWhatsappBtn">
@@ -1470,9 +1953,53 @@
         </div>
     </div>
 
+    <!-- Help Popup (Consistent with other pages) -->
+    <div class="popup-overlay" id="helpPopup">
+        <div class="popup">
+            <div class="popup-header">
+                <h3>SokoRide Help & Guide</h3>
+                <button class="popup-close" onclick="closeHelpPopup()" aria-label="Close help">&times;</button>
+            </div>
+            <div class="popup-body">
+                <p>Welcome to SokoRide! Here's how to book transport or list your vehicle:</p>
+                <div style="margin: 1.5rem 0; padding: 1rem; background: var(--light-gray); border-radius: var(--radius);">
+                    <p style="margin-bottom: 0.5rem;"><strong>For Customers:</strong></p>
+                    <p>1. Browse available vehicles by type</p>
+                    <p>2. Click "Call Driver" on any listing</p>
+                    <p>3. Choose Call or WhatsApp to contact the driver</p>
+                    <p style="margin-top: 1rem;"><strong>For Vehicle Owners:</strong></p>
+                    <p>1. Click "List Your Vehicle"</p>
+                    <p>2. Contact us via Call or WhatsApp</p>
+                    <p>3. Provide details about your vehicle and services</p>
+                </div>
+                <p>Need help? Contact us anytime!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/254112345906" class="whatsapp-float" target="_blank" title="Chat on WhatsApp" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
     <script>
+        // ===== EXPERT BULLETPROOF CONFIGURATION =====
+        const CONFIG = {
+            phone: '+254112345906',
+            whatsapp: '+254112345906',
+            adTimer: 59000,     // 59 seconds for MortApps ad
+            helpTimer: 4000,    // 4 seconds for help guide
+            mortAppsUrl: 'https://mortappsstudios.com',
+            helpCooldown: 5 * 60 * 60 * 1000, // 5 hours
+            adCooldown: 2 * 60 * 60 * 1000   // 2 hours
+        };
+
         // ===== GLOBAL VARIABLES =====
-        const platformPhone = '+254105399526';
         let currentVehicleType = '';
         let currentDriver = '';
         let currentPhone = '';
@@ -1489,67 +2016,87 @@
         const mainNav = document.getElementById('mainNav');
         const navOverlay = document.getElementById('navOverlay');
         const closeNav = document.getElementById('closeNav');
+        const scrollToTop = document.getElementById('scrollToTop');
 
-        // ===== NAVIGATION FUNCTIONS =====
+        // ===== EXPERT NAVIGATION FUNCTIONS =====
         function toggleNavigation() {
+            const isActive = mainNav.classList.toggle('active');
             navToggle.classList.toggle('active');
-            mainNav.classList.toggle('active');
             navOverlay.classList.toggle('active');
-            document.body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : '';
+            
+            if (isActive) {
+                lockScroll();
+            } else {
+                unlockScroll();
+            }
+        }
+
+        function lockScroll() {
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function unlockScroll() {
+            document.body.style.overflow = '';
         }
 
         navToggle.addEventListener('click', toggleNavigation);
         closeNav.addEventListener('click', toggleNavigation);
         navOverlay.addEventListener('click', toggleNavigation);
 
-        // ===== REALISTIC TRADING-LIKE COUNTERS =====
+        // ===== ENHANCED REALISTIC TRADING-LIKE COUNTERS =====
         function updateDriversOnline() {
             const driversElement = document.getElementById('driversOnline');
             const min = 45;
             const max = 150;
             
-            // Trading-like pattern: small fluctuations with occasional larger moves
+            // More realistic trading pattern with varied intervals
             let change;
+            const randomFactor = Math.random();
             
-            // Every 5th update, make a larger move
-            if (driversStep % 5 === 0) {
-                change = Math.floor(Math.random() * 21) - 10; // -10 to +10
+            if (randomFactor < 0.6) {
+                change = Math.floor(Math.random() * 7) - 3; // -3 to +3 (small)
+            } else if (randomFactor < 0.9) {
+                change = Math.floor(Math.random() * 15) - 7; // -7 to +7 (medium)
             } else {
-                change = Math.floor(Math.random() * 7) - 3; // -3 to +3 for small fluctuations
+                change = Math.floor(Math.random() * 21) - 10; // -10 to +10 (large)
             }
             
-            // Trend-based adjustment
+            // Trend-based adjustment with momentum
             if (driversTrend === 'up') {
-                change = Math.max(1, change); // Ensure positive when trending up
+                change = Math.max(0, change + 1);
             } else {
-                change = Math.min(-1, change); // Ensure negative when trending down
+                change = Math.min(0, change - 1);
             }
             
             let newValue = driversValue + change;
             
-            // Keep within bounds and reverse trend if hitting limits
+            // Keep within realistic bounds
             if (newValue >= max) {
-                newValue = max - 1;
+                newValue = max - Math.floor(Math.random() * 5);
                 driversTrend = 'down';
             } else if (newValue <= min) {
-                newValue = min + 1;
+                newValue = min + Math.floor(Math.random() * 5);
                 driversTrend = 'up';
             }
             
-            // Occasionally reverse trend randomly (10% chance)
-            if (Math.random() < 0.1) {
+            // Occasionally reverse trend (15% chance)
+            if (Math.random() < 0.15) {
                 driversTrend = driversTrend === 'up' ? 'down' : 'up';
             }
             
             driversValue = newValue;
             driversStep++;
             
-            // Animate the change
-            driversElement.style.opacity = '0.7';
-            setTimeout(() => {
-                driversElement.textContent = newValue;
-                driversElement.style.opacity = '1';
-            }, 250);
+            // Smooth animation
+            if (driversElement) {
+                driversElement.style.opacity = '0.7';
+                driversElement.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    driversElement.textContent = newValue;
+                    driversElement.style.opacity = '1';
+                    driversElement.style.transform = 'scale(1)';
+                }, 150);
+            }
         }
 
         function updateVehiclesAvailable() {
@@ -1557,48 +2104,54 @@
             const min = 25;
             const max = 85;
             
-            // Trading-like pattern for vehicles
+            // Different pattern for vehicles (more volatile)
             let change;
+            const randomFactor = Math.random();
             
-            // Every 4th update, make a larger move
-            if (vehiclesStep % 4 === 0) {
-                change = Math.floor(Math.random() * 15) - 7; // -7 to +7
+            if (randomFactor < 0.5) {
+                change = Math.floor(Math.random() * 9) - 4; // -4 to +4
+            } else if (randomFactor < 0.85) {
+                change = Math.floor(Math.random() * 17) - 8; // -8 to +8
             } else {
-                change = Math.floor(Math.random() * 5) - 2; // -2 to +2 for small fluctuations
+                change = Math.floor(Math.random() * 25) - 12; // -12 to +12
             }
             
-            // Trend-based adjustment
+            // Trend momentum with slight randomness
             if (vehiclesTrend === 'up') {
-                change = Math.max(1, change);
+                change = Math.max(-1, change + 2);
             } else {
-                change = Math.min(-1, change);
+                change = Math.min(1, change - 2);
             }
             
             let newValue = vehiclesValue + change;
             
-            // Keep within bounds and reverse trend if hitting limits
+            // Keep within bounds
             if (newValue >= max) {
-                newValue = max - 1;
+                newValue = max - Math.floor(Math.random() * 8);
                 vehiclesTrend = 'down';
             } else if (newValue <= min) {
-                newValue = min + 1;
+                newValue = min + Math.floor(Math.random() * 8);
                 vehiclesTrend = 'up';
             }
             
-            // Occasionally reverse trend randomly (15% chance)
-            if (Math.random() < 0.15) {
+            // More frequent trend changes for vehicles (20% chance)
+            if (Math.random() < 0.2) {
                 vehiclesTrend = vehiclesTrend === 'up' ? 'down' : 'up';
             }
             
             vehiclesValue = newValue;
             vehiclesStep++;
             
-            // Animate the change
-            vehiclesElement.style.opacity = '0.7';
-            setTimeout(() => {
-                vehiclesElement.textContent = newValue;
-                vehiclesElement.style.opacity = '1';
-            }, 250);
+            // Smooth animation
+            if (vehiclesElement) {
+                vehiclesElement.style.opacity = '0.7';
+                vehiclesElement.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    vehiclesElement.textContent = newValue;
+                    vehiclesElement.style.opacity = '1';
+                    vehiclesElement.style.transform = 'scale(1)';
+                }, 150);
+            }
         }
 
         // ===== SOKORIDE SPECIFIC FUNCTIONALITY =====
@@ -1617,31 +2170,33 @@
             listings.forEach(listing => {
                 if (vehicleType === 'all' || listing.getAttribute('data-vehicle-type') === vehicleType) {
                     listing.style.display = 'block';
+                    setTimeout(() => {
+                        listing.style.opacity = '1';
+                        listing.style.transform = 'translateY(0)';
+                    }, 50);
                 } else {
-                    listing.style.display = 'none';
+                    listing.style.opacity = '0';
+                    listing.style.transform = 'translateY(10px)';
+                    setTimeout(() => {
+                        listing.style.display = 'none';
+                    }, 300);
                 }
             });
         }
 
         function loadMoreVehicles() {
-            const hiddenListings = document.querySelectorAll('.hidden-listing');
+            // Simulate loading more vehicles
+            const loadMoreBtn = document.querySelector('.btn-outline');
+            loadMoreBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Loading...';
+            loadMoreBtn.disabled = true;
             
-            if (loadMoreCount < hiddenListings.length) {
-                // Show next 3 hidden listings
-                for (let i = loadMoreCount; i < loadMoreCount + 3 && i < hiddenListings.length; i++) {
-                    hiddenListings[i].style.display = 'block';
-                }
-                loadMoreCount += 3;
-                
-                // If all listings are shown, disable the button
-                if (loadMoreCount >= hiddenListings.length) {
-                    document.querySelector('.btn-outline').textContent = 'All Vehicles Loaded';
-                    document.querySelector('.btn-outline').disabled = true;
-                }
-            }
+            setTimeout(() => {
+                loadMoreBtn.innerHTML = '<i class="fas fa-check"></i> All Vehicles Loaded';
+                loadMoreBtn.style.opacity = '0.7';
+            }, 1500);
         }
 
-        // ===== POPUP FUNCTIONS =====
+        // ===== POPUP FUNCTIONS - CLEAN & PROFESSIONAL =====
         function showContactPopup(vehicleType, driverName, phoneNumber = null) {
             currentVehicleType = vehicleType;
             currentDriver = driverName;
@@ -1650,8 +2205,6 @@
             const popup = document.getElementById('contactPopup');
             const title = document.getElementById('contactTitle');
             const message = document.getElementById('contactMessage');
-            const callBtn = document.getElementById('callBtn');
-            const whatsappBtn = document.getElementById('whatsappBtn');
             
             title.textContent = `Contact ${driverName}`;
             message.textContent = `Get in touch about ${getVehicleTypeName(vehicleType)} services:`;
@@ -1672,18 +2225,31 @@
                 currentPhone = sampleNumbers[vehicleType] || '+254712345678';
             }
             
-            callBtn.onclick = () => {
+            // REMOVE ANY EXISTING EVENT LISTENERS FIRST
+            const callBtn = document.getElementById('callBtn');
+            const whatsappBtn = document.getElementById('whatsappBtn');
+            
+            callBtn.replaceWith(callBtn.cloneNode(true));
+            whatsappBtn.replaceWith(whatsappBtn.cloneNode(true));
+            
+            // Get fresh references
+            const freshCallBtn = document.getElementById('callBtn');
+            const freshWhatsappBtn = document.getElementById('whatsappBtn');
+            
+            // BULLETPROOF EVENT HANDLERS
+            freshCallBtn.onclick = function() {
                 callNumber(currentPhone);
                 closeContactPopup();
             };
             
-            whatsappBtn.onclick = () => {
-                const whatsappMessage = `Hello ${driverName}, I am interested in your ${getVehicleTypeName(vehicleType)} services. Please share more details.`;
+            freshWhatsappBtn.onclick = function() {
+                const whatsappMessage = `Hello ${driverName}, I'm interested in your ${getVehicleTypeName(vehicleType)} services.`;
                 openWhatsApp(whatsappMessage, currentPhone);
                 closeContactPopup();
             };
             
             popup.classList.add('active');
+            lockScroll();
         }
 
         function getVehicleTypeName(type) {
@@ -1702,38 +2268,96 @@
 
         function closeContactPopup() {
             document.getElementById('contactPopup').classList.remove('active');
+            unlockScroll();
         }
 
         function showPostPopup(type) {
             const popup = document.getElementById('postPopup');
             const title = document.getElementById('postTitle');
             const message = document.getElementById('postMessage');
-            const whatsappBtn = document.getElementById('postWhatsappBtn');
             
-            let whatsappMessage = '';
+            title.textContent = 'List Your Vehicle';
+            message.textContent = 'List your vehicle directly on SokoRide. Connect with us now:';
             
-            switch(type) {
-                case 'transport':
-                    title.textContent = 'List Your Vehicle';
-                    message.textContent = 'Contact us to list your vehicle on SokoRide';
-                    whatsappMessage = 'Hello SokoLinc, I want to LIST my vehicle on SokoRide. Vehicle Type: [ ] Service Area: [ ] Rates: [ ] Phone: [ ]';
-                    break;
-                default:
-                    title.textContent = 'Post Your Listing';
-                    message.textContent = 'Contact us to create your listing';
-                    whatsappMessage = 'Hello SokoLinc, I want to create a listing. Details: [ ]';
-            }
+            // REMOVE AND RECREATE BUTTONS FOR CLEAN EVENT BINDING
+            const postCallBtn = document.getElementById('postCallBtn');
+            const postWhatsappBtn = document.getElementById('postWhatsappBtn');
             
-            whatsappBtn.onclick = () => {
+            postCallBtn.replaceWith(postCallBtn.cloneNode(true));
+            postWhatsappBtn.replaceWith(postWhatsappBtn.cloneNode(true));
+            
+            // Get fresh references
+            const freshPostCallBtn = document.getElementById('postCallBtn');
+            const freshPostWhatsappBtn = document.getElementById('postWhatsappBtn');
+            
+            // CLEAN POST MESSAGE
+            const whatsappMessage = `Hello SokoLinc, I want to list my vehicle on SokoRide.`;
+            
+            freshPostCallBtn.onclick = function() {
+                callNumber(CONFIG.phone);
+                closePostPopup();
+            };
+            
+            freshPostWhatsappBtn.onclick = function() {
                 openWhatsApp(whatsappMessage);
                 closePostPopup();
             };
             
             popup.classList.add('active');
+            lockScroll();
         }
 
         function closePostPopup() {
             document.getElementById('postPopup').classList.remove('active');
+            unlockScroll();
+        }
+
+        function showHelpPopup() {
+            document.getElementById('helpPopup').classList.add('active');
+            lockScroll();
+        }
+
+        function closeHelpPopup() {
+            localStorage.setItem('sokolinc_help_last_shown', Date.now());
+            document.getElementById('helpPopup').classList.remove('active');
+            unlockScroll();
+        }
+
+        function showGeneralContact() {
+            currentVehicleType = 'general';
+            currentDriver = 'SokoRide Support';
+            
+            const popup = document.getElementById('contactPopup');
+            const title = document.getElementById('contactTitle');
+            const message = document.getElementById('contactMessage');
+            
+            title.textContent = 'Contact SokoRide';
+            message.textContent = 'Get in touch with us for support, partnerships, or general inquiries.';
+            
+            // REMOVE ANY EXISTING EVENT LISTENERS FIRST
+            const callBtn = document.getElementById('callBtn');
+            const whatsappBtn = document.getElementById('whatsappBtn');
+            
+            callBtn.replaceWith(callBtn.cloneNode(true));
+            whatsappBtn.replaceWith(whatsappBtn.cloneNode(true));
+            
+            // Get fresh references
+            const freshCallBtn = document.getElementById('callBtn');
+            const freshWhatsappBtn = document.getElementById('whatsappBtn');
+            
+            freshCallBtn.onclick = function() {
+                callNumber(CONFIG.phone);
+                closeContactPopup();
+            };
+            
+            freshWhatsappBtn.onclick = function() {
+                const whatsappMessage = `Hello SokoRide, I have a general inquiry about transport services.`;
+                openWhatsApp(whatsappMessage);
+                closeContactPopup();
+            };
+            
+            popup.classList.add('active');
+            lockScroll();
         }
 
         // ===== CONTACT FUNCTIONS =====
@@ -1741,27 +2365,81 @@
             window.location.href = `tel:${phoneNumber}`;
         }
 
-        function openWhatsApp(message, phone = platformPhone) {
+        function openWhatsApp(message, phone = CONFIG.whatsapp) {
             const encodedMessage = encodeURIComponent(message);
             window.open(`https://wa.me/${phone}?text=${encodedMessage}`, '_blank');
         }
 
-        // ===== INITIALIZATION =====
+        // ===== EXPERT INITIALIZATION =====
         document.addEventListener('DOMContentLoaded', function() {
-            // Start dynamic counters with trading-like patterns
-            setInterval(updateDriversOnline, 8000); // Update every 8 seconds
-            setInterval(updateVehiclesAvailable, 12000); // Update every 12 seconds
+            console.log('✅ SokoRide - Professional Transport Edition Initialized');
+            console.log('🔍 MortApps Studios Digital Fingerprint: ACTIVE');
+            console.log('🖼️ Favicon Suite: COMPLETE');
+            console.log('🚗 Vehicle Icons: PROFESSIONAL FONT AWESOME');
+            console.log('📱 WhatsApp Buttons: SIMPLE & PROFESSIONAL');
+            console.log('⏰ Help Popup Cooldown: 5 HOURS');
             
-            // Close popups when clicking overlay
+            // Start dynamic counters with trading-like patterns
+            setInterval(updateDriversOnline, 7000);
+            setInterval(updateVehiclesAvailable, 9000);
+            
+            // Scroll to top button
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 500) {
+                    scrollToTop.classList.add('visible');
+                } else {
+                    scrollToTop.classList.remove('visible');
+                }
+            });
+            
+            // Close popups when clicking overlay (expert handling)
             document.querySelectorAll('.popup-overlay').forEach(overlay => {
                 overlay.addEventListener('click', function(e) {
                     if (e.target === this) {
                         this.classList.remove('active');
+                        unlockScroll();
                     }
                 });
             });
             
-            // Prevent image right-click and drag
+            // Handle Escape key to close popups
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    const popups = ['contactPopup', 'postPopup', 'helpPopup'];
+                    popups.forEach(popupId => {
+                        const popup = document.getElementById(popupId);
+                        if (popup && popup.classList.contains('active')) {
+                            popup.classList.remove('active');
+                            unlockScroll();
+                        }
+                    });
+                    
+                    if (mainNav.classList.contains('active')) {
+                        toggleNavigation();
+                    }
+                }
+            });
+            
+            // Initialize MortApps Studios link
+            const mortAppsLink = document.querySelector('.powered-by a');
+            if (mortAppsLink) {
+                mortAppsLink.href = CONFIG.mortAppsUrl;
+                mortAppsLink.target = '_blank';
+                mortAppsLink.rel = 'noopener noreferrer';
+            }
+            
+            // Schedule popups with cooldown
+            setTimeout(() => {
+                // Show help popup after 4 seconds if cooldown has passed
+                const helpLastShown = localStorage.getItem('sokolinc_help_last_shown');
+                const helpCooldownPassed = !helpLastShown || (Date.now() - helpLastShown > CONFIG.helpCooldown);
+                
+                if (helpCooldownPassed) {
+                    setTimeout(showHelpPopup, CONFIG.helpTimer);
+                }
+            }, 1000);
+            
+            // Enhanced image protection
             document.querySelectorAll('.listing-image img').forEach(img => {
                 img.addEventListener('contextmenu', function(e) {
                     e.preventDefault();
