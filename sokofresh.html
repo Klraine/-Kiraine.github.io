@@ -1,9 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- === MORTAPPS STUDIOS DIGITAL FINGERPRINT === -->
+    <!-- Google will know who built this -->
+    <meta name="generator" content="MortApps Studios - Premium Web Solutions Kenya">
+    <meta name="author" content="MortApps Studios">
+    <meta name="copyright" content="© 2026 MortApps Studios. Website crafted with excellence.">
+    <meta name="web_author" content="https://mortappsstudios.com">
+    <link rel="author" href="https://mortappsstudios.com">
+    <link rel="publisher" href="https://mortappsstudios.com">
+    <!-- ============================================ -->
+
+    <!-- Schema.org Structured Data for MortApps SEO Boost -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "SokoFresh - Bulk Farm Produce Marketplace | SokoLinc",
+        "url": "https://www.sokolinc.co.ke/sokofresh.html",
+        "description": "Kenya's trusted hub for bulk fresh produce connecting farmers directly with buyers across Kajiado County and beyond",
+        "provider": {
+            "@type": "Organization",
+            "name": "MortApps Studios",
+            "url": "https://mortappsstudios.com",
+            "description": "Premium Web Development & Digital Solutions for Kenyan Businesses"
+        }
+    }
+    </script>
+
+    <!-- CRITICAL: Social Media Preview Images -->
+    <meta property="og:image" content="https://www.sokolinc.co.ke/android-chrome-512x512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="SokoFresh - Kenya's Bulk Farm Produce Marketplace">
+    <meta property="og:image:type" content="image/png">
+    
+    <meta name="twitter:image" content="https://www.sokolinc.co.ke/android-chrome-512x512.png">
+    <meta name="twitter:image:alt" content="SokoFresh - Fresh Produce from Kenyan Farms">
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+    
+    <meta property="og:title" content="SokoFresh - Bulk Farm Produce Marketplace | SokoLinc">
+    <meta property="og:description" content="Kenya's Trusted Hub for Bulk Fresh Produce – Powered by Farmers. Trusted by Buyers.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sokolinc.co.ke/sokofresh.html">
+    <meta name="twitter:card" content="summary_large_image">
+    
     <title>SokoFresh - Bulk Farm Produce Marketplace | SokoLinc</title>
+    
+    <!-- ===== COMPLETE FAVICON SUITE ===== -->
+    <!-- Favicon for legacy browsers -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
+    <!-- Modern favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    
+    <!-- Android Chrome Icons -->
+    <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="site.webmanifest">
+    
+    <!-- Theme Color for Mobile Browsers -->
+    <meta name="theme-color" content="#2D8C3C">
+    <meta name="msapplication-TileColor" content="#2D8C3C">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* ===== VARIABLES & BASE STYLES ===== */
@@ -20,15 +90,20 @@
             --white: #FFFFFF;
             --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
+            --shadow-xl: 0 12px 32px rgba(0, 0, 0, 0.2);
+            --radius-sm: 8px;
             --radius: 12px;
+            --radius-lg: 16px;
             --transition: all 0.3s ease;
+            --transition-slow: all 0.5s ease;
         }
 
+        /* ===== COMPLETE COPY PROTECTION ===== */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
             -webkit-tap-highlight-color: transparent;
             -webkit-touch-callout: none;
             -webkit-user-select: none;
@@ -37,8 +112,72 @@
             user-select: none;
         }
 
+        /* Allow text selection ONLY where absolutely necessary */
+        input, textarea {
+            -webkit-user-select: text;
+            -moz-user-select: text;
+            -ms-user-select: text;
+            user-select: text;
+        }
+
+        /* Completely disable text selection on body */
+        body {
+            -webkit-user-select: none !important;
+            -moz-user-select: none !important;
+            -ms-user-select: none !important;
+            user-select: none !important;
+        }
+
+        /* Force no selection on all elements */
+        div, p, span, h1, h2, h3, h4, h5, h6, a, li, button, section, main, footer, header, nav {
+            -webkit-user-select: none !important;
+            -moz-user-select: none !important;
+            -ms-user-select: none !important;
+            user-select: none !important;
+            cursor: default;
+        }
+
+        /* Prevent context menu on right-click */
+        * {
+            -webkit-touch-callout: none !important;
+        }
+
+        /* Disable image dragging */
+        img {
+            -webkit-user-drag: none;
+            -khtml-user-drag: none;
+            -moz-user-drag: none;
+            -o-user-drag: none;
+            pointer-events: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        /* Exception for popup content */
+        .popup-body * {
+            -webkit-user-select: text !important;
+            -moz-user-select: text !important;
+            -ms-user-select: text !important;
+            user-select: text !important;
+        }
+
+        /* Exception for images inside popups */
+        .popup-body img {
+            pointer-events: auto;
+            -webkit-user-drag: auto;
+            -khtml-user-drag: auto;
+            -moz-user-drag: auto;
+            -o-user-drag: auto;
+        }
+
         html {
             scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+            scroll-padding-top: 80px;
+            overflow-x: hidden;
+            width: 100%;
         }
 
         body {
@@ -48,6 +187,8 @@
             overflow-x: hidden;
             width: 100%;
             position: relative;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         .container {
@@ -90,6 +231,27 @@
             -webkit-appearance: none;
             -moz-appearance: none;
             appearance: none;
+            position: relative;
+            overflow: hidden;
+            touch-action: manipulation;
+        }
+
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+        }
+
+        .btn:active::after {
+            width: 300px;
+            height: 300px;
         }
 
         .btn-primary {
@@ -155,6 +317,8 @@
             top: 0;
             z-index: 1000;
             box-shadow: var(--shadow);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
 
         .header-container {
@@ -171,9 +335,11 @@
             color: var(--white);
         }
 
-        .logo-icon {
-            font-size: 2rem;
-            color: var(--secondary);
+        .logo-image {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
         }
 
         .logo-text {
@@ -184,36 +350,45 @@
         .logo h1 {
             font-size: 1.5rem;
             margin: 0;
+            font-weight: 800;
+            letter-spacing: -0.5px;
         }
 
         .tagline {
             font-size: 0.75rem;
             opacity: 0.9;
+            font-weight: 500;
+            white-space: nowrap;
         }
 
         .nav-toggle {
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: var(--radius-sm);
             display: flex;
             flex-direction: column;
-            background: none;
-            border: none;
-            width: 30px;
-            height: 30px;
-            justify-content: space-between;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
             cursor: pointer;
-            padding: 0;
+            transition: var(--transition);
+            position: relative;
+            z-index: 1001;
         }
 
         .nav-toggle span {
             display: block;
-            height: 3px;
-            width: 100%;
-            background-color: var(--white);
-            border-radius: 3px;
+            width: 22px;
+            height: 2px;
+            background: var(--white);
+            border-radius: 2px;
             transition: var(--transition);
         }
 
         .nav-toggle.active span:nth-child(1) {
-            transform: rotate(45deg) translate(6px, 6px);
+            transform: translateY(7px) rotate(45deg);
         }
 
         .nav-toggle.active span:nth-child(2) {
@@ -221,21 +396,26 @@
         }
 
         .nav-toggle.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(6px, -6px);
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        .nav-toggle:hover {
+            background: rgba(255, 255, 255, 0.2);
         }
 
         nav {
             position: fixed;
             top: 0;
             right: -100%;
-            width: 85%;
-            max-width: 320px;
+            width: 320px;
             height: 100vh;
             background: var(--white);
-            transition: var(--transition);
-            z-index: 2000;
-            overflow-y: auto;
-            box-shadow: -2px 0 20px rgba(0,0,0,0.1);
+            box-shadow: var(--shadow-xl);
+            z-index: 1000;
+            transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            max-width: 90vw;
         }
 
         nav.active {
@@ -244,49 +424,98 @@
 
         .nav-header {
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            color: var(--white);
             padding: 1.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-shrink: 0;
+            min-height: 74px;
+        }
+
+        .nav-header span {
+            color: var(--white);
+            font-size: 1.25rem;
+            font-weight: 600;
         }
 
         .close-btn {
-            background: none;
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.1);
             border: none;
+            border-radius: var(--radius-sm);
             color: var(--white);
             font-size: 1.5rem;
             cursor: pointer;
-            width: 30px;
-            height: 30px;
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: var(--transition);
+            flex-shrink: 0;
         }
 
+        .close-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* EXPERT FIX: Perfect scrollable navigation */
         .nav-links {
             list-style: none;
-            padding: 1rem 0;
+            overflow-y: auto;
+            height: calc(100vh - 74px);
+            -webkit-overflow-scrolling: touch;
+            overscroll-behavior: contain;
+            padding: 0;
+            margin: 0;
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary) transparent;
+        }
+
+        .nav-links::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .nav-links::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .nav-links::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 2px;
         }
 
         .nav-links li {
             border-bottom: 1px solid var(--light-gray);
+            margin: 0;
+        }
+
+        .nav-links li:last-child {
+            border-bottom: none;
         }
 
         .nav-links a {
             display: flex;
             align-items: center;
             gap: 12px;
-            padding: 1rem 1.5rem;
+            padding: 1.25rem 1.5rem;
             color: var(--dark);
             text-decoration: none;
-            transition: var(--transition);
             font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+            min-height: 60px;
         }
 
         .nav-links a:hover {
-            background-color: var(--light-gray);
+            background: var(--light-gray);
             color: var(--primary);
+        }
+
+        .nav-links a i {
+            width: 20px;
+            text-align: center;
+            font-size: 1.1rem;
+            flex-shrink: 0;
         }
 
         .nav-overlay {
@@ -296,12 +525,20 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.5);
-            z-index: 1500;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(3px);
+            -webkit-backdrop-filter: blur(3px);
+            z-index: 999;
+            animation: fadeIn 0.3s ease;
         }
 
         .nav-overlay.active {
             display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         /* ===== PAGE HEADER ===== */
@@ -310,16 +547,38 @@
             color: var(--white);
             padding: 2.5rem 0;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.05)"/></svg>');
+            background-size: cover;
+            opacity: 0.5;
         }
 
         .page-header h1 {
             margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
 
         .page-header p {
             font-size: 1.2rem;
-            opacity: 0.9;
+            opacity: 0.95;
             margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         /* ===== SECTIONS ===== */
@@ -545,7 +804,7 @@
             background: var(--light-gray);
         }
 
-        /* ===== STATS GRID ===== */
+        /* ===== ENHANCED STATS GRID WITH REALISTIC COUNTERS ===== */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -557,7 +816,7 @@
             font-size: 2rem;
             color: var(--primary);
             font-weight: bold;
-            transition: all 0.5s ease-in-out;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
         }
 
@@ -577,24 +836,241 @@
             51%, 100% { opacity: 0; }
         }
 
-        /* ===== ENHANCED FOOTER ===== */
-        .powered-by {
-            text-align: center;
-            margin-top: 1rem;
-            color: rgba(255,255,255,0.6);
-            font-size: 0.9rem;
+        /* ===== ENHANCED FOOTER (MATCHING INDEX) ===== */
+        footer {
+            background: var(--accent);
+            color: var(--white);
+            padding: 4rem 0 2rem;
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-column h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.75rem;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--secondary);
+        }
+
+        .footer-column p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: var(--transition);
+            padding: 0.25rem 0;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+            transform: translateX(5px);
+        }
+
+        .footer-links a i {
+            width: 20px;
+            font-size: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
+            color: var(--white);
+            font-size: 1.25rem;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background: var(--secondary);
+            color: var(--accent);
+            transform: translateY(-3px) rotate(5deg);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        .footer-tagline {
+            margin: 1.5rem 0;
+        }
+
+        .kenyan-heart {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--white);
+        }
+
+        /* CRITICAL: Fast beating heart animation */
+        .heart-pulse {
+            color: #ff6b6b;
+            animation: heartbeat 0.6s infinite;
+            display: inline-block;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.15); }
+        }
+
+        .powered-by {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-top: 1rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.85rem;
         }
 
         .powered-by::before {
             content: '';
-            display: block;
             width: 30px;
             height: 1px;
             background: var(--secondary);
+        }
+
+        .powered-by a {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 700;
+            transition: var(--transition);
+        }
+
+        .powered-by a:hover {
+            color: var(--white);
+            text-decoration: underline;
+        }
+
+        /* ===== FLOATING WHATSAPP BUTTON ===== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            text-decoration: none;
+            transition: all var(--transition);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.6);
+            animation: none;
+        }
+
+        /* ===== SCROLL TO TOP ===== */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.25rem;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            z-index: 998;
+            opacity: 0;
+            visibility: hidden;
+            transition: all var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .scroll-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
         }
 
         /* ===== POPUPS ===== */
@@ -605,13 +1081,15 @@
             width: 100%;
             height: 100%;
             background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
             display: flex;
             align-items: center;
             justify-content: center;
-            z-index: 3000;
+            z-index: 2000;
             opacity: 0;
             visibility: hidden;
-            transition: var(--transition);
+            transition: all var(--transition);
             padding: 1rem;
         }
 
@@ -627,13 +1105,15 @@
             max-width: 500px;
             max-height: 90vh;
             overflow-y: auto;
-            box-shadow: var(--shadow-lg);
-            transform: translateY(20px);
-            transition: var(--transition);
+            box-shadow: var(--shadow-xl);
+            transform: translateY(20px) scale(0.98);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
         }
 
         .popup-overlay.active .popup {
-            transform: translateY(0);
+            transform: translateY(0) scale(1);
         }
 
         .popup-header {
@@ -642,28 +1122,61 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            flex-shrink: 0;
         }
 
         .popup-header h3 {
-            color: var(--primary);
+            color: var(--white);
             margin: 0;
+            font-size: 1.5rem;
+            font-weight: 700;
         }
 
         .popup-close {
-            background: none;
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.1);
             border: none;
+            border-radius: var(--radius-sm);
+            color: var(--white);
             font-size: 1.5rem;
             cursor: pointer;
-            color: var(--gray);
-            width: 30px;
-            height: 30px;
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: var(--transition);
+            flex-shrink: 0;
         }
 
+        .popup-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* EXPERT FIX: Perfect popup body scrolling */
         .popup-body {
             padding: 1.5rem;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            overscroll-behavior: contain;
+            flex: 1;
+            min-height: 0;
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary) transparent;
+        }
+
+        .popup-body::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .popup-body::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .popup-body::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 3px;
         }
 
         .popup-actions {
@@ -678,88 +1191,6 @@
             gap: 0.75rem;
             margin-top: 1.5rem;
             font-size: 0.9rem;
-        }
-
-        /* ===== FOOTER ===== */
-        footer {
-            background: var(--accent);
-            color: var(--white);
-            padding: 3rem 0 1.5rem;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-column h3 {
-            color: var(--secondary);
-            margin-bottom: 1.5rem;
-            font-size: 1.3rem;
-        }
-
-        .footer-column p {
-            color: rgba(255,255,255,0.8);
-            margin-bottom: 1rem;
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 0.75rem;
-        }
-
-        .footer-links a {
-            color: rgba(255,255,255,0.8);
-            text-decoration: none;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .footer-links a:hover {
-            color: var(--secondary);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 1.5rem;
-            color: rgba(255,255,255,0.7);
-            font-size: 0.9rem;
-        }
-
-        .footer-tagline {
-            text-align: center;
-            margin: 1rem 0;
-            padding: 1rem 0;
-        }
-
-        .kenyan-heart {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            padding: 0.5rem 1rem;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50px;
-            margin: 0.5rem 0;
-        }
-
-        .heart-pulse {
-            color: #ff6b6b;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
         }
 
         /* ===== RESPONSIVE DESIGN ===== */
@@ -787,6 +1218,37 @@
             .service-card {
                 padding: 1.5rem 1rem;
             }
+            
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+                width: 56px;
+                height: 56px;
+                font-size: 1.5rem;
+            }
+            
+            .scroll-to-top {
+                bottom: 90px;
+                right: 20px;
+                width: 44px;
+                height: 44px;
+                font-size: 1.1rem;
+            }
+            
+            nav {
+                width: 100%;
+                max-width: 320px;
+            }
+            
+            .nav-links {
+                height: calc(100vh - 74px);
+            }
+            
+            /* Mobile-specific fixes for perfect scrolling */
+            .nav-links a {
+                padding: 1rem 1.5rem;
+                min-height: 56px;
+            }
         }
 
         @media (min-width: 768px) and (max-width: 1023px) {
@@ -800,6 +1262,24 @@
                 grid-template-columns: repeat(3, 1fr);
             }
         }
+
+        /* High-performance scrolling fixes */
+        .nav-links,
+        .popup-body {
+            will-change: transform;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            transform: translateZ(0);
+            -webkit-transform: translateZ(0);
+        }
+
+        /* Safari-specific fixes */
+        @supports (-webkit-touch-callout: none) {
+            .nav-links,
+            .popup-body {
+                -webkit-overflow-scrolling: touch !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -807,7 +1287,8 @@
     <header>
         <div class="container header-container">
             <a href="index.html" class="logo">
-                <i class="fas fa-link logo-icon"></i>
+                <!-- Logo image instead of icon -->
+                <img src="sokolinc.logo.png" alt="SokoLinc Logo" class="logo-image">
                 <div class="logo-text">
                     <h1>SokoLinc</h1>
                     <div class="tagline">Connecting Buyers, Sellers & Services Across Every Soko</div>
@@ -838,9 +1319,10 @@
             <li><a href="sokoride.html"><i class="fas fa-truck"></i> SokoRide</a></li>
             <li><a href="tangazo.html"><i class="fas fa-bullhorn"></i> Tangazo+</a></li>
             <li><a href="bizboost.html"><i class="fas fa-ad"></i> BizBoost</a></li>
-            <li><a href="contact.html"><i class="fas fa-phone"></i> Contact Us</a></li>
+            <li><a href="#" onclick="showContactPopup()"><i class="fas fa-phone"></i> Contact Us</a></li>
             <li><a href="terms.html"><i class="fas fa-file-contract"></i> Terms & Conditions</a></li>
             <li><a href="privacy.html"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
+            <li><a href="#" onclick="showHelpPopup()"><i class="fas fa-question-circle"></i> Help & Guide</a></li>
         </ul>
     </nav>
 
@@ -907,9 +1389,10 @@
                     <i class="fas fa-leaf" style="font-size: 1.5rem; color: #2E8B57; margin-bottom: 0.5rem;"></i>
                     <div style="font-size: 0.9rem; font-weight: 600;">Herbs & Spices</div>
                 </button>
-                <button class="category-btn" onclick="filterProduce('eggs')">
-                    <i class="fas fa-egg" style="font-size: 1.5rem; color: #FFD700; margin-bottom: 0.5rem;"></i>
-                    <div style="font-size: 0.9rem; font-weight: 600;">Eggs</div>
+                <!-- UPDATED: Changed from "Eggs" to "Animal Produce" -->
+                <button class="category-btn" onclick="filterProduce('animal')">
+                    <i class="fas fa-paw" style="font-size: 1.5rem; color: #8B4513; margin-bottom: 0.5rem;"></i>
+                    <div style="font-size: 0.9rem; font-weight: 600;">Animal Produce</div>
                 </button>
             </div>
         </div>
@@ -933,7 +1416,8 @@
                         <div class="listing-badge">Bulk Available</div>
                         <h3 class="listing-title">Maize (Dry, White)</h3>
                         <p class="listing-description">Locally harvested white maize, dried and bagged — staple for both households and animal feed.</p>
-                        <div class="listing-price">KES 40-100 / kg</div>
+                        <!-- UPDATED: Changed from price range to exact price (KES 70 / kg) -->
+                        <div class="listing-price">KES 70 / kg</div>
                         <div class="listing-meta">
                             <span><i class="fas fa-map-marker-alt"></i> Isinya, Kiserian</span>
                             <span><i class="fas fa-calendar"></i> Available Now</span>
@@ -957,7 +1441,8 @@
                     <div class="listing-content">
                         <h3 class="listing-title">Beans (Mixed / Rosecoco)</h3>
                         <p class="listing-description">Clean, dried beans — sourced from smallholder farms near Kiserian & Ngong.</p>
-                        <div class="listing-price">KES 80-150 / kg</div>
+                        <!-- UPDATED: Changed from price range to exact price (KES 120 / kg) -->
+                        <div class="listing-price">KES 120 / kg</div>
                         <div class="listing-meta">
                             <span><i class="fas fa-map-marker-alt"></i> Kiserian, Ngong</span>
                             <span><i class="fas fa-calendar"></i> Fresh Stock</span>
@@ -981,7 +1466,8 @@
                     <div class="listing-content">
                         <h3 class="listing-title">Irish Potatoes</h3>
                         <p class="listing-description">Freshly harvested potatoes from the highlands near Ngong — ideal for chips & stews.</p>
-                        <div class="listing-price">KES 60-120 / kg</div>
+                        <!-- UPDATED: Changed from price range to exact price (KES 90 / kg) -->
+                        <div class="listing-price">KES 90 / kg</div>
                         <div class="listing-meta">
                             <span><i class="fas fa-map-marker-alt"></i> Ngong Highlands</span>
                             <span><i class="fas fa-calendar"></i> Harvested Today</span>
@@ -1005,7 +1491,8 @@
                     <div class="listing-content">
                         <h3 class="listing-title">Onions (Red)</h3>
                         <p class="listing-description">Bright red onions with strong aroma, supplied weekly from local Kiserian farms.</p>
-                        <div class="listing-price">KES 80-200 / kg</div>
+                        <!-- UPDATED: Changed from price range to exact price (KES 140 / kg) -->
+                        <div class="listing-price">KES 140 / kg</div>
                         <div class="listing-meta">
                             <span><i class="fas fa-map-marker-alt"></i> Kiserian, Ngong</span>
                             <span><i class="fas fa-calendar"></i> Weekly Supply</span>
@@ -1029,7 +1516,8 @@
                     <div class="listing-content">
                         <h3 class="listing-title">Tomatoes</h3>
                         <p class="listing-description">Juicy red tomatoes grown near Isinya — perfect for wholesale or household cooking.</p>
-                        <div class="listing-price">KES 50-150 / kg</div>
+                        <!-- UPDATED: Changed from price range to exact price (KES 100 / kg) -->
+                        <div class="listing-price">KES 100 / kg</div>
                         <div class="listing-meta">
                             <span><i class="fas fa-map-marker-alt"></i> Isinya, Kiserian</span>
                             <span><i class="fas fa-calendar"></i> Daily Supply</span>
@@ -1054,7 +1542,8 @@
                         <div class="listing-badge" style="background: var(--secondary); color: var(--accent);">Daily Fresh</div>
                         <h3 class="listing-title">Sukuma Wiki (Kales)</h3>
                         <p class="listing-description">Fresh leafy greens picked daily; rich in iron and vitamin C.</p>
-                        <div class="listing-price">KES 20-60 / bunch</div>
+                        <!-- UPDATED: Changed from price range to exact price (KES 40 / bunch) -->
+                        <div class="listing-price">KES 40 / bunch</div>
                         <div class="listing-meta">
                             <span><i class="fas fa-map-marker-alt"></i> Kiserian, Ngong</span>
                             <span><i class="fas fa-calendar"></i> Picked Today</span>
@@ -1078,7 +1567,8 @@
                     <div class="listing-content">
                         <h3 class="listing-title">Cabbage</h3>
                         <p class="listing-description">Large green heads grown in Ngong — crisp and long-lasting.</p>
-                        <div class="listing-price">KES 30-80 / head</div>
+                        <!-- UPDATED: Changed from price range to exact price (KES 55 / head) -->
+                        <div class="listing-price">KES 55 / head</div>
                         <div class="listing-meta">
                             <span><i class="fas fa-map-marker-alt"></i> Ngong, Pipeline</span>
                             <span><i class="fas fa-calendar"></i> Fresh Stock</span>
@@ -1102,7 +1592,8 @@
                     <div class="listing-content">
                         <h3 class="listing-title">Green Grams (Ndengu)</h3>
                         <p class="listing-description">Nutritious and protein-rich green grams, cleaned and ready for market.</p>
-                        <div class="listing-price">KES 90-150 / kg</div>
+                        <!-- UPDATED: Changed from price range to exact price (KES 120 / kg) -->
+                        <div class="listing-price">KES 120 / kg</div>
                         <div class="listing-meta">
                             <span><i class="fas fa-map-marker-alt"></i> Isinya, Kitengela</span>
                             <span><i class="fas fa-calendar"></i> Available Now</span>
@@ -1119,7 +1610,7 @@
                 </div>
 
                 <!-- Eggs (Local / Improved Layers) -->
-                <div class="listing-card" data-category="eggs">
+                <div class="listing-card" data-category="animal">
                     <div class="listing-image">
                         <img src="https://biznakenya.com/wp-content/uploads/2025/05/egg-supplie.jpg" alt="Farm Eggs">
                     </div>
@@ -1127,7 +1618,8 @@
                         <div class="listing-badge">Farm Fresh</div>
                         <h3 class="listing-title">Eggs (Local / Improved Layers)</h3>
                         <p class="listing-description">Farm-fresh eggs from free-range hens — sourced from Kiserian & Kitengela poultry farms.</p>
-                        <div class="listing-price">KES 350-500 / dozen</div>
+                        <!-- UPDATED: Changed from price range to exact price (KES 425 / dozen) -->
+                        <div class="listing-price">KES 425 / dozen</div>
                         <div class="listing-meta">
                             <span><i class="fas fa-map-marker-alt"></i> Kiserian, Kitengela</span>
                             <span><i class="fas fa-calendar"></i> Daily Collection</span>
@@ -1143,6 +1635,32 @@
                     </div>
                 </div>
 
+                <!-- ADDED: Rabbit (Bunnies) for sale -->
+                <div class="listing-card" data-category="animal">
+                    <div class="listing-image">
+                        <img src="https://cdn.pixabay.com/photo/2017/07/13/16/10/cute-2500929_1280.jpg" alt="Rabbit (Bunnies)">
+                    </div>
+                    <div class="listing-content">
+                        <div class="listing-badge" style="background: var(--secondary); color: var(--accent);">Livestock</div>
+                        <h3 class="listing-title">Rabbit (Bunnies)</h3>
+                        <p class="listing-description">Healthy domestic rabbits for meat production or as pets. Fast breeding, low maintenance.</p>
+                        <!-- EXACT PRICE: KES 800 / rabbit -->
+                        <div class="listing-price">KES 800 / rabbit</div>
+                        <div class="listing-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Kajiado Central</span>
+                            <span><i class="fas fa-calendar"></i> Available Now</span>
+                        </div>
+                        <div class="listing-actions">
+                            <button class="btn btn-primary btn-small btn-full" onclick="showContactPopup('buy', 'Rabbit (Bunnies)')">
+                                <i class="fas fa-shopping-cart"></i> Buy Now
+                            </button>
+                            <button class="btn btn-secondary btn-small btn-full" onclick="showContactPopup('sell', 'Rabbit (Bunnies)')">
+                                <i class="fas fa-tag"></i> Sell Similar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Spinach -->
                 <div class="listing-card" data-category="vegetables">
                     <div class="listing-image">
@@ -1151,7 +1669,8 @@
                     <div class="listing-content">
                         <h3 class="listing-title">Spinach</h3>
                         <p class="listing-description">Tender spinach leaves harvested daily — great for home cooking or hotels.</p>
-                        <div class="listing-price">KES 30-70 / bunch</div>
+                        <!-- UPDATED: Changed from price range to exact price (KES 50 / bunch) -->
+                        <div class="listing-price">KES 50 / bunch</div>
                         <div class="listing-meta">
                             <span><i class="fas fa-map-marker-alt"></i> Kiserian, Ngong</span>
                             <span><i class="fas fa-calendar"></i> Picked Today</span>
@@ -1175,7 +1694,8 @@
                     <div class="listing-content">
                         <h3 class="listing-title">Carrots</h3>
                         <p class="listing-description">Bright orange carrots grown in the highlands — sweet and crisp.</p>
-                        <div class="listing-price">KES 70-130 / kg</div>
+                        <!-- UPDATED: Changed from price range to exact price (KES 100 / kg) -->
+                        <div class="listing-price">KES 100 / kg</div>
                         <div class="listing-meta">
                             <span><i class="fas fa-map-marker-alt"></i> Ngong</span>
                             <span><i class="fas fa-calendar"></i> Fresh Today</span>
@@ -1313,39 +1833,93 @@
                 <div class="footer-column">
                     <h3>SokoLinc</h3>
                     <p>Connecting buyers, sellers & services across every Soko through simple, accessible technology.</p>
-                    <p><i class="fas fa-phone"></i> +254 105 399 526</p>
-                    <p><i class="fab fa-whatsapp"></i> +254 105 399 526</p>
+                    <p style="margin-top: 1.5rem;">
+                        <i class="fas fa-phone" style="margin-right: 10px;"></i>
+                        <strong>+254 112 345906</strong>
+                    </p>
+                    <p>
+                        <i class="fab fa-whatsapp" style="margin-right: 10px; color: #25D366;"></i>
+                        <strong>+254 112 345906</strong>
+                    </p>
+                    <!-- CLICKABLE EMAILS -->
+                    <p style="margin-top: 1rem;">
+                        <i class="fas fa-envelope" style="margin-right: 10px;"></i>
+                        <a href="mailto:mort@sokolinc.co.ke" style="color: rgba(255, 255, 255, 0.9); text-decoration: none; transition: var(--transition);">
+                            mort@sokolinc.co.ke
+                        </a>
+                    </p>
+                    <p>
+                        <i class="fas fa-envelope" style="margin-right: 10px;"></i>
+                        <a href="mailto:sokolinc.ke@gmail.com" style="color: rgba(255, 255, 255, 0.9); text-decoration: none; transition: var(--transition);">
+                            sokolinc.ke@gmail.com
+                        </a>
+                    </p>
                 </div>
                 <div class="footer-column">
-                    <h3>Quick Links</h3>
+                    <h3>Marketplaces</h3>
                     <ul class="footer-links">
                         <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
                         <li><a href="sokofresh.html"><i class="fas fa-apple-alt"></i> SokoFresh</a></li>
                         <li><a href="sokodeals.html"><i class="fas fa-tags"></i> SokoDeals</a></li>
                         <li><a href="kaziconnect.html"><i class="fas fa-tools"></i> KaziConnect</a></li>
                         <li><a href="sokoride.html"><i class="fas fa-truck"></i> SokoRide</a></li>
+                        <li><a href="tangazo.html"><i class="fas fa-bullhorn"></i> Tangazo+</a></li>
+                        <li><a href="bizboost.html"><i class="fas fa-ad"></i> BizBoost</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Legal</h3>
+                    <h3>Quick Links</h3>
                     <ul class="footer-links">
+                        <li><a href="#" onclick="showContactPopup()"><i class="fas fa-phone"></i> Contact Us</a></li>
                         <li><a href="terms.html"><i class="fas fa-file-contract"></i> Terms & Conditions</a></li>
                         <li><a href="privacy.html"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
-                        <li><a href="contact.html"><i class="fas fa-phone"></i> Contact Us</a></li>
+                        <li><a href="#" onclick="showHelpPopup()"><i class="fas fa-question-circle"></i> Help & Guide</a></li>
                     </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Connect With Us</h3>
+                    <p>Stay updated with the latest from SokoLinc and connect with our growing community.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" title="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link" title="Twitter/X">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/254112345906" class="social-link" title="WhatsApp" style="background: #25D366;">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                    <!-- CLICKABLE EMAILS -->
+                    <p style="margin-top: 1.5rem;">
+                        <i class="fas fa-envelope" style="margin-right: 10px;"></i>
+                        <a href="mailto:mort@sokolinc.co.ke" style="color: rgba(255, 255, 255, 0.9); text-decoration: none; transition: var(--transition);">
+                            mort@sokolinc.co.ke
+                        </a>
+                    </p>
+                    <p>
+                        <i class="fas fa-envelope" style="margin-right: 10px;"></i>
+                        <a href="mailto:sokolinc.ke@gmail.com" style="color: rgba(255, 255, 255, 0.9); text-decoration: none; transition: var(--transition);">
+                            sokolinc.ke@gmail.com
+                        </a>
+                    </p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 SokoLinc. All rights reserved.</p>
+                <!-- UPDATED: Changed from 2025 to 2026 -->
+                <p>&copy; 2026 SokoLinc. All rights reserved.</p>
                 <div class="footer-tagline">
                     <div class="kenyan-heart">
-                        <span>Made with</span>
+                        <span>Built with</span>
                         <span class="heart-pulse">❤️</span>
-                        <span>for Kenyan Communities</span>
+                        <span>for Kenya</span>
                     </div>
                 </div>
                 <div class="powered-by">
-                    Powered by MortApps Studios
+                    Powered by <a href="https://mortappsstudios.com" target="_blank" rel="noopener">MortApps Studios</a>
                 </div>
             </div>
         </div>
@@ -1356,7 +1930,7 @@
     <div class="popup-overlay" id="contactPopup">
         <div class="popup">
             <div class="popup-header">
-                <h3 id="contactTitle">Contact Seller</h3>
+                <h3 id="contactTitle">Contact SokoFresh</h3>
                 <button class="popup-close" onclick="closeContactPopup()">&times;</button>
             </div>
             <div class="popup-body">
@@ -1368,6 +1942,9 @@
                     <button class="btn btn-secondary" id="whatsappBtn">
                         <i class="fab fa-whatsapp"></i> WhatsApp
                     </button>
+                    <button class="btn btn-accent" onclick="sendEmail()">
+                        <i class="fas fa-envelope"></i> Email
+                    </button>
                 </div>
             </div>
         </div>
@@ -1377,29 +1954,119 @@
     <div class="popup-overlay" id="postPopup">
         <div class="popup">
             <div class="popup-header">
-                <h3 id="postTitle">Post Your Listing</h3>
+                <h3 id="postTitle">Post Your Produce</h3>
                 <button class="popup-close" onclick="closePostPopup()">&times;</button>
             </div>
             <div class="popup-body">
-                <p id="postMessage">Contact us to list your item:</p>
+                <p id="postMessage">Contact us to list your fresh produce on SokoFresh:</p>
                 <div class="popup-actions">
-                    <button class="btn btn-primary" onclick="callNumber('+254105399526')">
+                    <button class="btn btn-primary" onclick="callNumber('+254112345906')">
                         <i class="fas fa-phone"></i> Call Us
                     </button>
                     <button class="btn btn-secondary" id="postWhatsappBtn">
                         <i class="fab fa-whatsapp"></i> WhatsApp Us
+                    </button>
+                    <button class="btn btn-accent" onclick="sendEmail()">
+                        <i class="fas fa-envelope"></i> Email
                     </button>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Help Popup (Consistent with Index) -->
+    <div class="popup-overlay" id="helpPopup">
+        <div class="popup">
+            <div class="popup-header">
+                <h3>SokoFresh Help & Guide</h3>
+                <button class="popup-close" onclick="closeHelpPopup()">&times;</button>
+            </div>
+            <div class="popup-body">
+                <p>Welcome to SokoFresh! Here's how to buy or sell produce:</p>
+                <div style="margin: 1.5rem 0; padding: 1rem; background: var(--light-gray); border-radius: var(--radius);">
+                    <p style="margin-bottom: 0.5rem;"><strong>For Buyers:</strong></p>
+                    <p>1. Browse produce listings</p>
+                    <p>2. Click "Buy Now" on any item</p>
+                    <p>3. Choose Call or WhatsApp to contact us</p>
+                    <p style="margin-top: 1rem;"><strong>For Sellers:</strong></p>
+                    <p>1. Click "List Your Produce"</p>
+                    <p>2. Contact us via Call, WhatsApp, or Email</p>
+                    <p>3. Provide details about your produce</p>
+                </div>
+                <p>Need help? Contact us anytime!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- MortApps Ad Popup (Consistent with Index) -->
+    <div class="popup-overlay" id="adPopup">
+        <div class="popup">
+            <div class="popup-header">
+                <h3>Need a Professional Website?</h3>
+                <button class="popup-close" onclick="closeAdPopup()">&times;</button>
+            </div>
+            <div class="popup-body">
+                <div style="text-align: center; margin-bottom: 1.5rem;">
+                    <i class="fas fa-globe-africa" style="font-size: 3rem; color: var(--primary);"></i>
+                </div>
+                <h4 style="color: var(--primary); margin-bottom: 1rem; text-align: center;">MortApps Studios</h4>
+                <p><strong>We build stunning, high-performance websites and mobile apps</strong> that help Kenyan businesses grow online and reach more customers.</p>
+                
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; margin: 1.5rem 0;">
+                    <div style="padding: 0.75rem; background: var(--light-gray); border-radius: var(--radius); font-size: 0.85rem; font-weight: 600; color: var(--primary-dark); text-align: center;">Premium Design</div>
+                    <div style="padding: 0.75rem; background: var(--light-gray); border-radius: var(--radius); font-size: 0.85rem; font-weight: 600; color: var(--primary-dark); text-align: center;">Fast & Reliable</div>
+                    <div style="padding: 0.75rem; background: var(--light-gray); border-radius: var(--radius); font-size: 0.85rem; font-weight: 600; color: var(--primary-dark); text-align: center;">Mobile First</div>
+                    <div style="padding: 0.75rem; background: var(--light-gray); border-radius: var(--radius); font-size: 0.85rem; font-weight: 600; color: var(--primary-dark); text-align: center;">Business Ready</div>
+                </div>
+                
+                <p style="margin: 1.5rem 0; font-weight: 700; color: var(--primary); font-size: 1.1rem; text-align: center;">
+                    <i class="fas fa-phone"></i> Contact: +254 112 345906
+                </p>
+                
+                <div class="popup-actions">
+                    <button class="btn btn-primary" onclick="callNumber('+254112345906')">
+                        <i class="fas fa-phone"></i> Call Now
+                    </button>
+                    <button class="btn btn-secondary" onclick="openWhatsApp('Hello MortApps Studios, I am interested in your website development services.')">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </button>
+                    <button class="btn btn-outline" onclick="closeAdPopup()">Not Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/254112345906" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
     <script>
+        // ===== EXPERT BULLETPROOF CONFIGURATION =====
+        const CONFIG = {
+            phone: '+254112345906',
+            email: 'sokolinc.ke@gmail.com', // PRIMARY - used for email button
+            email2: 'mort@sokolinc.co.ke',  // SECONDARY
+            whatsapp: '+254112345906',
+            adTimer: 59000,     // 59 seconds for MortApps ad
+            helpTimer: 4000,    // 4 seconds for help guide
+            mortAppsUrl: 'https://mortappsstudios.com',
+            // Cooldown periods in milliseconds
+            helpCooldown: 5 * 60 * 60 * 1000, // 5 hours
+            adCooldown: 2 * 60 * 60 * 1000   // 2 hours
+        };
+
         // ===== GLOBAL VARIABLES =====
-        const platformPhone = '+254105399526';
         let currentAction = '';
         let currentItem = '';
         let loadMoreCount = 0;
+        
+        // UPDATED: More realistic counter starting values and ranges
         let farmersValue = 142;
         let productsValue = 187;
         let farmersTrend = 'up';
@@ -1412,67 +2079,88 @@
         const mainNav = document.getElementById('mainNav');
         const navOverlay = document.getElementById('navOverlay');
         const closeNav = document.getElementById('closeNav');
+        const scrollToTop = document.getElementById('scrollToTop');
 
-        // ===== NAVIGATION FUNCTIONS =====
+        // ===== EXPERT NAVIGATION FUNCTIONS =====
         function toggleNavigation() {
+            const isActive = mainNav.classList.toggle('active');
             navToggle.classList.toggle('active');
-            mainNav.classList.toggle('active');
             navOverlay.classList.toggle('active');
-            document.body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : '';
+            
+            if (isActive) {
+                lockScroll();
+            } else {
+                unlockScroll();
+            }
+        }
+
+        function lockScroll() {
+            document.body.classList.add('scroll-locked');
+        }
+        
+        function unlockScroll() {
+            document.body.classList.remove('scroll-locked');
         }
 
         navToggle.addEventListener('click', toggleNavigation);
         closeNav.addEventListener('click', toggleNavigation);
         navOverlay.addEventListener('click', toggleNavigation);
 
-        // ===== REALISTIC TRADING-LIKE COUNTERS =====
+        // ===== ENHANCED REALISTIC TRADING-LIKE COUNTERS =====
         function updateFarmersOnline() {
             const farmersElement = document.getElementById('farmersOnline');
             const min = 36;
             const max = 253;
             
-            // Trading-like pattern: small fluctuations with occasional larger moves
+            // More realistic trading pattern with varied intervals
             let change;
+            const randomFactor = Math.random();
             
-            // Every 5th update, make a larger move
-            if (farmersStep % 5 === 0) {
-                change = Math.floor(Math.random() * 21) - 10; // -10 to +10
+            // 60% small fluctuations, 30% medium moves, 10% larger moves
+            if (randomFactor < 0.6) {
+                change = Math.floor(Math.random() * 7) - 3; // -3 to +3 (small)
+            } else if (randomFactor < 0.9) {
+                change = Math.floor(Math.random() * 15) - 7; // -7 to +7 (medium)
             } else {
-                change = Math.floor(Math.random() * 7) - 3; // -3 to +3 for small fluctuations
+                change = Math.floor(Math.random() * 21) - 10; // -10 to +10 (large)
             }
             
-            // Trend-based adjustment
+            // Trend-based adjustment with momentum
             if (farmersTrend === 'up') {
-                change = Math.max(1, change); // Ensure positive when trending up
+                change = Math.max(0, change + 1); // Bias upward when trending up
             } else {
-                change = Math.min(-1, change); // Ensure negative when trending down
+                change = Math.min(0, change - 1); // Bias downward when trending down
             }
             
             let newValue = farmersValue + change;
             
-            // Keep within bounds and reverse trend if hitting limits
+            // Keep within realistic bounds
             if (newValue >= max) {
-                newValue = max - 1;
+                newValue = max - Math.floor(Math.random() * 5);
                 farmersTrend = 'down';
             } else if (newValue <= min) {
-                newValue = min + 1;
+                newValue = min + Math.floor(Math.random() * 5);
                 farmersTrend = 'up';
             }
             
-            // Occasionally reverse trend randomly (10% chance)
-            if (Math.random() < 0.1) {
+            // Occasionally reverse trend (15% chance)
+            if (Math.random() < 0.15) {
                 farmersTrend = farmersTrend === 'up' ? 'down' : 'up';
             }
             
             farmersValue = newValue;
             farmersStep++;
             
-            // Animate the change
-            farmersElement.style.opacity = '0.7';
-            setTimeout(() => {
-                farmersElement.textContent = newValue;
-                farmersElement.style.opacity = '1';
-            }, 250);
+            // Smooth animation
+            if (farmersElement) {
+                farmersElement.style.opacity = '0.7';
+                farmersElement.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    farmersElement.textContent = newValue;
+                    farmersElement.style.opacity = '1';
+                    farmersElement.style.transform = 'scale(1)';
+                }, 150);
+            }
         }
 
         function updateProductsAvailable() {
@@ -1480,48 +2168,54 @@
             const min = 145;
             const max = 289;
             
-            // Trading-like pattern for products
+            // Different pattern for products (more volatile)
             let change;
+            const randomFactor = Math.random();
             
-            // Every 4th update, make a larger move
-            if (productsStep % 4 === 0) {
-                change = Math.floor(Math.random() * 15) - 7; // -7 to +7
+            if (randomFactor < 0.5) {
+                change = Math.floor(Math.random() * 9) - 4; // -4 to +4
+            } else if (randomFactor < 0.85) {
+                change = Math.floor(Math.random() * 17) - 8; // -8 to +8
             } else {
-                change = Math.floor(Math.random() * 5) - 2; // -2 to +2 for small fluctuations
+                change = Math.floor(Math.random() * 25) - 12; // -12 to +12
             }
             
-            // Trend-based adjustment
+            // Trend momentum with slight randomness
             if (productsTrend === 'up') {
-                change = Math.max(1, change);
+                change = Math.max(-1, change + 2); // Stronger upward bias
             } else {
-                change = Math.min(-1, change);
+                change = Math.min(1, change - 2); // Stronger downward bias
             }
             
             let newValue = productsValue + change;
             
-            // Keep within bounds and reverse trend if hitting limits
+            // Keep within bounds
             if (newValue >= max) {
-                newValue = max - 1;
+                newValue = max - Math.floor(Math.random() * 8);
                 productsTrend = 'down';
             } else if (newValue <= min) {
-                newValue = min + 1;
+                newValue = min + Math.floor(Math.random() * 8);
                 productsTrend = 'up';
             }
             
-            // Occasionally reverse trend randomly (15% chance)
-            if (Math.random() < 0.15) {
+            // More frequent trend changes for products (20% chance)
+            if (Math.random() < 0.2) {
                 productsTrend = productsTrend === 'up' ? 'down' : 'up';
             }
             
             productsValue = newValue;
             productsStep++;
             
-            // Animate the change
-            productsElement.style.opacity = '0.7';
-            setTimeout(() => {
-                productsElement.textContent = newValue;
-                productsElement.style.opacity = '1';
-            }, 250);
+            // Smooth animation
+            if (productsElement) {
+                productsElement.style.opacity = '0.7';
+                productsElement.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    productsElement.textContent = newValue;
+                    productsElement.style.opacity = '1';
+                    productsElement.style.transform = 'scale(1)';
+                }, 150);
+            }
         }
 
         // ===== SOKOFRESH SPECIFIC FUNCTIONALITY =====
@@ -1540,31 +2234,34 @@
             listings.forEach(listing => {
                 if (category === 'all' || listing.getAttribute('data-category') === category) {
                     listing.style.display = 'block';
+                    setTimeout(() => {
+                        listing.style.opacity = '1';
+                        listing.style.transform = 'translateY(0)';
+                    }, 50);
                 } else {
-                    listing.style.display = 'none';
+                    listing.style.opacity = '0';
+                    listing.style.transform = 'translateY(10px)';
+                    setTimeout(() => {
+                        listing.style.display = 'none';
+                    }, 300);
                 }
             });
         }
 
         function loadMoreProduce() {
-            const hiddenListings = document.querySelectorAll('.hidden-listing');
+            // Simulate loading more produce
+            const loadMoreBtn = document.querySelector('.btn-outline');
+            loadMoreBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Loading...';
+            loadMoreBtn.disabled = true;
             
-            if (loadMoreCount < hiddenListings.length) {
-                // Show next 3 hidden listings
-                for (let i = loadMoreCount; i < loadMoreCount + 3 && i < hiddenListings.length; i++) {
-                    hiddenListings[i].style.display = 'block';
-                }
-                loadMoreCount += 3;
-                
-                // If all listings are shown, disable the button
-                if (loadMoreCount >= hiddenListings.length) {
-                    document.querySelector('.btn-outline').textContent = 'All Produce Loaded';
-                    document.querySelector('.btn-outline').disabled = true;
-                }
-            }
+            setTimeout(() => {
+                // In a real implementation, this would load actual new listings
+                loadMoreBtn.innerHTML = '<i class="fas fa-check"></i> No More Produce';
+                loadMoreBtn.style.opacity = '0.7';
+            }, 1500);
         }
 
-        // ===== POPUP FUNCTIONS =====
+        // ===== POPUP FUNCTIONS (Consistent with Index) =====
         function showContactPopup(action, itemName) {
             currentAction = action;
             currentItem = itemName;
@@ -1577,14 +2274,14 @@
             
             if (action === 'buy') {
                 title.textContent = `Buy ${itemName}`;
-                message.textContent = 'Connect with us to place your order:';
+                message.textContent = `Connect with us to purchase ${itemName}:`;
             } else {
                 title.textContent = `Sell ${itemName}`;
-                message.textContent = 'List your produce with us:';
+                message.textContent = `List your ${itemName} with us:`;
             }
             
             callBtn.onclick = () => {
-                callNumber(platformPhone);
+                callNumber(CONFIG.phone);
                 closeContactPopup();
             };
             
@@ -1600,10 +2297,12 @@
             };
             
             popup.classList.add('active');
+            lockScroll();
         }
 
         function closeContactPopup() {
             document.getElementById('contactPopup').classList.remove('active');
+            unlockScroll();
         }
 
         function showPostPopup(type) {
@@ -1612,51 +2311,38 @@
             const message = document.getElementById('postMessage');
             const whatsappBtn = document.getElementById('postWhatsappBtn');
             
-            let whatsappMessage = '';
+            let whatsappMessage = 'Hello SokoLinc, I want to POST produce on SokoFresh. Item: [ ] Quantity: [ ] Price: [ ] Location: [ ]';
             
-            switch(type) {
-                case 'produce':
-                    title.textContent = 'Post Your Produce';
-                    message.textContent = 'Contact us to list your fresh produce on SokoFresh';
-                    whatsappMessage = 'Hello SokoLinc, I want to POST produce on SokoFresh. Item: [ ] Quantity: [ ] Price: [ ] Location: [ ]';
-                    break;
-                case 'deal':
-                    title.textContent = 'Post Your Item';
-                    message.textContent = 'Contact us to list your item on SokoDeals';
-                    whatsappMessage = 'Hello SokoLinc, I want to POST an item on SokoDeals. Item: [ ] Price: [ ] Details: [ ] Location: [ ]';
-                    break;
-                case 'work':
-                    title.textContent = 'Post Your Skills';
-                    message.textContent = 'Contact us to list your services on KaziConnect';
-                    whatsappMessage = 'Hello SokoLinc, I want to POST my services on KaziConnect. Service: [ ] Experience: [ ] Location: [ ] Phone: [ ]';
-                    break;
-                case 'transport':
-                    title.textContent = 'List Your Vehicle';
-                    message.textContent = 'Contact us to list your vehicle on SokoRide';
-                    whatsappMessage = 'Hello SokoLinc, I want to LIST my vehicle on SokoRide. Vehicle Type: [ ] Service Area: [ ] Rates: [ ] Phone: [ ]';
-                    break;
-                case 'announcement':
-                    title.textContent = 'Post Announcement';
-                    message.textContent = 'Contact us to post your announcement on Tangazo+';
-                    whatsappMessage = 'Hello SokoLinc, I want to POST an announcement on Tangazo+. Event: [ ] Date: [ ] Location: [ ] Details: [ ]';
-                    break;
-                case 'business':
-                    title.textContent = 'Advertise Your Business';
-                    message.textContent = 'Contact us to advertise your business on BizBoost';
-                    whatsappMessage = 'Hello SokoLinc, I want to ADVERTISE my business on BizBoost. Business Name: [ ] Services: [ ] Location: [ ] Phone: [ ]';
-                    break;
-            }
-            
-            whatsappBtn.onclick = () => {
-                openWhatsApp(whatsappMessage);
-                closePostPopup();
-            };
+            title.textContent = 'Post Your Produce';
+            message.textContent = 'Contact us to list your fresh produce on SokoFresh';
             
             popup.classList.add('active');
+            lockScroll();
         }
 
         function closePostPopup() {
             document.getElementById('postPopup').classList.remove('active');
+            unlockScroll();
+        }
+
+        function showHelpPopup() {
+            document.getElementById('helpPopup').classList.add('active');
+            lockScroll();
+        }
+
+        function closeHelpPopup() {
+            document.getElementById('helpPopup').classList.remove('active');
+            unlockScroll();
+        }
+
+        function showAdPopup() {
+            document.getElementById('adPopup').classList.add('active');
+            lockScroll();
+        }
+
+        function closeAdPopup() {
+            document.getElementById('adPopup').classList.remove('active');
+            unlockScroll();
         }
 
         // ===== CONTACT FUNCTIONS =====
@@ -1666,25 +2352,188 @@
 
         function openWhatsApp(message) {
             const encodedMessage = encodeURIComponent(message);
-            window.open(`https://wa.me/${platformPhone}?text=${encodedMessage}`, '_blank');
+            window.open(`https://wa.me/${CONFIG.whatsapp}?text=${encodedMessage}`, '_blank');
         }
 
-        // ===== INITIALIZATION =====
-        document.addEventListener('DOMContentLoaded', function() {
-            // Start dynamic counters with trading-like patterns
-            setInterval(updateFarmersOnline, 8000); // Update every 8 seconds
-            setInterval(updateProductsAvailable, 12000); // Update every 12 seconds
+        function sendEmail() {
+            window.location.href = `mailto:${CONFIG.email}?subject=SokoFresh Inquiry&body=Hello SokoLinc team, I would like to get more information about SokoFresh.`;
+        }
+
+        // ===== COMPLETE COPY PROTECTION SCRIPT =====
+        function preventTextSelection() {
+            // Block context menu (right-click)
+            document.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+                return false;
+            }, false);
             
-            // Close popups when clicking overlay
+            // Block text selection
+            document.addEventListener('selectstart', function(e) {
+                e.preventDefault();
+                return false;
+            }, false);
+            
+            // Block drag events
+            document.addEventListener('dragstart', function(e) {
+                e.preventDefault();
+                return false;
+            }, false);
+            
+            // Block copy events
+            document.addEventListener('copy', function(e) {
+                e.preventDefault();
+                return false;
+            }, false);
+            
+            // Block cut events
+            document.addEventListener('cut', function(e) {
+                e.preventDefault();
+                return false;
+            }, false);
+            
+            // Block paste events
+            document.addEventListener('paste', function(e) {
+                e.preventDefault();
+                return false;
+            }, false);
+            
+            // Special handling for popups - allow selection in popups
+            document.addEventListener('click', function(e) {
+                if (e.target.closest('.popup-body')) {
+                    // Allow selection in popups temporarily
+                    const popupElements = e.target.closest('.popup-body').querySelectorAll('*');
+                    popupElements.forEach(el => {
+                        el.style.userSelect = 'text';
+                        el.style.webkitUserSelect = 'text';
+                        el.style.MozUserSelect = 'text';
+                        el.style.msUserSelect = 'text';
+                    });
+                } else {
+                    // Reset all elements to no selection
+                    document.querySelectorAll('*').forEach(el => {
+                        if (!el.closest('.popup-body')) {
+                            el.style.userSelect = 'none';
+                            el.style.webkitUserSelect = 'none';
+                            el.style.MozUserSelect = 'none';
+                            el.style.msUserSelect = 'none';
+                        }
+                    });
+                }
+            }, false);
+        }
+
+        // ===== GLOBAL EXPORTS =====
+        window.showContactPopup = function() {
+            const popup = document.getElementById('contactPopup');
+            const title = document.getElementById('contactTitle');
+            const message = document.getElementById('contactMessage');
+            
+            title.textContent = 'Contact SokoLinc';
+            message.textContent = 'Get in touch with us for support, partnerships, or general inquiries.';
+            
+            popup.classList.add('active');
+            lockScroll();
+        };
+
+        window.showHelpPopup = showHelpPopup;
+        window.closeHelpPopup = closeHelpPopup;
+        window.callNumber = callNumber;
+        window.openWhatsApp = openWhatsApp;
+        window.sendEmail = sendEmail;
+
+        // ===== EXPERT INITIALIZATION =====
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('✅ SokoFresh - Expert Edition Initialized');
+            console.log('🔍 MortApps Studios Digital Fingerprint: ACTIVE');
+            console.log('🖼️ Favicon Suite: COMPLETE');
+            console.log('📱 Social Media Previews: CONFIGURED');
+            console.log('📈 Realistic Counters: ACTIVE');
+            
+            // Apply copy protection immediately
+            preventTextSelection();
+            
+            // Start dynamic counters with trading-like patterns
+            setInterval(updateFarmersOnline, 7000); // Update every 7 seconds
+            setInterval(updateProductsAvailable, 9000); // Update every 9 seconds
+            
+            // Scroll to top button
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 500) {
+                    scrollToTop.classList.add('visible');
+                } else {
+                    scrollToTop.classList.remove('visible');
+                }
+            });
+            
+            // Close popups when clicking overlay (expert handling)
             document.querySelectorAll('.popup-overlay').forEach(overlay => {
                 overlay.addEventListener('click', function(e) {
                     if (e.target === this) {
                         this.classList.remove('active');
+                        unlockScroll();
                     }
                 });
             });
             
-            // Prevent image right-click and drag
+            // Handle Escape key to close popups
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    const popups = ['contactPopup', 'postPopup', 'helpPopup', 'adPopup'];
+                    popups.forEach(popupId => {
+                        const popup = document.getElementById(popupId);
+                        if (popup && popup.classList.contains('active')) {
+                            popup.classList.remove('active');
+                            unlockScroll();
+                        }
+                    });
+                    
+                    if (mainNav.classList.contains('active')) {
+                        toggleNavigation();
+                    }
+                }
+            });
+            
+            // Initialize MortApps Studios link
+            const mortAppsLink = document.querySelector('.powered-by a');
+            if (mortAppsLink) {
+                mortAppsLink.href = CONFIG.mortAppsUrl;
+                mortAppsLink.target = '_blank';
+                mortAppsLink.rel = 'noopener noreferrer';
+            }
+            
+            // Schedule popups similar to index
+            setTimeout(() => {
+                // Show help popup after 4 seconds if not dismissed and cooldown has passed
+                const helpLastShown = localStorage.getItem('sokolinc_help_last_shown');
+                const helpCooldownPassed = !helpLastShown || (Date.now() - helpLastShown > CONFIG.helpCooldown);
+                
+                if (!localStorage.getItem('sokolinc_help_closed') && helpCooldownPassed) {
+                    setTimeout(showHelpPopup, CONFIG.helpTimer);
+                }
+                
+                // MortApps Ad Popup - Shows after 59 seconds if cooldown has passed
+                const adLastShown = localStorage.getItem('sokolinc_ad_last_shown');
+                const adCooldownPassed = !adLastShown || (Date.now() - adLastShown > CONFIG.adCooldown);
+                
+                if (adCooldownPassed) {
+                    setTimeout(() => {
+                        if (!document.getElementById('helpPopup').classList.contains('active')) {
+                            showAdPopup();
+                        }
+                    }, CONFIG.adTimer);
+                }
+            }, 1000);
+            
+            // Smooth scroll for category filtering
+            const categoryBtns = document.querySelectorAll('.category-btn');
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const listingsSection = document.getElementById('produceListings');
+                    listingsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+            });
+            
+            // Enhanced image protection
             document.querySelectorAll('.listing-image img').forEach(img => {
                 img.addEventListener('contextmenu', function(e) {
                     e.preventDefault();
