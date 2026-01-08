@@ -1319,7 +1319,7 @@
             <li><a href="sokoride.html"><i class="fas fa-truck"></i> SokoRide</a></li>
             <li><a href="tangazo.html"><i class="fas fa-bullhorn"></i> Tangazo+</a></li>
             <li><a href="bizboost.html"><i class="fas fa-ad"></i> BizBoost</a></li>
-            <li><a href="#" onclick="showContactPopup()"><i class="fas fa-phone"></i> Contact Us</a></li>
+            <li><a href="#" onclick="showGeneralContact()"><i class="fas fa-phone"></i> Contact Us</a></li>
             <li><a href="terms.html"><i class="fas fa-file-contract"></i> Terms & Conditions</a></li>
             <li><a href="privacy.html"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
             <li><a href="#" onclick="showHelpPopup()"><i class="fas fa-question-circle"></i> Help & Guide</a></li>
@@ -1331,7 +1331,7 @@
         <div class="container">
             <h1><i class="fas fa-apple-alt"></i> SokoFresh</h1>
             <p>Kenya's Trusted Hub for Bulk Fresh Produce – Powered by Farmers. Trusted by Buyers.</p>
-            <button class="btn btn-secondary" onclick="showPostPopup('produce')">
+            <button class="btn btn-secondary" onclick="showPostPopup()">
                 <i class="fas fa-plus"></i> List Your Produce
             </button>
         </div>
@@ -1816,7 +1816,7 @@
                 <p>Join thousands of Kenyans buying and selling fresh produce directly</p>
             </div>
             <div style="text-align: center;">
-                <button class="btn btn-primary" onclick="showPostPopup('produce')" style="margin-right: 1rem;">
+                <button class="btn btn-primary" onclick="showPostPopup()" style="margin-right: 1rem;">
                     <i class="fas fa-plus"></i> Start Selling
                 </button>
                 <button class="btn btn-secondary" onclick="window.scrollTo(0, document.getElementById('produceListings').offsetTop)">
@@ -1870,7 +1870,7 @@
                 <div class="footer-column">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="#" onclick="showContactPopup()"><i class="fas fa-phone"></i> Contact Us</a></li>
+                        <li><a href="#" onclick="showGeneralContact()"><i class="fas fa-phone"></i> Contact Us</a></li>
                         <li><a href="terms.html"><i class="fas fa-file-contract"></i> Terms & Conditions</a></li>
                         <li><a href="privacy.html"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
                         <li><a href="#" onclick="showHelpPopup()"><i class="fas fa-question-circle"></i> Help & Guide</a></li>
@@ -1942,7 +1942,7 @@
                     <button class="btn btn-secondary" id="whatsappBtn">
                         <i class="fab fa-whatsapp"></i> WhatsApp
                     </button>
-                    <button class="btn btn-accent" onclick="sendEmail()">
+                    <button class="btn btn-accent" id="emailBtn">
                         <i class="fas fa-envelope"></i> Email
                     </button>
                 </div>
@@ -1960,13 +1960,13 @@
             <div class="popup-body">
                 <p id="postMessage">Contact us to list your fresh produce on SokoFresh:</p>
                 <div class="popup-actions">
-                    <button class="btn btn-primary" onclick="callNumber('+254112345906')">
+                    <button class="btn btn-primary" id="postCallBtn">
                         <i class="fas fa-phone"></i> Call Us
                     </button>
                     <button class="btn btn-secondary" id="postWhatsappBtn">
                         <i class="fab fa-whatsapp"></i> WhatsApp Us
                     </button>
-                    <button class="btn btn-accent" onclick="sendEmail()">
+                    <button class="btn btn-accent" id="postEmailBtn">
                         <i class="fas fa-envelope"></i> Email
                     </button>
                 </div>
@@ -2057,7 +2057,7 @@
             helpTimer: 4000,    // 4 seconds for help guide
             mortAppsUrl: 'https://mortappsstudios.com',
             // Cooldown periods in milliseconds
-            helpCooldown: 5 * 60 * 60 * 1000, // 5 hours
+            helpCooldown: 5 * 60 * 60 * 1000, // 5 hours (already implemented)
             adCooldown: 2 * 60 * 60 * 1000   // 2 hours
         };
 
@@ -2261,7 +2261,7 @@
             }, 1500);
         }
 
-        // ===== POPUP FUNCTIONS (Consistent with Index) =====
+        // ===== POPUP FUNCTIONS - CLEAN & PROFESSIONAL MESSAGING =====
         function showContactPopup(action, itemName) {
             currentAction = action;
             currentItem = itemName;
@@ -2269,30 +2269,52 @@
             const popup = document.getElementById('contactPopup');
             const title = document.getElementById('contactTitle');
             const message = document.getElementById('contactMessage');
-            const callBtn = document.getElementById('callBtn');
-            const whatsappBtn = document.getElementById('whatsappBtn');
             
             if (action === 'buy') {
                 title.textContent = `Buy ${itemName}`;
-                message.textContent = `Connect with us to purchase ${itemName}:`;
+                message.textContent = `Ready to purchase ${itemName}? Connect with us now:`;
             } else {
                 title.textContent = `Sell ${itemName}`;
-                message.textContent = `List your ${itemName} with us:`;
+                message.textContent = `Want to list your ${itemName}? Connect with us now:`;
             }
             
-            callBtn.onclick = () => {
+            // REMOVE ANY EXISTING EVENT LISTENERS FIRST (Clean slate)
+            const callBtn = document.getElementById('callBtn');
+            const whatsappBtn = document.getElementById('whatsappBtn');
+            const emailBtn = document.getElementById('emailBtn');
+            
+            callBtn.replaceWith(callBtn.cloneNode(true));
+            whatsappBtn.replaceWith(whatsappBtn.cloneNode(true));
+            emailBtn.replaceWith(emailBtn.cloneNode(true));
+            
+            // Get fresh references
+            const freshCallBtn = document.getElementById('callBtn');
+            const freshWhatsappBtn = document.getElementById('whatsappBtn');
+            const freshEmailBtn = document.getElementById('emailBtn');
+            
+            // BULLETPROOF EVENT HANDLERS
+            freshCallBtn.onclick = function() {
                 callNumber(CONFIG.phone);
                 closeContactPopup();
             };
             
-            whatsappBtn.onclick = () => {
+            freshWhatsappBtn.onclick = function() {
                 let whatsappMessage = '';
+                
                 if (action === 'buy') {
-                    whatsappMessage = `Hello SokoLinc, I want to BUY (Produce): ${itemName}.`;
+                    // CLEAN BUY MESSAGE - SIMPLE AND PROFESSIONAL
+                    whatsappMessage = `Hello SokoLinc, I'm interested in buying ${itemName}.`;
                 } else {
-                    whatsappMessage = `Hello SokoLinc, I want to SELL (Produce): ${itemName}. Quantity: [ ] Location: [ ]`;
+                    // CLEAN SELL MESSAGE - SIMPLE AND PROFESSIONAL
+                    whatsappMessage = `Hello SokoLinc, I want to sell ${itemName}.`;
                 }
+                
                 openWhatsApp(whatsappMessage);
+                closeContactPopup();
+            };
+            
+            freshEmailBtn.onclick = function() {
+                sendEmail();
                 closeContactPopup();
             };
             
@@ -2305,16 +2327,46 @@
             unlockScroll();
         }
 
-        function showPostPopup(type) {
+        function showPostPopup() {
             const popup = document.getElementById('postPopup');
             const title = document.getElementById('postTitle');
             const message = document.getElementById('postMessage');
-            const whatsappBtn = document.getElementById('postWhatsappBtn');
-            
-            let whatsappMessage = 'Hello SokoLinc, I want to POST produce on SokoFresh. Item: [ ] Quantity: [ ] Price: [ ] Location: [ ]';
             
             title.textContent = 'Post Your Produce';
-            message.textContent = 'Contact us to list your fresh produce on SokoFresh';
+            message.textContent = 'List your fresh produce directly on SokoFresh. Connect with us now:';
+            
+            // REMOVE AND RECREATE BUTTONS FOR CLEAN EVENT BINDING
+            const postCallBtn = document.getElementById('postCallBtn');
+            const postWhatsappBtn = document.getElementById('postWhatsappBtn');
+            const postEmailBtn = document.getElementById('postEmailBtn');
+            
+            postCallBtn.replaceWith(postCallBtn.cloneNode(true));
+            postWhatsappBtn.replaceWith(postWhatsappBtn.cloneNode(true));
+            postEmailBtn.replaceWith(postEmailBtn.cloneNode(true));
+            
+            // Get fresh references
+            const freshPostCallBtn = document.getElementById('postCallBtn');
+            const freshPostWhatsappBtn = document.getElementById('postWhatsappBtn');
+            const freshPostEmailBtn = document.getElementById('postEmailBtn');
+            
+            // CLEAN POST MESSAGE - SIMPLE AND PROFESSIONAL
+            const whatsappMessage = `Hello SokoLinc, I want to list produce on SokoFresh.`;
+            
+            freshPostCallBtn.onclick = function() {
+                callNumber(CONFIG.phone);
+                closePostPopup();
+            };
+            
+            freshPostWhatsappBtn.onclick = function() {
+                openWhatsApp(whatsappMessage);
+                closePostPopup();
+            };
+            
+            freshPostEmailBtn.onclick = function() {
+                currentItem = 'General Produce Listing';
+                sendEmail();
+                closePostPopup();
+            };
             
             popup.classList.add('active');
             lockScroll();
@@ -2331,8 +2383,56 @@
         }
 
         function closeHelpPopup() {
+            // Store when help was last shown (for 5-hour cooldown)
+            localStorage.setItem('sokolinc_help_last_shown', Date.now());
             document.getElementById('helpPopup').classList.remove('active');
             unlockScroll();
+        }
+
+        function showGeneralContact() {
+            currentAction = 'general';
+            currentItem = 'SokoFresh Inquiry';
+            
+            const popup = document.getElementById('contactPopup');
+            const title = document.getElementById('contactTitle');
+            const message = document.getElementById('contactMessage');
+            
+            title.textContent = 'Contact SokoLinc';
+            message.textContent = 'Get in touch with us for support, partnerships, or general inquiries.';
+            
+            // REMOVE ANY EXISTING EVENT LISTENERS FIRST (Clean slate)
+            const callBtn = document.getElementById('callBtn');
+            const whatsappBtn = document.getElementById('whatsappBtn');
+            const emailBtn = document.getElementById('emailBtn');
+            
+            callBtn.replaceWith(callBtn.cloneNode(true));
+            whatsappBtn.replaceWith(whatsappBtn.cloneNode(true));
+            emailBtn.replaceWith(emailBtn.cloneNode(true));
+            
+            // Get fresh references
+            const freshCallBtn = document.getElementById('callBtn');
+            const freshWhatsappBtn = document.getElementById('whatsappBtn');
+            const freshEmailBtn = document.getElementById('emailBtn');
+            
+            // BULLETPROOF EVENT HANDLERS
+            freshCallBtn.onclick = function() {
+                callNumber(CONFIG.phone);
+                closeContactPopup();
+            };
+            
+            freshWhatsappBtn.onclick = function() {
+                const whatsappMessage = `Hello SokoLinc, I have a general inquiry about SokoFresh.`;
+                openWhatsApp(whatsappMessage);
+                closeContactPopup();
+            };
+            
+            freshEmailBtn.onclick = function() {
+                sendEmail();
+                closeContactPopup();
+            };
+            
+            popup.classList.add('active');
+            lockScroll();
         }
 
         function showAdPopup() {
@@ -2345,7 +2445,7 @@
             unlockScroll();
         }
 
-        // ===== CONTACT FUNCTIONS =====
+        // ===== CONTACT FUNCTIONS - SIMPLE AND PROFESSIONAL =====
         function callNumber(phoneNumber) {
             window.location.href = `tel:${phoneNumber}`;
         }
@@ -2356,7 +2456,21 @@
         }
 
         function sendEmail() {
-            window.location.href = `mailto:${CONFIG.email}?subject=SokoFresh Inquiry&body=Hello SokoLinc team, I would like to get more information about SokoFresh.`;
+            let subject = '';
+            let body = '';
+            
+            if (currentAction === 'buy') {
+                subject = `SokoFresh - Want to BUY: ${currentItem}`;
+                body = `Hello SokoLinc team,\n\nI would like to purchase ${currentItem}.\n\nPlease connect me with sellers.\n\nThank you.`;
+            } else if (currentAction === 'sell') {
+                subject = `SokoFresh - Want to SELL: ${currentItem}`;
+                body = `Hello SokoLinc team,\n\nI would like to list ${currentItem} for sale on SokoFresh.\n\nPlease contact me with details.\n\nThank you.`;
+            } else {
+                subject = `SokoFresh Inquiry - ${currentItem || 'General'}`;
+                body = `Hello SokoLinc team,\n\nI have an inquiry about ${currentItem || 'your SokoFresh service'}.\n\nPlease contact me with more information.\n\nThank you.`;
+            }
+            
+            window.location.href = `mailto:${CONFIG.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
         }
 
         // ===== COMPLETE COPY PROTECTION SCRIPT =====
@@ -2423,18 +2537,8 @@
         }
 
         // ===== GLOBAL EXPORTS =====
-        window.showContactPopup = function() {
-            const popup = document.getElementById('contactPopup');
-            const title = document.getElementById('contactTitle');
-            const message = document.getElementById('contactMessage');
-            
-            title.textContent = 'Contact SokoLinc';
-            message.textContent = 'Get in touch with us for support, partnerships, or general inquiries.';
-            
-            popup.classList.add('active');
-            lockScroll();
-        };
-
+        window.showContactPopup = showContactPopup;
+        window.showGeneralContact = showGeneralContact;
         window.showHelpPopup = showHelpPopup;
         window.closeHelpPopup = closeHelpPopup;
         window.callNumber = callNumber;
@@ -2448,6 +2552,8 @@
             console.log('🖼️ Favicon Suite: COMPLETE');
             console.log('📱 Social Media Previews: CONFIGURED');
             console.log('📈 Realistic Counters: ACTIVE');
+            console.log('📱 WhatsApp Buttons: SIMPLE & PROFESSIONAL');
+            console.log('⏰ Help Popup Cooldown: 5 HOURS (implemented)');
             
             // Apply copy protection immediately
             preventTextSelection();
@@ -2501,14 +2607,16 @@
                 mortAppsLink.rel = 'noopener noreferrer';
             }
             
-            // Schedule popups similar to index
+            // Schedule popups with 5-hour cooldown for help
             setTimeout(() => {
-                // Show help popup after 4 seconds if not dismissed and cooldown has passed
+                // Show help popup after 4 seconds if cooldown has passed
                 const helpLastShown = localStorage.getItem('sokolinc_help_last_shown');
                 const helpCooldownPassed = !helpLastShown || (Date.now() - helpLastShown > CONFIG.helpCooldown);
                 
-                if (!localStorage.getItem('sokolinc_help_closed') && helpCooldownPassed) {
+                if (helpCooldownPassed) {
                     setTimeout(showHelpPopup, CONFIG.helpTimer);
+                } else {
+                    console.log('⏰ Help popup skipped - 5-hour cooldown active');
                 }
                 
                 // MortApps Ad Popup - Shows after 59 seconds if cooldown has passed
@@ -2545,6 +2653,13 @@
                     return false;
                 });
             });
+            
+            console.log('✅ WhatsApp messages are now CLEAN & PROFESSIONAL:');
+            console.log('   Buy Now → "Hello SokoLinc, I\'m interested in buying [Item Name]."');
+            console.log('   Sell Similar → "Hello SokoLinc, I want to sell [Item Name]."');
+            console.log('   List Produce → "Hello SokoLinc, I want to list produce on SokoFresh."');
+            console.log('✅ No more cluttered messages - Simple, clean, professional.');
+            console.log('✅ Help popup 5-hour cooldown is ACTIVE');
         });
     </script>
 </body>
